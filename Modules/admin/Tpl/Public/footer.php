@@ -1,0 +1,1 @@
+<footer class="foot_nav"><a href="javascript:history.go(-1);"></a><a href="__APP__"></a><a href="javascript:window.location.reload();"></a></footer></body></html>
