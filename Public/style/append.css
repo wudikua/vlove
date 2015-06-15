@@ -1,0 +1,199 @@
+@import url(main_OELOVE26FL319L.css);
+@import url(user_OELOVE26FL319L.css);
+/*---------------------- Toast Show Css Begin ----------------------*/
+.toast {
+    margin:0 auto;
+    height:40px;
+    position:fixed;
+    bottom:80px;
+    z-index:101;
+    padding:10px;
+}
+
+.toast span {
+    background:#000000;color:#ffffff;font-size:14px;
+    height:35px;line-height:35px;text-align:center;
+    border:1px solid #333333;
+    box-shadow: 1px 1px 2px 1px #999999;
+    border-radius: 6px;
+    padding:10px;
+    background-position: -webkit-gradient(linear, 0 0, 0 100%, from(#000000), to(#3f3f3f));
+    background-color: #F3F3F3;
+    background: -moz-linear-gradient(center top , #000000, #3f3f3f) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#000000), to(#3f3f3f));
+}
+/*-----------------------Toast Show Css End ------------------------*/
+
+/*---------------------- confirm 弹窗Css Begin --------------------*/
+.confirm-layout {
+    margin:0 auto;
+    background:#fff;
+    /*display: none;*/
+    width: 85%;
+    position:fixed;
+    z-index:120;
+    /*top:50%;left:50%;*/
+}
+.confirm-layout h2 {
+    height:35px;line-height:35px;color:#4EC1FF;
+    border-bottom:2px solid #4EC1FF;font-weight:normal;padding-left:10px;
+}
+.confirm-layout p {
+    padding:10px;line-height:25px;color:#666666;
+}
+
+.confirm-list {
+    margin:0 auto;
+    border-top:1px solid #ddd;overflow:hidden;height:35px;
+}
+.confirm-list .confirm-l {
+    float:left;width:50%;border-right:1px solid #ddd;text-align:center;height:35px;line-height:35px;
+}
+.confirm-list .confirm-r {
+    float:left;width:40%;text-align:center;height:35px;line-height:35px;
+}
+/*---------------------- confirm 弹窗Css End --------------------*/
+
+/*---------------------- 弹出参数窗口 Css Begin ------------------------*/
+.varpop-shade{
+    display:none;
+    position:fixed;
+    width:100%;height:100%;
+    background:#333;
+    z-index:110;
+    top:0;left:0;
+    opacity:0.7;
+    overflow:hidden;
+}
+
+.varpop-layout {
+    margin:0 auto;
+    background:#fff;
+    display: none;
+    width: 85%;
+    position:fixed;
+    z-index:120;
+    /*top:50%;left:50%;*/
+}
+.varpop-layout .var-loading {
+    padding:10px;text-align:center;display:block;color:gray;
+}
+.varpop-layout .varpop-head {
+    background:#f2f2f2;height:50px;line-height:50px;
+    border-bottom:2px solid #fc377a;padding-left:10px;
+    color:#FF6599;
+}
+.varpop-layout .varpop-head span {
+    font-size:18px;
+}
+.varpop-layout .varpop-head i {
+    float:right;color:#999999;padding-right:10px;
+}
+
+.varpop-layout .varpop-footer {
+    height:40px;line-height:40px;text-align:center;
+    color:#666;
+}
+.varpop-layout .varpop-footer:hover {
+    color:#FF0088;
+}
+
+.varpop-layout .varpop-button {
+    height:40px;
+}
+.varpop-layout .varpop-button .btn-comfirm {
+    float:left;width:80px;text-align:center;
+    height:40px;line-height:40px;color:#666;
+}
+.varpop-layout .varpop-button .btn-comfirm:hover {
+    color:#FF0088;
+}
+.varpop-layout .varpop-button .btn-cancel {
+    float:right;width:80px;text-align:center;
+    height:40px;line-height:40px;color:#666;
+}
+.varpop-layout .varpop-button .btn-cancel:hover {
+    color:#FF0088;
+}
+
+
+.varpop-list {
+    color:#666;max-height:276px;overflow-y:auto;
+}
+.varpop-list ul li {
+    height:45px;line-height:45px;
+    border-bottom:1px solid #ccc;
+    padding-left:10px;
+}
+.varpop-list ul li:hover {
+    background:#f8f8f8;
+}
+.varpop-list ul li a:hover {
+    font-style:none;
+}
+/*聚集去掉a链接样式*/
+.varpop-list ul li a{text-decoration:none; outline:none;color:#666;}
+.varpop-list ul li a:active{star:expression(this.onFocus=this.blur());}
+.varpop-list ul li a:hover{cursor:default;}
+
+
+.varpop-list ul li i {
+    float:right;display:block;width:50px;height:45px;line-height:30px;
+    font-weight:normal;text-align:center;
+}
+.varpop-list ul li i input {
+    margin-top:15px;
+}
+
+.varpop-list .var-item {
+    float:right;height:45px;line-height:45px;/*margin-right:10px;padding-right:30px;*/width:50px;
+}
+
+.var-item-icon {
+    background:url(../images/radio.jpg) no-repeat center;
+}
+.var-item-icon-select {
+    background:url(../images/radio-s.jpg) no-repeat center;
+}
+
+.varpop-box1 {
+    border:1px solid #ccc;
+}
+
+.varpop-box2 {
+    border:1px solid #ccc;
+}
+
+
+/* 选择地区 */
+.varpop-label {
+    margin:0 auto;max-height:276px;overflow-y:auto;
+}
+.varpop-label ul li {
+    float:left;height:50px;line-height:50px;width:98%;
+    border-bottom:1px solid #ddd;
+}
+.varpop-label ul li i {
+    float:left;width:100px;text-align:center;display:block;
+}
+.varpop-label ul li span {
+    float:left;display:block;padding-top:10px;line-height:30px;
+}
+.varpop-label select {
+    padding:2px;height:30px;border:0;
+    font-size:18px;color:#666;background:transparent;
+    -webkit-border-radius: 5px;
+    -webkit-appearance: none;
+    top:-2px;left:-2px;overflow:hidden;
+
+}
+.varpop-label select:hover {
+    border:0;
+}
+.varpop-label select:active {
+    border:0;
+}
+.varpop-label select:visited {
+    border:0;
+}
+/*---------------------- 弹出参数窗口 Css End ------------------------*/
