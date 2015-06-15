@@ -1,0 +1,1143 @@
+/*
+ * @Design By OElove 前台CSS
+ * @Lastdate: 2014.11.24
+*/
+@charset "utf-8";
+/*------------ public begin --------------*/
+*{
+    margin:0; padding:0; list-style:none; font-size:14px;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-overflow-scrolling:touch;
+}
+.delBorder {
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+img {border:0;}
+ul,li {list-style:none;}
+
+a:link{color:#333; text-decoration:none;}
+a:visited{color:#333; text-decoration:none;}
+a:hover{color:#333; text-decoration:none;}
+a:active{color:#333; text-decoration:none;}
+.clear{clear:both;}
+h1, h2, h3, h4, h5, h6, p {
+    padding:0;margin:0;
+}
+i {font-style:normal;}
+.margin-top{
+    margin-top:60px;
+}
+.margin-bottom {
+    margin-bottom:60px;
+}
+.bg-gray {
+    background:#f2f2f2;
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+
+/*------------ webkit滚动条效果 适用于div begin -----------*/
+
+::-webkit-scrollbar{width:8px;} /*滚动条垂直方向的宽度与水平方向的高度*/
+::-webkit-scrollbar-track{background-color:#f1f1f1;} /*滚动条轨道*/
+::-webkit-scrollbar-thumb{background-color:#ccc;} /*滚动条轨道上的按钮*/
+::-webkit-scrollbar-thumb:hover {background-color:#ccc;}
+::-webkit-scrollbar-thumb:active {background-color:#ccc;}
+
+/*------------ webkit滚动条效果 适用于div end -----------*/
+
+.checkbox-s{
+    width:20px;height:20px;display:inline-block;
+    color:gray;cursor:pointer;
+    border-radius:.2em;
+    -webkit-box-shadow:inset .08em .08em .1em #000;
+}
+
+/*--------- 拉动刷新 begin -----------*/
+.event-body {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+.event-wrap {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /*background-color: #0094ff;*/
+    /*float: inherit;*/
+    top: 0px;
+    left: 0px;
+}
+#alt {
+    position:relative;
+    top:-18px;
+    margin:35%;
+}
+/*--------- 拉动刷新 end -----------*/
+/*------------ public end --------------*/
+
+/*------------ loading begin -----------*/
+#loading{
+    position:fixed;
+    top:50%;left:50%;
+    width:124px;height:124px;
+    overflow:hidden;
+    background:url("../images/loaderc.gif") no-repeat;
+    z-index:1;
+    /*margin:-62px 0 0 -62px;*/
+}
+/*------------ loading end ------------*/
+
+.hr-t {
+    margin:0 auto;height:10px;
+}
+
+.hr-b {
+    margin:0 auto;height:10px;
+}
+
+.hr-shadow {
+    background: #EAEAEA;
+    box-shadow: 0 0 4px #EAEAEA;
+    height: 2px;
+    width:100%;
+}
+
+/*-------------  halt-layout Begin ---------------*/
+.halt-layout {
+    margin:0 auto;
+    margin-top:10px;
+}
+.halt-layout p {
+    line-height:30px;font-size:16px;text-align:center;
+}
+.halt-layout p span {
+    font-size:16px;
+}
+/*-------------  halt-layout End ---------------*/
+
+/*------------- more-layout begin ---------*/
+.more-layout {
+    background:#F2F3F5;
+    margin:0 auto;
+    width: 50%;
+    height:30px;line-height:30px;text-align:center;
+    color:#51545B;
+    margin-top:10px;
+    font-size:16px;
+}
+/*------------- more-layout end ---------*/
+
+/*------------- page-layout begin ---------*/
+.page-layout {
+    margin:0 auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    width: 95%;
+    height:30px;line-height:30px;text-align:right;
+    color:#51545B;
+    font-size:16px;
+}
+.page-layout span {
+    background:#F2F3F5;
+    display:block;width:80px;float:left;margin-right:5px;
+    height:30px;line-height:30px;text-align:center;font-size:16px;
+}
+.page-layout span:hover {
+    color:#FB6DA1;
+}
+/*------------- page-layout end ---------*/
+.layout-body {
+    margin:0 auto;
+    /*margin:50px auto;*/
+    padding:0 5px 5px 5px;
+}
+
+.layout-body-t6 {
+    margin:0 auto;
+    padding:0 5px 5px 5px;
+    margin-top:60px;margin-bottom:10px;
+}
+
+/*-------------------- nav bar Begin -----------------------*/
+.navbar-layout {
+    margin:0 auto;background:#FC6DA2;height:40px;
+}
+.navbar-layout p {
+    line-height:40px;text-align:center;color:#ffffff;font-size:16px;
+}
+.navbar-layout ul li {
+    float:left;position:relative;line-height:40px;text-align:center;width:20%;color:#ffffff;font-size:16px;
+}
+.navbar-layout .cur {
+    background-color:#DF2E70;color:#F8AECA;
+}
+/*-------------------- nav bar End -----------------------*/
+
+/*--------------------- square Css Begin -------------------*/
+.square-layout {
+    margin:0 auto;background:url("../images/square.jpg") repeat center;height:90px;
+    border-bottom:1px solid #f1f1f1;
+}
+.square-layout ul {
+    padding-left:10px;
+}
+.square-layout ul li {
+    float:left;height:30px;line-height:30px;width:25%;margin-top:8px;
+}
+.square-layout span {
+    margin:0 auto;width:100%;display:block;height:30px;line-height:30px;
+    color:#888888;font-size:14px;
+}
+.square-layout span img {
+    vertical-align: middle;width:16px;height:16px;padding-bottom:4px;padding-right:2px;
+}
+/*--------------------- square Css End -------------------*/
+
+/*-------------------- footer Css Begin ------------------*/
+.footer-about {
+    background-color: #F1EFEF;
+    border-top: 1px solid #E0E0D6;
+    color: #999999;
+    font-size: 14px;
+    line-height: 25px;
+    padding-top: 10px;
+    text-align: center;
+}
+.footer-about span {
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.about-layout {
+    margin:0 auto;
+}
+.about-layout h1 {
+    border-bottom: 1px dashed #CCCCCC;
+    color: #333333;
+    font-size: 14px;
+    line-height: 25px;
+    padding-bottom: 5px;
+    text-align: center;
+    padding-top:10px;padding-bottom:10px;
+}
+.about-layout .about-content p {
+    padding:0;margin:0;
+}
+.about-layout .about-content {
+    background-color: #FFFFFF;
+    margin: 5px;
+    padding: 5px 10px;line-height:25px;
+}
+/*-------------------- footer Css End ------------------*/
+
+
+/*----------------------  图标样式 Begin ---------------------*/
+.icon-back {
+    background: url("../images/titlebar_btn_previous.png") no-repeat scroll 5px center;
+}
+.icon-refresh {
+    background: url("../images/button_refresh.png") no-repeat scroll 5px center;
+}
+
+/*---------------------- 图标样式 End --------------------------*/
+
+/*---------------------- Button CSS Begin ----------------------*/
+.button3 {
+    margin:0 auto;
+    border-width: 0px;
+    background-position: -webkit-gradient(linear, 0 0, 0 100%, from(#F3F3F3), to(#ffffff));
+    background-color: #F3F3F3;
+    height: 40px;
+    line-height: 40px;
+    color: #2F3E46;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 2px 2px 4px 2px #e6e4e4;
+    background: -moz-linear-gradient(center top , #F3F3F3, #ffffff) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#F3F3F3), to(#ffffff));
+    border-radius: 5px;
+    width: 98%;
+}
+.button3:hover {
+    color:#FF0088;
+}
+
+.button3 a{
+    color: #2F3E46;
+    text-decoration: underline;
+}
+
+.button4 {
+    margin:0 auto;
+    border-width: 0px;
+    background-position: -webkit-gradient(linear, 0 0, 0 100%, from(#fc3f7f), to(#FF6599));
+    background-color: #C31E1A;
+    height: 50px;line-height: 50px;color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 2px 2px 2px #ccc;
+    background: -moz-linear-gradient(center top , #fc3f7f, #FF6599) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fc3f7f), to(#FF6599));
+    border-radius: 10px;
+    width: 100%;
+}
+.button4 a{
+    color: #FFFF99;
+    text-decoration: underline;
+}
+
+
+.spanbtn0 {
+    margin:0 auto;width:90%;margin-top:5px;display:block;height:36px;line-height:36px;
+    background:#4EC1FF;border-radius:5px;text-align:center;color:#ffffff;font-size:16px;
+}
+
+.spanbtn1 {
+    margin:0 auto;width:90%;margin-top:5px;display:block;height:36px;line-height:36px;
+    background:#FC6DA2;border-radius:5px;text-align:center;color:#ffffff;font-size:16px;
+}
+
+/*---------------------- Button CSS End ----------------------*/
+
+
+/*--------------------- index Css Begin ----------------------*/
+.index-user-list {
+    margin:5px auto;
+    padding:0 5px 5px 5px;
+    padding-left:10px;
+}
+.index-user-list ul li {
+    float:left;position:relative;
+}
+.index-user-list ul li p{
+    background: none repeat scroll 0 0 #000000;
+    bottom:0;
+    height:30px;line-height:30px;color:#ffffff;text-align:center;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    width:100%;
+}
+
+.b-li {
+    width:196px;overflow:hidden;margin-right:10px;
+}
+.b-li-img {
+    width:196px;height:238px;position:relative
+}
+.s-li {
+    width:93px;overflow:hidden;
+}
+.s-li-img {
+    width:93px;height:114px;position:relative
+}
+
+
+/*--------------------- index Css End   ----------------------*/
+
+/*---------------------- passport Css Begin ------------------*/
+.login-layout {
+    margin:5px;
+    border:1px solid #ddd;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding:8px;
+}
+
+.login-layout ul li {
+    float:left;width:90%;height:60px;line-height:60px;
+    padding-left:10px;
+    font-size:18px;
+}
+
+.login-layout ul li input {
+    padding:5px;width:185px;border:1px solid #ddd;height:30px;
+}
+
+.login-tips {
+    margin:5px;height:40px;text-align:center;
+}
+
+/*login*/
+.login-box {
+    margin:0 auto;margin-top:10px;
+}
+.login-box h2 {
+    height:30px;line-height:30px;text-align:center;margin-bottom:20px;
+}
+
+.login-box ul {
+    margin:0 auto;
+    width:280px;
+
+}
+.login-box ul li {
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    position: relative;
+}
+.login-box ul li i {
+    background: #F5F5F5;
+    border-radius: 5px 0 0 5px;
+    border-right: 1px solid #CCCCCC;
+    color: #696969;
+    display: inline-block;
+    font-size:18px;
+    line-height: 38px;
+    text-align: center;
+    width:70px;font-style:normal;
+}
+.login-box ul li input{
+    background: none;
+    border: medium none;
+    color: #CACACA;
+    font-size:16px;
+    height: 36px;
+    padding-left: 8px;
+    width: 190px;
+}
+
+
+/*reg*/
+.reg-layout {
+    margin:0 auto;padding:10px;background:#F1EFEF;
+}
+
+.reg-wrap {
+    margin:0 auto;
+}
+.reg-wrap h2 {
+    height:25px;line-height:25px;font-weight:normal;
+}
+
+.reg-itemlist {
+    margin:0 auto;background:#ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+.reg-itemlist p {
+    line-height:22px;color:#6666;padding:5px;
+}
+
+.reg-itemlist dl {
+    float:left;line-height:30px;margin-top:5px;
+    border-bottom:1px solid #ccc;width:100%;color:#666666;padding:5px 0 5px 0;
+}
+.reg-itemlist dl dt {
+    float:left;width:80px;line-height:30px;padding-left:10px;
+}
+.reg-itemlist dl dd {
+    float:left;line-height:30px;
+}
+.reg-itemlist .input {
+    background: none;
+    border: 1px solid #ccc;
+    color: #9F9696;
+    height:25px;
+    padding-left:8px;
+    width:170px;
+}
+.reg-itemlist select {
+    border: medium none;
+    border:1px solid #D1D1D1;
+    padding:3px 0;color:#9F9696;
+    min-width:80px;
+}
+.reg-itemlist .error-border {
+    border:1px solid #ff0000;
+}
+.reg-itemlist textarea{
+    border: medium none;
+    padding:3px 0;color:#9F9696;
+    overflow:auto;width:98%;height:80px;
+}
+
+
+
+/* reg2 */
+.reg2-avatar {
+    margin:auto;position:relative;
+}
+.reg2-avatar .img-preview {
+    float:left;width:90px;
+}
+.reg2-avatar .img-preview img {
+    width:80px;height:90px;margin-top:15px;border-radius:5px;
+}
+.reg2-avatar .img-up {
+    float:left;width:200px;
+}
+.reg2-avatar .img-up h2 {
+    height:30px;line-height:30px;color:#666;font-weight:normal;
+}
+.reg2-avatar .img-up ul li {
+    line-height:30px;color:#666;
+}
+.reg2-avatar .img-up input{
+    border: 1px solid #DDDDDD;
+    height: 30px;padding:3px;
+    width: 100px;
+}
+.reg2-avatar .img-up .upload-btn {
+    margin:0 auto;width:90%;display:block;height:35px;line-height:35px;margin-top:10px;
+    background:#00CCCC;border-radius:5px;text-align:center;color:#ffffff;
+}
+
+.reg2-avatar .img-up ul li i {
+    float:left;display:block;width:80px;height:30px;line-height:30px;font-style:normal;
+}
+.reg2-avatar .img-up .input-file {
+    float:left;display:block;width:100px;height:30px;line-height:30px;
+    border:1px solid #ddd;background:#f8f8f8;text-align:center;color:#666666;
+}
+
+
+
+
+.reg2-box {
+    margin:0 auto;
+}
+.reg2-box h2 {
+    margin-top:15px;line-height:25px;color:#666666;font-weight:normal;
+    border-bottom:1px solid #ddd;padding-bottom:10px;font-size:18px;
+}
+
+.reg2-box ul li {
+    border-bottom: 1px solid #CCCCCC;
+    height:38px;line-height:38px;
+    position: relative;
+    margin-top:10px;
+    color:#9F9696;
+    background:url("../images/arrow.png") no-repeat right center;
+    font-size:18px;
+}
+.reg2-box .linone {
+    background:url();
+}
+.reg2-box ul li i {
+    color: #696969;
+    display: inline-block;
+    font-size:18px;
+    line-height:38px;
+    text-align: center;
+    width:80px;font-style:normal;
+
+}
+
+.reg2-box ul li span {
+    float:right;padding-right:30px;
+    font-size:18px;
+}
+
+.reg2-box ul li .input{
+    background: none;
+    border: medium none;
+    color: #9F9696;
+    font-size:18px;
+    height:36px;
+    padding-left: 8px;
+    width:180px;
+}
+.reg2-box ul li select {
+    border: medium none;
+    border:1px solid #D1D1D1;
+    padding:3px 0;color:#9F9696;
+}
+
+/* 独白 */
+.reg3-box {
+    margin:0 auto;
+}
+.reg3-box h2 {
+    margin-top:15px;line-height:25px;color:#666666;font-weight:normal;
+    border-bottom:1px solid #ddd;padding-bottom:10px;font-size:18px;
+}
+.reg3-box h3 {
+    height:25px;line-height:25px;font-weight:normal;margin-bottom:10px;color:#999;margin-top:10px;
+}
+.reg3-box h3 span {
+    float:right;padding-right:10px;
+}
+.reg3-box textarea{
+    width:90%;border:1px solid #ccc;padding:10px;height:150px;overflow:auto;
+    color:#666;line-height:20px;border-radius:5px;
+}
+
+/*---------------------- passport Css End  -------------------*/
+
+
+/*---------------------- tab layout Begin --------------------*/
+.tab-layout {
+    margin:0 auto;
+    width:100%;
+    border-bottom:1px solid #ddd;
+}
+
+.tab-layout ul li {
+    float:left;height:35px;line-height:35px;
+    text-align:center;
+}
+.tab-layout ul li.tab-selected {
+    border-bottom:2px solid #FB6DA1;
+    color:#FB6DA1;font-weight:bold;
+}
+
+.tab-layout-2 {
+    margin:0 auto;
+    width:100%;
+    border-bottom:1px solid #ddd;
+}
+
+.tab-layout-2 ul li {
+    float:left;height:35px;line-height:35px;
+    text-align:center;
+}
+.tab-layout-2 ul li.tab-selected {
+    color:#FC6DA2;border-bottom:2px solid #FC6DA2;
+}
+/*---------------------- tab layout End -----------------------*/
+
+/*----------------------- User list Begin --------------------*/
+.user-list {
+    margin:5px 0px 5px 0px;
+}
+
+.user-list h6 {
+    padding:10px;text-align:center;
+    height:35px;line-height:35px;font-weight:normal;
+}
+
+.user-list ul li {
+    height:90px;float:left;width:100%;
+    border-bottom:1px dashed #ddd;
+    padding-top:5px;padding-bottom:5px;
+    background-image: url("../images/ss.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    position:relative;
+}
+
+
+.user-list ul li:hover {
+    background:#f8f8f8;
+    background-image: url("../images/ss.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+
+.userlist-img {
+    border-radius: 5px;
+    float: left;
+    width:70px; height: 86px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.user-inner {
+    float:left;width:180px;
+}
+
+.user-inner h5 {
+    margin-top:3px;
+    font-weight: normal;
+    height: 25px; line-height:25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size:16px;
+}
+.user-inner h5 span {
+    padding-left:10px;height: 25px; line-height:25px;
+}
+.user-inner p {
+    color:#808080;
+    line-height:20px;
+    font-size:14px;
+}
+/*----------------------- User list End --------------------*/
+
+
+/*----------------------- User detail End --------------------*/
+
+/*会员头像信息*/
+.home-info-layout {
+    margin:20px 14px 0;
+}
+.home-info-layout .img-box {
+    float:left;width:74px;height:90px;
+}
+.home-info-layout .img-box img {
+    width:74px;height:90px;border-radius:5px;
+}
+.home-info-layout .name-box {
+    margin-left:10px;float:left;width:200px;
+}
+.home-info-layout .name-box h2 {
+    height:30px;line-height:30px;font-weight:normal;
+}
+.home-info-layout .name-box .user-name {
+    float:left;height:25px;line-height:25px;
+}
+.home-info-layout .name-box p {
+    height:20px;line-height:20px;color:#999999;overflow:hidden;
+}
+
+.home-time {
+    margin:0 auto;padding-left:14px;height:30px;line-height:30px;color:#666666;
+}
+.home-time span {
+    color:#FC6EA2;
+}
+
+/*打招呼...*/
+.home-tac {
+    margin:0 auto;border-top:1px solid #ccc;margin-top:14px;
+}
+.home-tac ul li {
+    float:left;width:33.3%;
+    border-bottom: 1px solid #E7E7E7;
+    border-right: 1px solid #E7E7E7;
+    margin-right: -1px;
+    padding: 10px 0 5px;
+    text-align:center;height:30px;line-height:30px;color:#666666;
+}
+
+
+/*会员资料*/
+.home-data {
+    margin:0 auto;background:#F1EFEF;padding:10px;
+}
+
+.home-wrap {
+    margin:0 auto;
+}
+.home-wrap h2 {
+    height:25px;line-height:25px;font-weight:normal;
+}
+
+.home-itemlist {
+    margin:0 auto;background:#ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+.home-itemlist p {
+    line-height:22px;color:#6666;padding:5px;
+}
+
+.home-itemlist ul {
+    padding:10px;
+}
+.home-itemlist ul li {
+    float:left;line-height:30px;margin-top:5px;
+    border-bottom:1px solid #ccc;width:100%;color:#666666;
+}
+.home-itemlist ul li span {
+    float: right;line-height:30px;#666666;
+}
+
+.writemsg-layout {
+    margin:0 auto;width:95%;
+    margin-top:10px;
+    border:1px solid #ddd;
+    border-radius:5px 5px 5px 5px;
+}
+
+.writemsg-layout h2 {
+    background:url("../images/msg_bg.jpg") repeat-x;height:6px;
+}
+.writemsg-box {
+    margin:0 auto;
+    padding:5px 15px 15px 15px;
+}
+.writemsg-box h3 {
+    height:30px;line-height:30px;font-weight:normal;color:#666666;
+}
+.writemsg-box h3 i {
+    color:#40A0BC;font-style:normal;
+}
+.writemsg-box h3 span {
+    float:right;display:block;width:70px;height:25px;line-height:25px;text-align:center;
+    background:#dddddd;border-radius:3px;
+}
+.writemsg-box textarea {
+    width:94%;height:80px;border:1px solid #ddd;overflow:auto;
+    padding:10px;line-height:25px;
+}
+
+.writemsg-button {
+    margin:0 auto;
+    padding:0 10px 10px 10px;
+}
+.writemsg-button span {
+    margin:0 auto;display:block;width:50%;height:35px;line-height:35px;
+    background:#00AA00;border-radius:3px;text-align:center;color:#ffffff;font-size:18px;
+}
+.writemsg-button p {
+    line-height:20px;padding-top:10px;font-size:14px;text-align:center;
+}
+
+.writemsg-bts {
+    margin:0 auto;
+}
+.writemsg-bts ul li {
+    float:left;width:50%;
+}
+
+.writemsg-bts ul li i {
+    display:block;width:100px;height:35px;line-height:35px;
+    border-radius:3px;text-align:center;color:#ffffff;font-size:18px;
+}
+
+.writemsg-bts ul li .i-left {
+    float:right;margin-right:10px;background:#FF3399;
+}
+
+.writemsg-bts ul li .i-right {
+    float:left;margin-left:10px;background:#4EC1FF;
+}
+
+/*----------------------- User detail End --------------------*/
+
+/*----------------------- Home album box Begin -------------------*/
+.home-album-box {
+    margin:0 auto;background:#F0F0F0;padding-left:8px;width:100%;
+    position:relative;margin-bottom:10px;
+}
+.home-album-box .photograph-list {
+    width:7000px;overflow:hidden;padding-top:10px;padding-bottom:10px;
+}
+.home-album-box ul li {
+    float: left;
+    height: 100px;
+    margin-right:5px;
+}
+.home-album-box ul li img {
+    max-height:100px;
+    max-width:88px;
+    vertical-align:middle;
+}
+.home-album-mask {
+    background: #000000;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0.7;
+    position:absolute;
+    z-index:1;
+}
+.home-album-mask p {
+    line-height:30px;text-align:center;padding-top:45px;color:#ffffff;
+}
+
+/*----------------------- Home album box End -------------------*/
+
+
+/*---------------------- Adv search Css Begin -----------------*/
+.adv-search {
+    margin:0 auto;width:310px;margin-top:10px;
+}
+.adv-search select {
+    outline:none;border: 1px solid #D1D1D1;
+    padding: 3px 0;color:#9F9696;min-width:80px;
+}
+.adv-search input {
+    outline:none;border: 1px solid #D1D1D1;
+    padding: 3px 0;color:#9F9696;min-width:80px;
+}
+.adv-search dl {
+    padding-top:10px;padding-bottom:10px;
+    border-bottom: 1px dashed #DFDFDF;
+}
+.adv-search dt {
+    float:left;padding-left: 10px; width: 72px; color:#666666;line-height:20px;
+}
+.adv-search dd {
+    float:left;margin-left:10px;color:#666666;line-height:20px;
+}
+/*---------------------- Adv search Css End -----------------*/
+
+
+
+/*-------------------- rzicon Css Begin ----------------------*/
+.rz-line-30 {
+    height:30px;line-height:30px;
+}
+.rz-line-25 {
+    height:25px;line-height:25px;
+}
+.rz-line-20 {
+    height:20px;line-height:20px;
+}
+.rz-avatar {
+    float:left;display:block;margin-left:6px;width:15px;
+    background-image:url("../images/rz_y.png");
+    background-repeat:no-repeat;background-position:0;
+}
+.rz-avatar-n {
+    float:left;display:block;margin-left:6px;width:15px;
+    background-image:url("../images/rz_n.png");
+    background-repeat:no-repeat;background-position:0;
+}
+
+.rz-mobile {
+    float:left;display:block;margin-left:6px;width:15px;
+    background-image:url("../images/rz_y.png");
+    background-repeat:no-repeat;background-position:-15px;
+}
+.rz-mobile-n {
+    float:left;display:block;margin-left:6px;width:15px;
+    background-image:url("../images/rz_n.png");
+    background-repeat:no-repeat;background-position:-15px;
+}
+
+.rz-email {
+    float:left;display:block;margin-left:6px;width:15px;
+    background-image:url("../images/rz_y.png");
+    background-repeat:no-repeat;background-position:-121px;
+}
+.rz-email-n {
+    float:left;display:block;margin-left:6px;width:15px;
+    background-image:url("../images/rz_n.png");
+    background-repeat:no-repeat;background-position:-121px;
+}
+
+
+.rz-idnumber {
+    float:left;display:block;margin-left:6px;width:15px;
+    background-image:url("../images/rz_y.png");
+    background-repeat:no-repeat;background-position:-34px;
+}
+.rz-idnumber-n {
+    float:left;display:block;margin-left:6px;width:15px;
+    background-image:url("../images/rz_n.png");
+    background-repeat:no-repeat;background-position:-34px;
+}
+
+
+/*-------------------- rzicon Css End ----------------------*/
+
+
+/*------------------- tagshow Css Begin -------------------*/
+.tagshow {
+    position:absolute;
+    color: #FFFFFF;
+    font-size: 14px;
+    /*font-weight: bold;*/
+    height: 30px;
+    line-height: 30px;
+    right: 20px;
+    text-align: center;
+    /*top: -10px;*/
+    transform: rotate(5deg);
+    letter-spacing: 1px;
+    width: 78px;
+}
+.tagbg-1 {
+    background: url("../images/show_bg1.png") no-repeat scroll left top;
+}
+.tagbg-2 {
+    background: url("../images/show_bg2.png") no-repeat scroll left top;
+}
+.tagbg-3 {
+    background: url("../images/show_bg3.png") no-repeat scroll left top;
+}
+.tagbg-4 {
+    background: url("../images/show_bg4.png") no-repeat scroll left top;
+}
+.tagbg-5 {
+    background: url("../images/show_bg5.png") no-repeat scroll left top;
+}
+.tagbg-6 {
+    background: url("../images/show_bg6.png") no-repeat scroll left top;
+}
+.tagbg-7 {
+    background: url("../images/show_bg7.png") no-repeat scroll left top;
+}
+.tagbg-8 {
+    background: url("../images/show_bg8.png") no-repeat scroll left top;
+}
+.tagbg-9 {
+    background: url("../images/show_bg9.png") no-repeat scroll left top;
+}
+
+/*------------------- tagshow Css Begin -------------------*/
+
+
+/*------------------- search index Css Begin --------------*/
+.search-id {
+    background: #F0F0F0;
+    padding: 24px 0;
+}
+.search-ks {
+    background: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    height: 28px;
+    margin: 0 auto;
+    width: 300px;
+}
+.search-ks input {
+    background: none;
+    border: none;
+    color: #BBBBBB;
+    left: 0;
+    line-height: 12px;
+    margin: 0 5px;
+    padding: 6px 0;
+    top: 0;
+    width: 255px;
+}
+.search-ks .ks-btn {
+    background: url("../images/search_ks.png") no-repeat scroll left top;
+    float: right;
+    height: 17px;
+    width: 18px;
+    margin-right:10px;margin-top:5px;
+}
+
+
+.search-item-layout {
+    margin:0 auto;width:318px;margin-top:10px;
+}
+.search-item-layout ul {
+    margin-left:5px;
+}
+.search-item-layout ul li {
+    border-bottom: 1px dashed #DDDDDD;
+    border-right: 1px dashed #DDDDDD;
+    box-sizing: border-box;
+    float: left;
+    padding: 16px 21px;
+    text-align: center;
+    position:relative;
+}
+.search-item-layout ul li img {
+    height: 32px;
+    text-align: center;
+    width: 42px;
+}
+.search-item-layout ul li p {
+    color:#4D4D4D;font-weight:bold;font-size:14px;line-height:30px;
+}
+
+.search-ks-mask {
+    background: #888888;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0.5;
+    position:absolute;
+    z-index:1;
+}
+.search-ks-lock {
+    background: url("../images/lock.png") no-repeat scroll left top;
+    height: 16px;
+    right: 10px;
+    top: 10px;
+    width: 12px;
+    position:absolute;
+    z-index:2;
+}
+
+
+.search-text {
+    background: #F0F0F0;
+    padding: 10px 0;margin-top:10px;
+}
+.search-text p {
+    height:30px;line-height:30px;text-align:center;color:#4D4D4D;
+}
+.search-text select {
+    border: 1px solid #BBBBBB;
+    color: #BBBBBB;
+    height:25px;outline:none;width:80px;
+}
+
+
+.search-lunar {
+    margin:0 auto;width:90%;margin-top:10px;margin-bottom:10px;
+}
+.search-lunar ul li {
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    float: left;
+    height: 54px;
+    line-height: 54px;
+    margin-bottom: -1px;
+    margin-right: -1px;
+    width: 33%;text-align:center;cursor:pointer;
+}
+.search-lunar ul li img {
+    vertical-align:middle;
+}
+.search-lunar ul li span {
+    color:#4D4D4D;margin-left:6px;
+}
+.search-lunar .cur-select {
+    background:#F0F0F0;
+}
+
+
+.search-astro {
+    margin:0 auto;width:95%;margin-top:10px;margin-bottom:10px;
+}
+.search-astro ul li {
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    float: left;
+    height: 55px;
+    margin-bottom: -1px;
+    margin-right: -1px;
+    width:49.5%;cursor:pointer;
+    padding-top:5px;padding-bottom:5px;
+}
+
+.search-astro .xz-img {
+    float:left;margin-left:10px;
+}
+.search-astro .xz-img img {
+    vertical-align:middle;
+}
+
+.search-astro .xz-name {
+    float:left;margin-left:10px;
+}
+.search-astro .xz-name b {
+    height:25px;line-height:25px;font-size:14px;text-align:left;
+}
+.search-astro .xz-name p {
+    color:#999999;line-height:20px;height:20px;overflow:hidden;font-size:12px;text-align:left;
+}
+
+.search-astro .cur-select {
+    background:#F0F0F0;
+}
+
+/*------------------- search index Css End --------------*/

@@ -1,0 +1,898 @@
+/*
+ * @Design By OElove 会员中心CSS
+ * @Lastdate: 2014.11.25
+*/
+@charset "utf-8";
+.cp-vip-lock {
+    background: url("../images/lock2.png") no-repeat scroll left top;
+    height: 16px;
+    right: 25px;
+    top: 12px;
+    width: 12px;
+    position:absolute;
+    z-index:2;
+}
+
+
+/*--------------- cp-data Begin -------------------*/
+.cp-data {
+    height:85px;width:100%;
+    border-bottom:1px dashed #ddd;
+    background:#fff;margin-top:10px;
+}
+.cp-data .cp-data-avatar {
+    margin:0 auto;float:left;width:70px; height:80px;margin-left:10px;
+    position:relative;
+
+}
+.cp-data .cp-data-avatar img {
+    width:60px;height:74px;border:1px solid #ddd;border-radius:5px;
+}
+.cp-data .cp-data-avatar i {
+    background: none repeat scroll 0 0 #000000;
+    bottom: 5px;
+    color: #FFFFFF;
+    left: 1px;
+    height: 20px;line-height: 20px;font-size:14px;
+    opacity: 0.7;
+    position: absolute;
+    text-align: center;
+    width: 60px;
+}
+
+.cp-data .cp-data-info {
+    float:left;
+}
+.cp-data .cp-data-info h2 {
+    height:30px;line-height:30px;font-weight:normal;font-size:16px;
+}
+.cp-data .cp-data-info h2 b {
+    height:30px;line-height:30px;font-weight:normal;font-size:16px;
+}
+.cp-data .cp-data-info h2 i {
+    float:right;display:block; width:80px;font-size:14px;
+    height:28px; line-height:28px;color:#666666;
+    border-radius:5px;border:1px solid #ddd;text-align:center;
+    background:#f8f8f8;
+}
+.cp-data .cp-data-info h2 .user-name {
+    float:left;height:30px;line-height:30px;
+}
+
+.cp-data .cp-data-info ul li {
+    height:22px;line-height:22px;color:#666;font-size:14px;
+    width:220px;
+}
+
+.cp-avatar-upload {
+    margin:5px auto;margin-top:10px;
+}
+.cp-avatar-upload ul li {
+    float:left;width:98%;height:50px;line-height:50px;
+}
+.cp-avatar-upload ul li i {
+    float:left;display:block;width:100px;height:50px;line-height:50px;
+    font-style:normal;font-size:16px;
+}
+.cp-avatar-upload .input-file {
+    float:left;display:block;width:120px;height:30px;line-height:30px;margin-top:8px;
+    border:1px solid #ddd;background:#f8f8f8;text-align:center;color:#666666;font-size:16px;
+}
+
+.cp-avatar-upload input{
+    border: 1px solid #DDDDDD;
+    height: 30px;
+    padding: 5px;
+    width: 160px;
+}
+
+.cp-data-tips {
+    height:35px;line-height:35px;padding-left:10px;
+}
+
+/*--------------- cp-data End   -------------------*/
+
+/*-------------  user cp index Begin --------------*/
+.cp-layout-body {
+    margin:0 auto;
+    padding:0 5px 5px 5px;
+}
+.cp-layout-body-bo {
+    margin:0 auto;
+    padding:0 5px 5px 5px;
+    margin-top:50px;
+    margin-bottom:60px;
+}
+.cp-layout-body-gray {
+    margin:0 auto;
+    padding:10px 5px 5px 5px;
+    background:#f2f2f2;
+    /*margin-bottom:60px;*/
+}
+
+.cp-layout-body-gray-s {
+    margin:0 auto;
+    padding:10px 5px 5px 5px;
+    background:#f2f2f2;
+}
+
+.cp-layout-body-60 {
+    margin:0 auto;
+    padding:0 5px 5px 5px;
+    margin-top:60px;
+}
+
+.cp-index-bar{
+    margin:5px;
+    border:1px solid #ddd;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background:#fff;
+}
+
+.cp-index-bar ul li {
+    float:left;width:100%;
+    height:40px;line-height:40px;
+    border-bottom:1px solid #ccc;
+    font-size:16px;font-family:"宋体";
+    background:url("../images/ss.png") no-repeat right center;
+    position:relative;
+}
+
+.cp-index-bar ul li a {
+    font-size:16px;color:#000;
+}
+.cp-index-bar ul li a:hover {
+    color:#000;
+}
+
+.cp-index-bar ul li:hover {
+    background:#f9f9f9;
+    background-image: url("../images/ss.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.cp-index-bar ul li i {
+    float:left;width:50px;height:40px;line-height:40px;
+    font-weight:normal;display:block;
+}
+
+.cp-index-bar ul li span {
+    background: #cccccc;
+    border-radius: 20px;
+    color: #FFFFFF;
+    text-align: center;float:right;margin-right:30px;
+    height:18px;line-height:18px;font-size:12px;min-width:30px;padding:3px;margin-top:8px;
+}
+
+
+.cp-bartitle {
+    background: #FFF6FA;
+    color: #FC6EA2;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;text-align:center;
+}
+
+.cp-bartitle b {
+    background: #F8F8F8;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    color: #666666;
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    height: 25px;
+    line-height: 25px;
+    margin-right: 10px;
+    margin-top: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: right;
+}
+/*-------------  user cp index End --------------*/
+
+
+
+/*--------------------- 小图标 Begin --------------------*/
+.mob_icon_01 {
+    background:url(../images/cpbar/1121745.png) no-repeat 10px center;
+}
+.mob_icon_02 {
+    background:url(../images/cpbar/1121809.png) no-repeat 10px center;
+}
+.mob_icon_03 {
+    background:url(../images/cpbar/1121793.png) no-repeat 10px center;
+}
+.mob_icon_04 {
+    background:url(../images/cpbar/1121908.png) no-repeat 10px center;
+}
+.mob_icon_05 {
+    background:url(../images/cpbar/1121746.png) no-repeat 10px center;
+}
+.mob_icon_06 {
+    background:url(../images/cpbar/1121864.png) no-repeat 10px center;
+}
+.mob_icon_07 {
+    background:url(../images/cpbar/1121889.png) no-repeat 10px center;
+}
+.mob_icon_08 {
+    background:url(../images/cpbar/1121868.png) no-repeat 10px center;
+}
+.mob_icon_09 {
+    background:url(../images/mob_icon_09.png) no-repeat 10px center;
+}
+
+.mob_pro_01 {
+    background:url(../images/mob_pro_01.png) no-repeat 10px center;
+}
+.mob_pro_02 {
+    background:url(../images/mob_pro_02.png) no-repeat 10px center;
+}
+.mob_pro_03 {
+    background:url(../images/mob_pro_03.png) no-repeat 10px center;
+}
+.mob_pro_04 {
+    background:url(../images/mob_pro_04.png) no-repeat 10px center;
+}
+.mob_pro_05 {
+    background:url(../images/mob_pro_05.png) no-repeat 10px center;
+}
+.mob_pro_06 {
+    background:url(../images/mob_pro_06.png) no-repeat 10px center;
+}
+.mob_pro_07 {
+    background:url(../images/mob_pro_07.png) no-repeat 10px center;
+}
+.mob_pro_08 {
+    background:url(../images/mob_pro_08.png) no-repeat 10px center;
+}
+.mob_pro_09 {
+    background:url(../images/mob_pro_09.png) no-repeat 10px center;
+}
+.mob_pro_10 {
+    background:url(../images/mob_pro_10.png) no-repeat 10px center;
+}
+
+/*--------------------- 小图标 End --------------------*/
+
+
+/*--------------- item wrap 卡元素 Css Begin ---------------*/
+.item-wrap {
+    margin:0 auto;
+}
+.item-wrap h2 {
+    height:25px;line-height:25px;font-weight:normal;
+}
+
+.item-list {
+    margin:0 auto;background:#ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+.item-list p {
+    line-height:22px;color:#6666;padding:5px;
+}
+
+.item-list dl {
+    float:left;line-height:30px;margin-top:5px;
+    border-bottom:1px solid #ccc;width:100%;color:#666666;padding:5px 0 5px 0;
+}
+.item-list dl dt {
+    float:left;width:80px;line-height:30px;padding-left:10px;
+}
+.item-list dl dd {
+    float:left;line-height:30px;
+}
+.item-list input {
+    background: none;
+    border: 1px solid #ccc;
+    color: #9F9696;
+    height:25px;
+    padding-left:8px;
+    width:170px;
+}
+.item-list select {
+    border: medium none;
+    border:1px solid #D1D1D1;
+    padding:3px 0;color:#9F9696;
+    min-width:80px;
+}
+.item-list .error-border {
+    border:1px solid #ff0000;
+}
+.item-list textarea{
+    border: medium none;
+    padding:3px 0;color:#9F9696;
+    overflow:auto;width:98%;height:80px;
+}
+
+/*--------------- item wrap 卡元素 Css End ---------------*/
+
+
+
+/*--------------------- profile edit Begin ------------------*/
+
+/*----------------- var参数 单选、多选 begin ---------------*/
+.profile-layout{
+    padding:5px;
+    background:#fff;
+}
+
+.profile-layout ul li {
+    float:left;width:98%;color:#666;
+    height:50px;line-height:50px;
+    border-bottom:1px solid #ccc;
+}
+.profile-layout ul li:hover {
+    background:#f8f8f8;
+}
+.profile-layout .profile-var-multi {
+    border-bottom:1px solid #ccc;background:none;height:auto;line-height:25px;
+
+}
+.profile-layout .profile-var-multi:hover {
+    background:none;background-image:none;
+}
+
+.profile-layout .profile-item {
+    float:left;line-height:50px;
+}
+.profile-layout .profile-value {
+    float:left;padding-right:10px;padding-left:10px;
+}
+.profile-layout .profile-value select {
+    border: 1px solid #ddd;
+    color: #6C6C6C;
+    height: 25px;line-height:25px;padding:3px;
+    min-width:80px;
+    outline:none;
+}
+.profile-layout .profile-value a {
+    padding-right:30px;
+    color:#666;
+}
+.profile-layout .profile-value a {
+    padding-right:30px;
+    color:#666;
+}
+.profile-layout ul li a {
+    color:#000;
+}
+.profile-layout ul li a:hover {
+    color:#000;
+}
+/*----------------- var参数 单选、多选 end ---------------*/
+
+
+/*---------------独白 begin -------------------*/
+.profile-monolog {
+    margin:0 auto;
+}
+.profile-monolog h2 {
+    height:30px;line-height:30px;font-size:18px;
+    border-bottom:1px solid #efefef;font-weight:normal;
+}
+.profile-monolog h2 span {
+    color:#FF5511;font-size:18px;
+}
+
+.profile-monolog .monolog-box {
+    margin:0 auto;padding:10px;
+}
+.profile-monolog .monolog-box h3 {
+    height:25px;line-height:25px;font-weight:normal;margin-bottom:10px;color:#999;
+}
+.profile-monolog .monolog-box h3 span {
+    float:right;padding-right:10px;
+}
+.profile-monolog .monolog-box textarea{
+    width:90%;border:1px solid #ccc;padding:10px;height:150px;overflow:auto;
+    color:#666;line-height:20px;border-radius:5px;
+}
+/*---------------独白 end -------------------*/
+
+/*--------------- 联系方式 begin -------------------*/
+.profile-info {
+    margin:0 auto;padding:5px;
+}
+.profile-info h2 {
+    height:30px;line-height:30px;font-size:18px;
+    border-bottom:1px solid #efefef;font-weight:normal;
+}
+.profile-info ul li {
+    float:left;height:50px;line-height:50px;width:98%;
+}
+.profile-info ul li i {
+    float:left;width:80px;height:50px;font-size:18px;
+}
+.profile-info ul li p {
+    float:left;width:180px;height:50px;
+
+}
+.profile-info ul li input {
+    padding:2px;height:40px;border:1px solid #ddd;font-size:18px;width:130px;
+}
+/*--------------- 联系方式 end -------------------*/
+
+
+/*--------------------- profile edit End --------------------*/
+
+/*---------------- edit pwd Begin ------------------*/
+.pwd-box {
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 8px;
+}
+
+.pwd-box ul li {
+    float: left;
+    font-size: 18px;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 10px;
+    width: 90%;
+}
+.pwd-box ul li i {
+    float:left;width:90px; height:60px;line-height: 60px;font-size:18px;
+}
+.pwd-box ul li .pwd-input {
+    float:left;width:160px;height:60px;line-height: 60px;
+}
+.pwd-box ul li .pwd-input input{
+    border: 1px solid #DDDDDD;
+    height: 30px;
+    padding: 5px;width:160px;
+}
+
+/*---------------- edit pwd End ------------------*/
+
+/*------------------ cplist-box Begin -------------------------*/
+.cplist-box {
+    margin:5px 0px 5px 0px;
+}
+
+.cplist-box h6 {
+    padding:10px;text-align:center;
+    height:35px;line-height:35px;font-weight:normal;
+}
+
+.cplist-box ul li {
+    /*height:80px;*/
+    float:left;width:100%;
+    border-bottom:1px solid #ddd;
+    padding-top:5px;padding-bottom:5px;
+    /*
+    background-image: url("../images/ss.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    */
+}
+.cplist-box ul li:hover {
+    background:#f8f8f8;
+    /*background-image: url("../images/ss.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    */
+}
+
+.cplist-box .cplist-img {
+    float: left;margin-left:5px; margin-right: 10px;
+    width:60px; height: 74px;position:relative;
+}
+.cplist-box .cplist-img img {
+    border-radius: 5px;width:60px; height: 74px;
+}
+
+.cplist-box .cplist-new {
+    background:url("../images/new.png") no-repeat;
+    width:12px;height:13px;
+    position:absolute;right:-5px;top:-5px;
+}
+
+.cplist-box .cplist-info {
+    float:left;width:220px;
+}
+.cplist-box .cplist-info h2 {
+    font-weight: normal;
+    width:98%;height:30px; line-height:30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size:16px;
+}
+.cplist-box .cplist-info h2 b {
+    font-weight:normal;font-size:16px;
+}
+.cplist-box .cplist-info h2 span {
+    float:right;display:block; width:100px;
+    height:30px; line-height:30px;color:#999999;text-align:right;
+}
+.cplist-box .cplist-info h2 i {
+    float:right;display:block; width:80px;font-size:14px;
+    height:28px; line-height:28px;color:#666666;
+    border-radius:5px;border:1px solid #ddd;text-align:center;
+    background:#f8f8f8;
+}
+.cplist-box .cplist-info h2 i:hover{
+    color:#00BB00;
+}
+.cplist-box .cplist-info p {
+    color:#808080;height:22px;line-height:22px;font-size:14px;
+    overflow:hidden;position:relative;
+}
+.cplist-box .cplist-info p i{
+    float:right;display:block;font-size:14px;border-radius:3px;
+    height:20px; line-height:20px;color:#666666;text-align:center;
+    border:1px solid #dddddd;background:#EEEEEE;
+    min-width:40px;position:absolute;right:0;padding-left:5px;padding-right:5px;z-index:1;
+}
+.cplist-box .cplist-info p i:hover {
+    color:#00BB00;
+}
+/*------------------ cplist-box End -------------------------*/
+
+/*------------------ smlist-box Begin -------------------------*/
+.smlist-box {
+    margin:5px 0px 5px 0px;
+}
+
+.smlist-box h6 {
+    padding:10px;text-align:center;
+    height:35px;line-height:35px;font-weight:normal;
+}
+
+.smlist-box ul li {
+    float:left;width:100%;
+    border-bottom:1px solid #ddd;
+    padding-top:5px;padding-bottom:5px;
+}
+.smlist-box ul li:hover {
+    background:#f8f8f8;
+}
+
+.smlist-box .smlist-img {
+    float: left;margin-left:5px; margin-right: 10px;
+    width:48px; height: 60px;position:relative;
+}
+.smlist-box .smlist-img img {
+    border-radius: 5px;width:48px; height: 59px;
+}
+
+.smlist-box .smlist-new {
+    background:url("../images/new.png") no-repeat;
+    width:12px;height:13px;
+    position:absolute;right:-5px;top:-5px;
+}
+
+.smlist-box .smlist-info {
+    float:left;width:232px;
+}
+.smlist-box .smlist-info h2 {
+    font-weight: normal;
+    width:98%;height:30px; line-height:30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size:18px;
+}
+.smlist-box .smlist-info h2 b {
+    font-weight:normal;font-size:18px;
+}
+.smlist-box .smlist-info h2 span {
+    float:right;display:block; width:100px;
+    height:30px; line-height:30px;color:#999999;text-align:right;
+}
+.smlist-box .smlist-info h2 i {
+    float:right;display:block; width:80px;font-size:14px;
+    height:28px; line-height:28px;color:#666666;
+    border-radius:5px;border:1px solid #ddd;text-align:center;
+    background:#f8f8f8;
+}
+.smlist-box .smlist-info h2 i:hover{
+    color:#00BB00;
+}
+.smlist-box .smlist-info p {
+    color:#808080;height:22px;line-height:22px;font-size:14px;
+    overflow:hidden;
+}
+.smlist-box .smlist-info p i{
+    float:right;display:block; width:40px;font-size:14px;border-radius:3px;
+    height:20px; line-height:20px;color:#666666;text-align:center;
+    border:1px solid #dddddd;background:#EEEEEE;min-width:50px;
+}
+.smlist-box .smlist-info p i:hover {
+    color:#00BB00;
+}
+/*------------------ cplist-box End -------------------------*/
+
+/*------------------ bglist-box Begin -------------------------*/
+.bglist-box {
+    margin:5px 0px 5px 0px;
+}
+
+.bglist-box h6 {
+    padding:10px;text-align:center;
+    height:35px;line-height:35px;font-weight:normal;
+}
+
+.bglist-box ul li {
+    float:left;width:100%;
+    border-bottom:1px solid #ddd;
+    padding-top:5px;padding-bottom:5px;
+}
+.bglist-box ul li:hover {
+    background:#f8f8f8;
+    background-image: url("../images/ss.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.bglist-box .bglist-img {
+    float: left;margin-left:5px; margin-right: 10px;
+    width:74px; height:74px; position:relative;
+}
+.bglist-box .bglist-img img {
+    border-radius: 5px;width:74px; height:74px;
+}
+
+.bglist-box .bglist-new {
+    background:url("../images/new.png") no-repeat;
+    width:12px;height:13px;
+    position:absolute;right:-5px;top:-5px;
+}
+
+.bglist-box .bglist-info {
+    float:left;width:200px;
+}
+.bglist-box .bglist-info h2 {
+    font-weight: normal;
+    width:98%;height:30px; line-height:30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size:18px;
+}
+.bglist-box .bglist-info h2 b {
+    font-weight:normal;font-size:18px;
+}
+.bglist-box .bglist-info h2 span {
+    float:right;display:block; width:100px;
+    height:30px; line-height:30px;color:#999999;text-align:right;
+}
+.bglist-box .bglist-info h2 i {
+    float:right;display:block; width:80px;font-size:14px;
+    height:28px; line-height:28px;color:#666666;
+    border-radius:5px;border:1px solid #ddd;text-align:center;
+    background:#f8f8f8;
+}
+.bglist-box .bglist-info h2 i:hover{
+    color:#00BB00;
+}
+.bglist-box .bglist-info p {
+    color:#808080;height:22px;line-height:22px;font-size:14px;
+    overflow:hidden;
+}
+.bglist-box .bglist-info p i{
+    float:right;display:block; width:40px;font-size:14px;border-radius:3px;
+    height:20px; line-height:20px;color:#666666;text-align:center;
+    border:1px solid #dddddd;background:#EEEEEE;min-width:50px;
+}
+.bglist-box .bglist-info p i:hover {
+    color:#00BB00;
+}
+/*------------------ cplist-box End -------------------------*/
+
+/*------------------- msg read tips Begin --------------------*/
+.msg-readtips {
+    margin-top:10px;font-size:16px;border-top:1px dashed #ddd;display:none;
+}
+.msg-read-tips {
+    margin-left:70px;height:30px;line-height:30px;
+    margin-top:10px;
+}
+.msg-read-tips .msg-bt-left {
+    float:left;
+}
+.msg-read-tips .msg-bt-left i {
+    float:left;display:block; width:80px;font-size:14px;
+    height:25px; line-height:25px;color:#ffffff;
+    border-radius:5px;/*border:1px solid #fe5c93;*/ border:1px solid #008800;text-align:center;
+    /*background:#ff7fac;*/
+    background:#00AA00;
+}
+.msg-read-tips .msg-bt-right {
+    float:right;margin-right:10px;
+}
+.msg-read-tips .msg-bt-right i {
+    float:right;display:block; width:100px;font-size:14px;
+    height:25px; line-height:25px;color:#ffffff;
+    border-radius:5px;border:1px solid #0066FF;text-align:center;
+    background:#5599FF;
+}
+/*------------------- msg read tips End --------------------*/
+
+/*------------------ message content Begin -------------------*/
+.message-box {
+    margin:0 auto;padding:10px;
+}
+.message-box h2 {
+    height:30px;line-height:30px;border-bottom:1px solid #ddd;
+    font-size:16px;font-weight:normal;color:#FF3399;
+}
+.message-box h3 {
+    height:25px;line-height:25px;font-size:14px;
+    font-weight:normal;color:#999999;text-align:right;
+
+}
+.message-box p {
+    line-height:25px;font-size:14px;color:#666666;
+}
+
+/*------------------ message content End -------------------*/
+
+/*------------------- myalbum Begin --------------------------*/
+.cp-album-file {
+    height:50px;line-height:50px;
+    background:#f8f8f8;
+}
+.cp-album-file span {
+    margin-top:7px;margin-right:10px;
+    float:right;display:block;width:80px;height:35px;line-height:35px;border-radius:8px;
+    border:1px solid #ddd;text-align:center;font-size:18px;color:#666666;
+}
+
+.cp-album-upload {
+    margin:5px auto;margin-top:10px;
+}
+.cp-album-upload ul li {
+    float:left;width:98%;height:50px;line-height:50px;
+}
+
+.cp-album-upload input{
+    border: 1px solid #DDDDDD;
+    height: 30px;
+    padding: 5px;
+    width: 160px;
+}
+
+.cp-album-list {
+    margin:5px auto;margin-top:10px;
+}
+.cp-album-list h6 {
+    padding:10px;text-align:center;font-weight:normal;
+}
+.cp-album-list ul li {
+    float:left;width:25%;height:155px;
+}
+.cp-album-list ul li .album-inner {
+    width:90%;text-align:center;margin:0 auto;
+}
+.cp-album-list ul li .album-inner h2 {
+    margin-top:5px;text-align:center;
+}
+.cp-album-list ul li .album-inner h2 img {
+    width:68px;height:84px;border:1px solid #ddd;border-radius:8px;
+}
+.cp-album-list ul li .album-inner p {
+    height:25px;line-height:25px;font-size:14px;
+    color:#666666;overflow:hidden;text-align:center;
+}
+.cp-album-list ul li .album-inner p span {
+    display:block; width:60px;font-size:14px;
+    height:23px; line-height:23px;color:#666666;
+    border-radius:5px;border:1px solid #ddd;text-align:center;
+    background:#f8f8f8;margin:0 auto;
+}
+.cp-album-list ul li .album-inner p span:hover {
+    color:#00BB00;
+}
+
+/*------------------- myalbum End --------------------------*/
+
+/*-------------------- buy Css Begin -------------*/
+
+.buy-box {
+    margin:0 auto;border-bottom:1px solid #E2E2E2;
+    position:relative;
+}
+
+.buy-box .sel-up{
+    position:absolute;display:block;width:22px;height:23px;right:10px;top:30px;
+    background:url("../images/vp_down.png") no-repeat right center;
+}
+
+.buy-box .sel-down{
+    position:absolute;display:block;width:22px;height:23px;right:10px;top:30px;
+    background:url("../images/vp_up.png") no-repeat right center;
+}
+
+
+.buy-wrap {
+    margin:0 auto;padding:10px;
+}
+.buy-wrap .buy-wrap-left {
+    float:left;text-align:center;
+}
+
+.buy-wrap .buy-wrap-left img {
+    width:48px;height:48px;
+}
+
+.buy-wrap .buy-wrap-right {
+    float:left;width:210px;margin-left:10px;
+}
+.buy-wrap .buy-wrap-right h2 {
+    height:30px;line-height:30px;font-weight:normal;font-size:18px;
+}
+.buy-wrap .buy-wrap-right p {
+    line-height:20px;color:#666666;font-size:14px;
+}
+
+.buy-list {
+    margin:0 auto;position:relative;background:#FFFAF5;
+}
+.buy-list ul {
+    padding-top:10px;padding-bottom:10px;
+}
+.buy-list ul li {
+    padding-left:10px;padding-right:10px;
+    border-bottom:1px dashed #D1D0D0;height:35px;line-height:35px;overflow:hidden;
+    font-size:14px;color:#666;
+}
+
+.buy-list ul li span {
+    float:right;margin-top:5px;display:block;width:60px;height:25px;line-height:25px;
+    background:#4EC1FF;border-radius:3px;text-align:center;color:#ffffff;font-size:14px;
+}
+
+.buy-slide-up {
+    position:absolute;left:50%;
+    background:url("../images/dot-up.png") no-repeat center;
+    width:11px;height:6px;top:-5px;
+}
+
+.buy-vip-spec {
+    padding-top:10px;font-size:14px;line-height:22px;
+}
+.buy-vip-spec ul li {
+    float:left;margin-right:10px;height:25px;line-height:25px;
+    background:#EAF5F7;color:#379BB3;margin-bottom:10px;font-size:14px;padding:3px 5px 3px 5px;
+}
+.buy-vip-spec h2 {
+    color:#FD8BB5;font-size:14px;line-height:30px;height:30px;margin-bottom:5px;
+}
+/*-------------------- buy Css End ---------------*/
+
+
+
+/*------------------- money-list Css Begin ----------------------*/
+.money-list {
+    margin:0 auto;padding:10px;
+}
+.money-list h6 {
+    font-weight: normal;
+    height: 35px;
+    line-height: 35px;
+    padding: 10px;
+    text-align: center;
+}
+.money-list ul li {
+    border-bottom:1px dashed #ddd;padding-top:5px;padding-bottom:5px;width:100%;
+}
+.money-list ul li h2 {
+    height:30px;line-height:30px;font-weight:normal;color:#888888;
+}
+.money-list ul li h2 span {
+    float:right;height:30px;line-height:30px;display:block;
+}
+.money-list ul li p {
+    color:#51545B;line-height:20px;
+}
+
+/*------------------- money-list Css End ----------------------*/
