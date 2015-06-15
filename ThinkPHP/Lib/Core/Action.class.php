@@ -10,13 +10,14 @@
 // +----------------------------------------------------------------------
 
 /**
+ * Class Action
  * ThinkPHP Action控制器基类 抽象类
  * @category   Think
  * @package  Think
  * @subpackage  Core
  * @author   liu21st <liu21st@gmail.com>
  */
-abstract class Action {
+abstract class CoreAction {
 
     /**
      * 视图实例对象
