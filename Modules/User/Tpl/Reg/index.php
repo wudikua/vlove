@@ -1,5 +1,10 @@
 <include file="./Tpl/Public/header.php" title="用户注册"/>
 
+<script>
+	var regProvince = "{:U('Reg/province')}";
+	var regCity = "{:U('Reg/city')}";
+	var regArea = "{:U('Reg/area')}";
+</script>
 
 <div class="reg-layout">
 
@@ -165,10 +170,10 @@ $(function(){
 		$("#btn_post").html("注册中，请稍等...");
 		$.ajax({
 			type: "POST",
-			url: "/wap.php?c=passport",
+			url: "{:U('Reg/index')}",
 			cache: false,
 			data: {
-				a:"regpost", email:email, username:username, password:password,
+				email:email, username:username, password:password,
 				dist1:dist1, dist2:dist2, dist3:dist3, gender:gender, birthday:birthday,
 				marrystatus:marrystatus, education:education, height:height, weight:weight,
 				lovesort:lovesort, salary:salary, mobile:mobile, qq:qq, idnumber:idnumber, r:get_rndnum(8)
@@ -181,7 +186,7 @@ $(function(){
 				if (response == '1') {
 					ToastShow("注册成功");
 					setTimeout(function(){
-						goUrl("/wap.php?c=passport&a=profile");
+						goUrl("{:U('Profile/index')}");
 					}, 800);
 				}
 				else {
@@ -219,9 +224,9 @@ function checkUserName() {
 	}
 	$.ajax({
 		type: "POST",
-		url: "/wap.php?c=passport",
+		url: "{:U('Reg/checkusername')}",
 		cache: false,
-		data: {a:"checkusername", username:value, r:get_rndnum(8)},
+		data: {username:value, r:get_rndnum(8)},
 		dataType: "json",
 		success: function(data) {
 			var json = eval(data);
@@ -261,9 +266,9 @@ function checkEmail() {
 	}
 	$.ajax({
 		type: "POST",
-		url: "/wap.php?c=passport",
+		url: "{:U('Reg/checkemail')}",
 		cache: false,
-		data: {a:"checkemail", email:value, r:get_rndnum(8)},
+		data: {email:value, r:get_rndnum(8)},
 		dataType: "json",
 		success: function(data) {
 			var json = eval(data);

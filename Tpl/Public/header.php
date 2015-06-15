@@ -21,7 +21,7 @@
 	<script src="__PUBLIC__/js/toast.js"></script>
 	<script src="__PUBLIC__/js/public.js"></script>
 	<link rel="stylesheet" href="__PUBLIC__/style/main.css" />
-	<link rel="stylesheet" href="__PUBLIC__/style/toast.css" />
+	<link rel="stylesheet" href="__PUBLIC__/style/user.css" />
 	<link rel="stylesheet" href="__PUBLIC__/style/append.css" />
 </head>
 <body>

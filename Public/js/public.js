@@ -210,9 +210,9 @@ function areaPopup(title, item) {
 	//POST
 	$.ajax({
 		type: "POST",
-		url: WAP_APPFILE+"?c=index",
+		url: window.regProvince,
 		cache: false,
-		data: {a:"area", item:item, dist1:dist1, dist2:dist2, dist3:dist3, r:get_rndnum(8)},
+		data: {item:item, dist1:dist1, dist2:dist2, dist3:dist3, r:get_rndnum(8)},
 		dataType: "json",
 		success: function(data) {
 			var json = eval(data);
