@@ -122,23 +122,20 @@
 <div class="cp-layout-body-gray">
 	<div class="cp-index-bar">
 		<ul>
-			<li onclick="goUrl('/wap.php?c=cp_buy');"><i class="mob_icon_01"></i>购买特权<span>普通会员</span></li>
-			<li onclick="goUrl('/wap.php?c=cp_photo');"><i class="mob_icon_02"></i>我的相片</li>
-			<li onclick="goUrl('/wap.php?c=cp_info');"><i class="mob_icon_03"></i>修改资料</li>
-			<li onclick="goUrl('/wap.php?c=cp_cond');"><i class="mob_icon_04"></i>征友条件</li>
-			<li style="border-bottom:none;" onclick="needBuyVip();"><i class="mob_icon_09"></i>缘分速配<div class="cp-vip-lock"></div></li>
+			<li onclick="goUrl('{:U('Photo/index')}');"><i class="mob_icon_02"></i>我的相片</li>
+			<li onclick="goUrl('{:U('Profile/index')}');"><i class="mob_icon_03"></i>修改资料</li>
 		</ul>
 		<div class="clear"></div>
 	</div>
 
 	<div class="cp-index-bar" style="margin-top:20px;">
 		<ul>
-			<li onclick="goUrl('/wap.php?c=cp_message');"><i class="mob_icon_05"></i>我的信件</li>
-			<li onclick="goUrl('/wap.php?c=cp_inhi');"><i class="mob_icon_06"></i>收到问候<span>2</span></li>
-			<li onclick="goUrl('/wap.php?c=cp_listen');"><i class="mob_icon_07"></i>我的关注</li>
-			<li onclick="needBuyVip();" style="border-bottom:none;"><i class="mob_icon_08"></i>谁看过我
-				<div class="cp-vip-lock"></div>
-			</li>
+<!--			<li onclick="goUrl('/wap.php?c=cp_message');"><i class="mob_icon_05"></i>我的信件</li>-->
+<!--			<li onclick="goUrl('/wap.php?c=cp_inhi');"><i class="mob_icon_06"></i>收到问候<span>2</span></li>-->
+<!--			<li onclick="goUrl('/wap.php?c=cp_listen');"><i class="mob_icon_07"></i>我的关注</li>-->
+<!--			<li onclick="needBuyVip();" style="border-bottom:none;"><i class="mob_icon_08"></i>谁看过我-->
+<!--				<div class="cp-vip-lock"></div>-->
+<!--			</li>-->
 		</ul>
 		<div class="clear"></div>
 	</div>
@@ -146,7 +143,6 @@
 
 	<div class="cp-index-bar" style="margin-top:20px;">
 		<ul>
-			<li onclick="goUrl('/wap.php?c=cp_money');">&#12288;消费记录</li>
 			<li onclick="goUrl('/wap.php?c=cp&a=editpwd');" style="border-bottom:none;">&#12288;修改密码</li>
 		</ul>
 		<div class="clear"></div>
