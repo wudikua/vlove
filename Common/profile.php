@@ -1,5 +1,10 @@
 <?php
 class ProfileConst {
+	public static $gender = [
+		'1'=>'男',
+		'2'=>'女',
+	];
+
 	public static $marrystatus = [
 		'1'=>'未婚',
 		'2'=>'已婚',

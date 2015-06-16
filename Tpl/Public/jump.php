@@ -3,7 +3,7 @@
 	<p>信息提示</p>
 </div>
 <div class="halt-layout">
-	<p>修改成功</p>
+	<p><?php if(!isset($msg)):?>修改成功<?php else:?>{$msg}<?php endif;?></p>
 	<p>
 		<script type="text/javascript">
 			$(function(){

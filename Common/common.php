@@ -8,6 +8,61 @@ function get_image_name(){
     return time().rand(10000, 999999) . $imageCount;
 }
 
+function age($YTD){
+	if ($YTD instanceof MongoDate) {
+		$YTD = $YTD->sec;
+	} else {
+		$YTD = strtotime($YTD);
+	}
+	$year = date('Y', $YTD);
+	if(($month = (date('m') - date('m', $YTD))) < 0){
+		$year++;
+	}else if ($month == 0 && date('d') - date('d', $YTD) < 0){
+		$year++;
+	}
+	return (date('Y') - $year) < 0 ? 0 : (date('Y') - $year);
+}
+
+function constellation($YTD){
+	if ($YTD instanceof MongoDate) {
+		$birthdayDate = $YTD->sec;
+	} else {
+		$birthdayDate = strtotime($YTD);
+	}
+	// 年龄
+	$month  = (int)date('m', $birthdayDate);
+	$day    = (int)date('d', $birthdayDate);
+	// 星座
+	if (($month == 1 && $day >= 20) || ($month == 2 && $day <= 18)) {
+		$constellation = '水瓶座';
+	} else if (($month == 2 && $day >= 19) || ($month == 3 && $day <= 20)) {
+		$constellation = '双鱼座';
+	} else if (($month == 3 && $day >= 21) || ($month == 4 && $day <= 19)) {
+		$constellation = '白羊座';
+	} else if (($month == 4 && $day >= 20) || ($month == 5 && $day <= 20)) {
+		$constellation = '金牛座';
+	} else if (($month == 5 && $day >= 21) || ($month == 6 && $day <= 21)) {
+		$constellation = '双子座';
+	} else if (($month == 6 && $day >= 22) || ($month == 7 && $day <= 22)) {
+		$constellation = '巨蟹座';
+	} else if (($month == 7 && $day >= 23) || ($month == 8 && $day <= 22)) {
+		$constellation = '狮子座';
+	} else if (($month == 8 && $day >= 23) || ($month == 9 && $day <= 22)) {
+		$constellation = '处女座';
+	} else if (($month == 9 && $day >= 23) || ($month == 10 && $day <= 23)) {
+		$constellation = '天秤座';
+	} else if (($month == 10 && $day >= 24) || ($month == 11 && $day <= 22)) {
+		$constellation = '天蝎座';
+	} else if (($month == 11 && $day >= 23) || ($month == 12 && $day <= 21)) {
+		$constellation = '射手座';
+	} else if (($month == 12 && $day >= 22) || ($month == 1 && $day <= 19)) {
+		$constellation = '摩羯座';
+	} else {
+		$constellation = '';
+	}
+	return $constellation;
+}
+
 class MongoUtil {
 
 	public static function asList($result) {
