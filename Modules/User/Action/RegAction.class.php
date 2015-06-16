@@ -51,6 +51,18 @@ class RegAction extends UserBaseAction {
 		]);
 	}
 
+	public function hometown($item, $dist1, $dist2) {
+		$province = "";
+		foreach (Province::getProvince() as $k=>$v) {
+			$province .= "<option value=\"$k\">$v</option>".PHP_EOL;
+		}
+
+		$this->ajaxReturn([
+			"response"=>1,
+			"result"=>sprintf(Province::getTemplateHometown(), $province),
+		]);
+	}
+
 	/**
 	 * ajax检测邮箱占用
 	 * @param $email
@@ -96,8 +108,8 @@ class RegAction extends UserBaseAction {
 	private function innerReg() {
 		try {
 			$fields = [
-				'email', 'username', 'password',
-				'dist1', 'dist2', 'dist3',
+				'email', 'username', 'password', //登录信息
+				'dist1', 'dist2', 'dist3',		 //区域信息
 				'gender', 'birthday',
 				'marrystatus', 'education', 'height', 'weight',
 				'lovesort', 'salary', 'mobile', 'qq', 'idnumber'
@@ -122,6 +134,7 @@ class RegAction extends UserBaseAction {
     public function index(){
         if($this->ispost()) {
 			$this->innerReg();
+			die;
         }
         $this->assign([]);
         $this->display();

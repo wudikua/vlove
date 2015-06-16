@@ -264,9 +264,9 @@ function hometownPopup(title, item) {
 	//POST
 	$.ajax({
 		type: "POST",
-		url: WAP_APPFILE+"?c=index",
+		url: window.regHometown,
 		cache: false,
-		data: {a:"hometown", item:item, dist1:dist1, dist2:dist2, r:get_rndnum(8)},
+		data: {item:item, dist1:dist1, dist2:dist2, r:get_rndnum(8)},
 		dataType: "json",
 		success: function(data) {
 			var json = eval(data);

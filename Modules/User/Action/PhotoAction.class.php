@@ -26,7 +26,7 @@ class PhotoAction extends UserLoginAction {
 		$user['images'] = array_values($user['images']);
 		MongoFactory::table("user")->update(
 			["_id"=>new MongoId($this->userId)],
-			['images'=>$user['images']]
+			['$set'=>['images'=>$user['images']]]
 		);
 		$this->ajaxReturn([
 			"response"=>1,

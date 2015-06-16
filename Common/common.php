@@ -1,5 +1,6 @@
 <?php
 require_once "area.php";
+require_once "profile.php";
 
 function get_image_name(){
     static $imageCount = 0;

@@ -33,6 +33,10 @@
 			$("#loading").remove();
 		}, 100);
 	});
+	var regProvince = "{:U('Reg/province')}";
+	var regCity = "{:U('Reg/city')}";
+	var regArea = "{:U('Reg/area')}";
+	var regHometown = "{:U('Reg/hometown')}";
 </script>
 <div class="navbar-layout">
 	<ul>

@@ -1,11 +1,5 @@
 <include file="./Tpl/Public/header.php" title="用户注册"/>
 
-<script>
-	var regProvince = "{:U('Reg/province')}";
-	var regCity = "{:U('Reg/city')}";
-	var regArea = "{:U('Reg/area')}";
-</script>
-
 <div class="reg-layout">
 
 
