@@ -19,8 +19,8 @@
 						<?php endif;?>
 					</div>
 					<div class="clear"></div>
-					<input type="hidden" name="hometown1" id="hometown1" value="0" />
-					<input type="hidden" name="hometown2" id="hometown2" value="0" />
+					<input type="hidden" name="hometown1" id="hometown1" value="{$user['hometown1']}" />
+					<input type="hidden" name="hometown2" id="hometown2" value="{$user['hometown2']}" />
 				</li>
 
 
@@ -51,12 +51,39 @@
 				</li>
 
 				<li>
+					<div class="profile-item">家中排行：</div>
+					<div class="profile-value" id="tophome_text">
+						<select name='tophome' id='tophome'>
+							<option value=''>=请选择=</option>
+							<?php foreach(ProfileConst::$tophome as $k=>$v):?>
+								<option value='{$k}' <?php if($user['tophome'] == $k):?>selected<?php endif;?>>{$v}</option>
+							<?php endforeach;?>
+						</select>
+					</div>
+					<div class="clear"></div>
+				</li>
+
+
+				<li>
 					<div class="profile-item">民&#12288;&#12288;族：</div>
 					<div class="profile-value" id="national_text">
 						<select name='national' id='national'>
 							<option value=''>=请选择=</option>
 							<?php foreach(ProfileConst::$national as $k=>$v):?>
 								<option value='{$k}' <?php if($user['national'] == $k):?>selected<?php endif;?>>{$v}</option>
+							<?php endforeach;?>
+						</select>
+					</div>
+					<div class="clear"></div>
+				</li>
+
+				<li>
+					<div class="profile-item">属&#12288;&#12288;像：</div>
+					<div class="profile-value" id="cnage_text">
+						<select name='cnage' id='cnage'>
+							<option value=''>=请选择=</option>
+							<?php foreach(ProfileConst::$cnage as $k=>$v):?>
+								<option value='{$k}' <?php if($user['cnage'] == $k):?>selected<?php endif;?>>{$v}</option>
 							<?php endforeach;?>
 						</select>
 					</div>

@@ -57,7 +57,7 @@
 				<li>
 					<div class="profile-item">体&#12288;&#12288;重：</div>
 					<div class="profile-value">
-						<input type="text" name='weight' id='weight' value="{$user['weight']}" placeholder="KG">
+						<input type="text" name='weight' id='weight' value="{$user['weight']}" placeholder="输入体重的KG数">&nbsp;KG
 					</div>
 					<div class="clear"></div>
 				</li>
@@ -97,7 +97,7 @@
 				</li>
 
 				<li>
-					<div class="profile-item">月薪收入：</div>
+					<div class="profile-item">年&#12288;&#12288;薪：</div>
 					<div class="profile-value" id="salary_text">
 						<select name='salary' id='salary'>
 							<option value=''>=请选择=</option>
