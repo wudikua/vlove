@@ -43,7 +43,7 @@ class PhotoAction extends UserLoginAction {
 	public function setavatar($id) {
 		$user = $this->getLoginUser();
 		$update = [];
-		$update['avatar'] = $user['images'][intval($id) - 1];
+		$update['avatar'] = $user['images'][$id];
 		MongoFactory::table("user")->update(
 			["_id"=>new MongoId($this->userId)],
 			['$set'=> $update]

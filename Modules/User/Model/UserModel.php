@@ -7,11 +7,19 @@
  */
 class UserModel extends MongoModel {
 
-    protected $pk = '_id';
+	/**
+	 * @var string 用户名
+	 */
+	public $username;
 
+	/**
+	 * @var string 邮箱
+	 */
+	public $email;
 
-    public function addUser($data) {
+	/**
+	 * @var string 密码
+	 */
+	public $password;
 
-        $this->add($data);
-    }
 }
