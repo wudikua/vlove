@@ -152,7 +152,7 @@ function goBackRefresh() {
 //home detail 
 function userDetail(uid) {
 	$("#loading").fadeIn(1);
-	window.location.href = WAP_APPFILE+"?c=home&uid="+uid;
+	window.location.href = window.profileOther+"?uid="+uid;
 }
 
 

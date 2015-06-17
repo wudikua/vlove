@@ -2,7 +2,7 @@
 <div class="hr-shadow"></div>
 <div class="tab-layout">
 	<ul>
-		<li onclick="{:U('Search/index')};" style="width:50%">搜索结果</li>
+		<li onclick="goUrl('{:U('Search/index')}');" style="width:50%">搜索结果</li>
 		<li class="tab-selected" style="width:50%">条件搜索</li>
 	</ul>
 	<div class="clear"></div>
@@ -147,9 +147,8 @@
 </div>
 <!--//area_box ajax End-->
 
-<div class="footer-about">
-	<span onclick="window.location.href='/wap.php?c=index&a=about';">关于我们</span> | <span onclick="window.location.href='/wap.php?c=index&a=contact';">联系我们</span> | <span onclick="window.location.href='/wap.php?c=index&a=clause';">用户条款</span> | <span onclick="window.location.href='/wap.php?c=index&a=payment';">付款方式</span><br />
-	&copy;22233 版权所有
-</div>
+
+<include file="./Tpl/Public/footer.php"/>
+
 </body>
 </html>

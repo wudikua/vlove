@@ -23,6 +23,12 @@ function age($YTD){
 	return (date('Y') - $year) < 0 ? 0 : (date('Y') - $year);
 }
 
+function rage($num) {
+	$year = date('Y', time());
+	$year -= $num;
+	return "$year".date("md", time());
+}
+
 function constellation($YTD){
 	if ($YTD instanceof MongoDate) {
 		$birthdayDate = $YTD->sec;

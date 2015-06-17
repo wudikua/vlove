@@ -30,4 +30,11 @@ class UserLoginAction extends UserBaseAction {
 	public function getLoginUser() {
 		return MongoFactory::table("user")->findOne(['_id'=>new MongoId($this->userId)]);
 	}
+
+	/**
+	 * 判断会员是否是VIP
+	 */
+	public function isVip() {
+		return true;
+	}
 }

@@ -37,11 +37,12 @@
 	var regCity = "{:U('Reg/city')}";
 	var regArea = "{:U('Reg/area')}";
 	var regHometown = "{:U('Reg/hometown')}";
+	var profileOther = "{:U('Profile/other')}";
 </script>
 <div class="navbar-layout">
 	<ul>
 		<li onclick="goUrl('/wap.php');">首页</li>
-		<li onclick="goUrl('/wap.php?c=user');">搜索</li>
+		<li onclick="goUrl('{:U('Search/index')}');">搜索</li>
 		<li onclick="goUrl('/wap.php?c=cp_message');">信件</li>
 		<li onclick="goUrl('/wap.php?c=cp_buy');">购买</li>
 		<?php if ($login):?>
