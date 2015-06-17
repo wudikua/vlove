@@ -5638,7 +5638,7 @@ EOF;
 		return $frame;
 	}
 
-	public static function getTemplate() {
+	public static function getTemplate($item) {
 		$frame = <<<EOF
 <div class="varpop-label">
   <ul>
@@ -5787,11 +5787,11 @@ $(function(){
 			return_dist_text += retrun_dist3_text;
 		}
 		//选择查询、等操作
-		$("#dist1").val(return_dist1_value);
-		$("#dist2").val(return_dist2_value);
-		$("#dist3").val(return_dist3_value);
+		$("#{$item}1").val(return_dist1_value);
+		$("#{$item}2").val(return_dist2_value);
+		$("#{$item}3").val(return_dist3_value);
 
-		$("#dist_text").html(return_dist_text);
+		$("#{$item}_text").html(return_dist_text);
 		areaPopClose(); //关闭
 	});
 

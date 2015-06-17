@@ -21,7 +21,7 @@ class RegAction extends UserBaseAction {
 
 		$this->ajaxReturn([
 			"response"=>1,
-			"result"=>sprintf(Province::getTemplate(), $province),
+			"result"=>sprintf(Province::getTemplate($item), $province),
 		]);
 	}
 
