@@ -56,10 +56,9 @@ class RegAction extends UserBaseAction {
 		foreach (Province::getProvince() as $k=>$v) {
 			$province .= "<option value=\"$k\">$v</option>".PHP_EOL;
 		}
-
 		$this->ajaxReturn([
 			"response"=>1,
-			"result"=>sprintf(Province::getTemplateHometown(), $province),
+			"result"=>sprintf(Province::getTemplateHometown($item), $province),
 		]);
 	}
 

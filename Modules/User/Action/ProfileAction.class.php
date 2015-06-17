@@ -9,10 +9,7 @@ class ProfileAction extends UserLoginAction {
 		$rt = MongoFactory::table("user")->update(['_id'=>new MongoId($this->userId)],
 			['$set'=> $update]
 		);
-		$this->assign([
-			'jumpUrl'=>U("Profile/index")
-		]);
-		$this->display("./Tpl/Public/jump.php");
+		$this->jump(U("Profile/index"), "修改成功");
 	}
 
 	/**
@@ -22,6 +19,7 @@ class ProfileAction extends UserLoginAction {
 		if($this->ispost()) {
 			$fields = [
 				'hometown1', 'hometown2',
+				'birthhometown1', 'birthhometown2',
 				'housing', 'caring', 'tophome',
 				'national', 'cnage'//属相
 			];
@@ -40,6 +38,7 @@ class ProfileAction extends UserLoginAction {
 	public function base() {
 		if($this->ispost()) {
 			$fields = [
+				'nickname',
 				'marrystatus', 'lovesort', 'birthday', 'height', 'weight',
 				'education', 'school',
 				'dist1', 'dist2', 'dist3',
@@ -108,6 +107,47 @@ class ProfileAction extends UserLoginAction {
 			'user'=>$this->getLoginUser(),
 		]);
 		$this->display();
+	}
+
+	public function changepwd() {
+		if($this->ispost()) {
+			$newpassword = $this->_post("newpassword");
+			$oldpassword = $this->_post("oldpassword");
+			$confirmpassword = $this->_post("confirmpassword");
+			if ($newpassword != $confirmpassword) {
+				$this->ajaxReturn([
+					"response"=>0,
+					"result"=>"新密码不一致",
+				]);
+			}
+			$update["password"] = $newpassword;
+			$rt = MongoFactory::table("user")->update(
+				[
+					'_id'=>new MongoId($this->userId),
+					'password'=>$oldpassword,
+				],
+				['$set'=> $update]
+			);
+			if (!$rt['updatedExisting'] && $oldpassword != $newpassword) {
+				$this->ajaxReturn([
+					"response"=>0,
+					"result"=>"原密码错误",
+				]);
+			}
+			$this->ajaxReturn([
+				"response"=>1,
+				"result"=>"",
+			]);
+		}
+		$this->assign([
+
+		]);
+		$this->display();
+	}
+
+	public function logout() {
+		$this->removeLoginStatus($this->userId);
+		$this->jump("Login/index", "退成成功");
 	}
 
 	public function index() {

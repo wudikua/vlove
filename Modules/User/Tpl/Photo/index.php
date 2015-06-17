@@ -83,9 +83,7 @@
 			<li id="id_{$i+1}">
 				<div class="album-inner">
 					<h2><img src="__PUBLIC__/upload/thumb/s_{$m}" /></h2>
-					<p>
-						已通过
-					</p>
+					<p><span onclick="setAvatar('{$i+1}');">设为头像</span></p>
 					<p><span onclick="delAlbum('{$i+1}');">删除</span></p>
 				</div>
 			</li>
@@ -107,6 +105,36 @@
 </body>
 </html>
 <script type="text/javascript">
+	function setAvatar(id) {
+		if (id > 0) {
+			$.ajax({
+				type: "POST",
+				url: "{:U('Photo/setavatar')}",
+				cache: false,
+				data: {id:id, r:get_rndnum(8)},
+				dataType: "json",
+				success: function(data) {
+					var json = eval(data);
+					var response = json.response;
+					var result = json.result;
+					if (response == '1') {
+						ToastShow("设置成功");
+					}
+					else {
+						if (result.length > 0) {
+							ToastShow(result);
+						}
+						else {
+							ToastShow("设置失败，请检查网络...");
+						}
+					}
+				},
+				error: function() {
+					ToastShow("设置失败，请检查网络...");
+				}
+			});
+		}
+	}
 	//删除
 	function delAlbum(id) {
 		if (id > 0) {

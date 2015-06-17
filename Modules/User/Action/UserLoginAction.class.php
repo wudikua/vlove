@@ -13,7 +13,15 @@ class UserLoginAction extends UserBaseAction {
 
     public function _initialize() {
 		parent::_initialize();
-		$this->userId = "557f8ae5a1a1a1ba038b456d";
+		$u = MongoFactory::table("user")->findOne(['sid'=>(string)$_COOKIE['sid']], ['_id']);
+		if (!isset($u['_id'])) {
+			$this->jump(U('Login/index'), "请先登录");
+		}
+		$this->userId = (string) $u['_id'];
+		if (strlen($this->userId) == 0) {
+			$this->jump(U('Login/index'), "请先登录");
+		}
+		$this->assign("login", true);
     }
 
 	/**

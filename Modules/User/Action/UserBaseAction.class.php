@@ -10,4 +10,26 @@ class UserBaseAction extends BaseAction {
     public function _initialize() {
 
     }
+
+	public function setLoginSid($id) {
+		$g = new Guid();
+		$sid = $g->toString();
+		MongoFactory::table("user")->update(['_id'=> new MongoId($id)], ['$set'=> ['sid'=>$sid]]);
+		setcookie('sid', $sid, time() + 3600*24*7, "/");
+		return $sid;
+	}
+
+	public function removeLoginStatus($id) {
+		MongoFactory::table("user")->update(['_id'=> new MongoId($id)], ['$unset'=> ['sid'=>1]]);
+		setcookie('sid', "", -1, "/");
+	}
+
+	public function jump($url, $msg) {
+		$this->assign([
+			'msg'=>$msg,
+			'jumpUrl'=>$url
+		]);
+		$this->display("./Tpl/Public/jump.php");
+		die;
+	}
 }

@@ -5542,7 +5542,7 @@ class Province {
 		return $data;
 	}
 
-	public static function getTemplateHometown() {
+	public static function getTemplateHometown($item) {
 		$frame = <<<EOF
 		<div class="varpop-label">
   <ul>
@@ -5622,9 +5622,9 @@ $(function(){
 		var return_town2_value = $("#town_dist2").find("option:selected").val();
 		var retrun_town2_text = $("#town_dist2").find("option:selected").text();
 		//选择查询、等操作
-		$("#hometown1").val(return_town1_value);
-		$("#hometown2").val(return_town2_value);
-		$("#hometown_text").text(retrun_town1_text+" "+retrun_town2_text);
+		$("#{$item}1").val(return_town1_value);
+		$("#{$item}2").val(return_town2_value);
+		$("#{$item}_text").text(retrun_town1_text+" "+retrun_town2_text);
 		hometownPopClose(); //关闭
 	});
 

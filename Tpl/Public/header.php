@@ -44,7 +44,11 @@
 		<li onclick="goUrl('/wap.php?c=user');">搜索</li>
 		<li onclick="goUrl('/wap.php?c=cp_message');">信件</li>
 		<li onclick="goUrl('/wap.php?c=cp_buy');">购买</li>
-		<li  onclick="goUrl('/wap.php?c=passport&a=login')">登录</li>
+		<?php if ($login):?>
+			<li  onclick="goUrl('{:U('Index/index')}')">我的</li>
+		<?php else:?>
+		<li  onclick="goUrl('{:U('Login/index')}')">登录</li>
+		<?php endif;?>
 	</ul>
 	<div class="clear"></div>
 </div>

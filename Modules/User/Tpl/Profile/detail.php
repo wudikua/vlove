@@ -9,7 +9,7 @@
 
 
 				<li onclick="hometownPopup('户口', 'hometown');">
-					<div class="profile-item">户&#12288;&#12288;籍：</div>
+					<div class="profile-item">户&#12288;&#12288;口：</div>
 					<div class="profile-value" id="hometown_text">
 						<?php if ($user['hometown1']):?>
 						<?php echo Province::getProvinceName($user['hometown1']);?>
@@ -21,6 +21,21 @@
 					<div class="clear"></div>
 					<input type="hidden" name="hometown1" id="hometown1" value="{$user['hometown1']}" />
 					<input type="hidden" name="hometown2" id="hometown2" value="{$user['hometown2']}" />
+				</li>
+
+				<li onclick="hometownPopup('籍贯', 'birthhometown');">
+					<div class="profile-item">籍&#12288;&#12288;贯：</div>
+					<div class="profile-value" id="birthhometown_text">
+						<?php if ($user['birthhometown1']):?>
+							<?php echo Province::getProvinceName($user['birthhometown1']);?>
+							<?php echo Province::getCityName($user['birthhometown1'], $user['birthhometown2']);?>
+						<?php else:?>
+							请填写
+						<?php endif;?>
+					</div>
+					<div class="clear"></div>
+					<input type="hidden" name="birthhometown1" id="birthhometown1" value="{$user['birthhometown1']}" />
+					<input type="hidden" name="birthhometown2" id="birthhometown2" value="{$user['birthhometown2']}" />
 				</li>
 
 

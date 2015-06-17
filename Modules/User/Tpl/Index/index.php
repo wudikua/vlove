@@ -143,12 +143,12 @@
 
 	<div class="cp-index-bar" style="margin-top:20px;">
 		<ul>
-			<li onclick="goUrl('/wap.php?c=cp&a=editpwd');" style="border-bottom:none;">&#12288;修改密码</li>
+			<li onclick="goUrl('{:U('Profile/changepwd')}');" style="border-bottom:none;">&#12288;修改密码</li>
 		</ul>
 		<div class="clear"></div>
 	</div>
 
-	<div class="spanbtn0" style="margin-top:15px;margin-bottom:15px;" id="btn_logout" onclick="goUrl('/wap.php?c=passport&a=logout');">退出登录</div>
+	<div class="spanbtn0" style="margin-top:15px;margin-bottom:15px;" id="btn_logout" onclick="goUrl('{:U('Profile/logout')}');">退出登录</div>
 </div>
 
 <script type="text/javascript">

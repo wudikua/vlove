@@ -6,6 +6,13 @@
 	<div class="cp-layout-body">
 		<div class="profile-layout">
 			<ul>
+				<li>
+					<div class="profile-item">昵&#12288;&#12288;称：</div>
+					<div class="profile-value">
+						<input type="text" name='nickname' id='nickname' value="{$user['nickname']}" placeholder="填写昵称">
+					</div>
+					<div class="clear"></div>
+				</li>
 
 				<li>
 					<div class="profile-item">婚姻状况：</div>
