@@ -12,6 +12,7 @@ class IndexAction extends BaseAction {
 		$users = array_merge($users, $users);
 		$users = array_merge($users, $users);
 		$this->assign([
+			"login"=>isset($_SESSION['login']),
 			"users"=>array_slice($users, 0, 6)
 		]);
         $this->display();
