@@ -14,7 +14,7 @@
 			<?php elseif($j%3==1):?>
 			style="margin-left: 10px; margin-right: 10px; width: 124px; height: 152px;"
 			<?php endif;?> class="<?php if($j == 0):?>b-li<?php else:?>s-li<?php endif;?>" onclick="userDetail('{:(string)$users[$j]['_id']}');">
-			<img class="<?php if($j == 0):?>b-li-img<?php else:?>s-li-img<?php endif;?>" src="<?php if(strlen($users[$j]['avatar'])):?>__PUBLIC__/upload/thumb/s_{$users[$j]['avatar']}<?php else:?>__PUBLIC__/images/gender_1.gif<?php endif;?>" />
+			<img class="<?php if($j == 0):?>b-li-img<?php else:?>s-li-img<?php endif;?>" src="<?php if(strlen($users[$j]['avatar'])):?>__PUBLIC__/upload/thumb/m_{$users[$j]['avatar']}<?php else:?>__PUBLIC__/images/gender_1.gif<?php endif;?>" />
 			<?php if($j==0):?>
 			<p>{$users[$j]['nickname']}|{:age($users[$j]['birthday'])}岁|{$users[$j]['height']}</p>
 			<?php endif;?>
