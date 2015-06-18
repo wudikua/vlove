@@ -1,8 +1,8 @@
 <include file="./Tpl/Public/header.php" title="资料"/>
 
-<script src="__PUBLIC__/js/jquery.scrollTo.js"></script>
-<script src="__PUBLIC__/js/photo.preview.min.js"></script>
-<link rel="stylesheet" href="__PUBLIC__/style/photopreview.css" />
+<!--<script src="__PUBLIC__/js/layer.js"></script>-->
+<script src="__PUBLIC__/js/swiper.js"></script>
+<link rel="stylesheet" href="__PUBLIC__/style/swiper.css" />
 
 <div class="home-info-layout">
 	<div class="img-box"><img src="<?php if(strlen($user['avatar'])):?>__PUBLIC__/upload/thumb/s_{$user['avatar']}<?php else:?>__PUBLIC__/images/gender_1.gif<?php endif;?>" /></div>
@@ -34,6 +34,17 @@
 </div>
 <script type="text/javascript">
 	$(function(){
+		$(".swiper-container").css("width", $("body").width()+"px");
+		$(".swiper-container").css("height", $("body").width()/118*120 +"px");
+		window.swiper = new Swiper('.swiper-container', {
+			pagination: '.pagination',
+			paginationClickable: true,
+			// Disable preloading of all images
+			updateOnImagesReady: false,
+			// Enable lazy loading
+			lazyLoading: true
+		});
+
 		var loginstatus = "1";
 		$("#act_hi").click(function(){ //打招呼
 			if (loginstatus == "0") {
@@ -80,7 +91,9 @@
 				goUrl("/wap.php?c=cp_do&a=writemsg&touid=162361");
 			}
 		});
+
 	});
+
 
 	function addToListen() { //加入关注
 		$.ajax({
@@ -142,14 +155,59 @@
 		});
 	}
 
+	function viewImage(index) {
+//		layer.open({
+//			type: 1,
+//			content: $(".swiper-container").html(),
+//			style: 'background-color: #000;opacity: 0.9;width:'+document.documentElement.clientHeight+'px; height:'+ document.documentElement.clientHeight +'px; border:none;'
+//		});
+
+		$('#light').css("display", 'block');
+		$('#fade').css("display", 'block');
+		$('#fade').css("height", $("body").height()+ 'px');
+
+		$(".swiper-container").css("display", "block");
+		window.swiper.swipeTo(index, 300);
+	}
+
+	function closeImage() {
+		$('#light').css("display", 'none');
+		$('#fade').css("display", 'none');
+		$(".swiper-container").css("display", "none");
+	}
+
 </script>
 
 
 
 <!--//album End-->
-
+<div id="fade" class="black_overlay" onclick="closeImage()"></div>
+<div id="light" class="white_content">
+	<div class="swiper-container" style="display: none">
+		<div class="swiper-wrapper">
+			<?php foreach($user['images'] as $image):?>
+				<div class="swiper-slide">
+					<img width="100%" height="100%" class="swiper-lazy" data-src="__PUBLIC__/upload/{$image}" src="__PUBLIC__/upload/{$image}">
+				</div>
+			<?php endforeach;?>
+		</div>
+		<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+		<div class="pagination"></div>
+		<div class="per-pop-close" onclick="closeImage()"></div>
+	</div>
+</div>
 
 <div class="home-data">
+	<div class="home-wrap">
+		<h2>相册</h2>
+		<div class="">
+		<div id="imgs" class="imgs">
+			<?php foreach($user['images'] as $i=>$image):?>
+			<img onclick="viewImage('{$i}')" style="max-width: 88px;max-height: 100px;" src="__PUBLIC__/upload/thumb/s_{$image}" >
+			<?php endforeach;?>
+		</div>
+	</div>
+
 
 	<div class="home-wrap">
 		<h2>内心独白</h2>

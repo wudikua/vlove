@@ -3,6 +3,82 @@
  * @Lastdate: 2014.11.25
 */
 @charset "utf-8";
+
+.per-pop-close {
+    background: #f10101 url(../images/close.png) no-repeat center 8px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 1006;
+    top: 5px;
+    right: 5px;
+    border-radius: 15px;
+}
+.black_overlay{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+}
+.white_content {
+    display: none;
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    z-index:1002;
+    overflow: auto;
+}
+.swiper-container {
+    width: 414px;
+    height: 500px;
+    margin: 20px auto;
+}
+.pagination {
+    position: absolute;
+    left: 0;
+    text-align: center;
+    bottom:5px;
+    width: 100%;
+}
+.swiper-pagination-switch {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #999;
+    box-shadow: 0px 1px 2px #555 inset;
+    margin: 0 3px;
+    cursor: pointer;
+}
+.swiper-active-switch {
+    background: #fff;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
 .cp-vip-lock {
     background: url("../images/lock2.png") no-repeat scroll left top;
     height: 16px;
