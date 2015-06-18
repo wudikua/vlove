@@ -174,7 +174,12 @@
 	<div class="home-wrap">
 		<h2>联系方式</h2>
 		<div class="home-itemlist">
-			<p style="padding:10px;text-align:center;" onclick="goUrl('/wap.php?c=buy');">VIP可见</p>
+<!--			<p style="padding:10px;text-align:center;">互相点赞可见</p>-->
+			<ul>
+				<li>微信：<span>{$user['wechat']}</span></li>
+				<li style="border-bottom:none;">QQ：<span>{$user['qq']}</span></li>
+			</ul>
+			<div class="clear"></div>
 		</div>
 		<div class="clear"></div>
 	</div>
@@ -186,7 +191,7 @@
 				<li>所在地区：<span>{:Province::getProvinceName($user['dist1'])} {:Province::getCityName($user['dist1'], $user['dist2'])} {:Province::getAreaName($user['dist1'], $user['dist2'], $user['dist3'])}</span></li>
 				<li>婚&#12288;&#12288;姻：<span>{:ProfileConst::$marrystatus[$user['marrystatus']]}</span></li>
 				<li>交友类型：<span>{:ProfileConst::$lovesort[$user['lovesort']]}</span></li>
-				<li>生&#12288;&#12288;日：<span>{$user['birthday']}</span></li>
+				<li>年&#12288;&#12288;龄：<span>{:age($user['birthday'])}岁</span></li>
 				<li>身&#12288;&#12288;高：<span>{$user['height']}CM</span></li>
 				<li>体&#12288;&#12288;重：<span>{$user['weight']}KG</span></li>
 				<li>学&#12288;&#12288;历：<span>{:ProfileConst::$education[$user['education']]}</span></li>

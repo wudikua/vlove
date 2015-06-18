@@ -321,10 +321,34 @@ i {font-style:normal;}
 
 
 /*--------------------- index Css Begin ----------------------*/
+.index-user-list-title {
+    padding: 5% 5%;
+    vertical-align: middle;
+    width: 90%;
+    overflow: hidden;
+    background: url("../images/ss.png") no-repeat right center;
+}
+.index-user-list-title span {
+    font-size: 16px;
+}
+.spe_txt {
+    font-size: 16px;
+    color: #ffffff;
+    width: 1.2em;
+    height: 1.2em;
+    background: #fc6da2;
+    text-align: center;
+    display: inline-block;
+    border-radius: 100%;
+    line-height: 1.2em;
+}
 .index-user-list {
     margin:5px auto;
     padding:0 5px 5px 5px;
     padding-left:10px;
+}
+.index-user-list ul {
+    padding-left: 3px;
 }
 .index-user-list ul li {
     float:left;position:relative;

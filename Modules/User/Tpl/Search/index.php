@@ -11,6 +11,9 @@
 <div class="layout-body">
 	<div class="user-list">
 		<ul id="json_data">
+			<?php if (count($users)==0):?>
+			<h6><div>目前已经没有更多会员了。</div><div>您可以尝试放宽择偶条件进行搜索。</div></h6>
+			<?php else:?>
 			<?php foreach($users as $user):?>
 			<li onclick="userDetail('{:(string)$user['_id']}');">
 				<img class="userlist-img" src="<?php if(strlen($user['avatar'])):?>__PUBLIC__/upload/thumb/s_{$user['avatar']}<?php else:?>__PUBLIC__/images/gender_1.gif<?php endif;?>" />
@@ -26,13 +29,13 @@
 				</div>
 			</li>
 			<?php endforeach;?>
+			<?php endif;?>
 		</ul>
 		<div class="clear"></div>
 	</div>
 	<!--//list End-->
-
 	<div class="page-layout">
-		{$show}
+		{$page}
 	</div>
 	<!--//ShowPage End-->
 

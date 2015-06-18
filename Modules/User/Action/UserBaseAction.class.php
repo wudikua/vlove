@@ -14,7 +14,8 @@ class UserBaseAction extends BaseAction {
 	public function setLoginSid($id) {
 		$g = new Guid();
 		$sid = $g->toString();
-		MongoFactory::table("user")->update(['_id'=> new MongoId($id)], ['$set'=> ['sid'=>$sid]]);
+		MongoFactory::table("user")->update(['_id'=> new MongoId($id)],
+			['$set'=> ['sid'=>$sid]]);
 		setcookie('sid', $sid, time() + 3600*24*7, "/");
 		return $sid;
 	}
@@ -22,6 +23,7 @@ class UserBaseAction extends BaseAction {
 	public function removeLoginStatus($id) {
 		MongoFactory::table("user")->update(['_id'=> new MongoId($id)], ['$unset'=> ['sid'=>1]]);
 		setcookie('sid', "", -1, "/");
+		session_destroy();
 	}
 
 	public function jump($url, $msg) {

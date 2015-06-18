@@ -107,7 +107,13 @@ class Guid
 class MongoUtil {
 
 	public static function asList($result) {
-
+		$list = [];
+		foreach($result as $u) {
+			if (!empty($u)) {
+				$list[] = $u;
+			}
+		}
+		return $list;
 	}
 }
 

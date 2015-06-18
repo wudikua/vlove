@@ -22,6 +22,7 @@ class SearchAction extends UserLoginAction {
 				's_salary', 's_housing', 's_caring'
 			];
 			$this->updateField($fields);
+			$this->jump(U('Search/index'), "设置成功");
 		}
 		$user = $this->getLoginUser();
 		// 如果在这里不是会员，高级搜索重置
@@ -41,7 +42,10 @@ class SearchAction extends UserLoginAction {
 		$user = $this->getLoginUser();
 		foreach ($fields as $field) {
 			if (isset($user[$field]) && strlen($user[$field]) > 0) {
-				if ($field == "s_height") {
+				if ($field == "s_avatar") {
+					// 处理头像
+					$query["avatar"]['$ne'] = "";
+				} else if ($field == "s_height") {
 					// 处理大于等于
 					$query["height"]['$gte'] = $user[$field];
 				} else if ($field == "s_age_gt") {
@@ -80,7 +84,12 @@ class SearchAction extends UserLoginAction {
 		import('ORG.Util.Page');
 		$count = MongoFactory::table("user")->find($query)->count();
 		$page = new Page($count);
-		$users = MongoFactory::table("user")->find($query)->skip($page->firstRow)->limit($page->listRows);
+//		'prev'=>'< <','next'=>'> >','first'=>'首页','last'=>'尾页','theme'=>'%first% %upPage% %linkPage% %downPage%  %end%'
+		$page->setConfig('prev', '<span onclick="goUrl(\'$url\');\">上一页</span>');
+		$page->setConfig('next', '<span onclick="goUrl(\'$url\');\">下一页</span>');
+		$page->setConfig('theme', '%first% %upPage% %linkPage% %downPage%  %end%');
+		$rt = MongoFactory::table("user")->find($query)->skip(intval($page->firstRow))->limit(intval($page->listRows));
+		$users = MongoUtil::asList($rt);
 		$this->assign([
 			'page'=>$page->show(),
 			'users'=>$users

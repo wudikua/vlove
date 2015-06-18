@@ -33,22 +33,22 @@
 			$("#loading").remove();
 		}, 100);
 	});
-	var regProvince = "{:U('Reg/province')}";
-	var regCity = "{:U('Reg/city')}";
-	var regArea = "{:U('Reg/area')}";
-	var regHometown = "{:U('Reg/hometown')}";
-	var profileOther = "{:U('Profile/other')}";
+	var regProvince = "{:U('User/Reg/province')}";
+	var regCity = "{:U('User/Reg/city')}";
+	var regArea = "{:U('User/Reg/area')}";
+	var regHometown = "{:U('User/Reg/hometown')}";
+	var profileOther = "{:U('User/Profile/other')}";
 </script>
 <div class="navbar-layout">
 	<ul>
-		<li onclick="goUrl('/wap.php');">首页</li>
-		<li onclick="goUrl('{:U('Search/index')}');">搜索</li>
+		<li onclick="goUrl('{:U('Home/Index/index')}');">首页</li>
+		<li onclick="goUrl('{:U('User/Search/index')}');">搜索</li>
 		<li onclick="goUrl('/wap.php?c=cp_message');">信件</li>
 		<li onclick="goUrl('/wap.php?c=cp_buy');">购买</li>
 		<?php if ($login):?>
-			<li  onclick="goUrl('{:U('Index/index')}')">我的</li>
+			<li  onclick="goUrl('{:U('User/Index/index')}')">我的</li>
 		<?php else:?>
-		<li  onclick="goUrl('{:U('Login/index')}')">登录</li>
+		<li  onclick="goUrl('{:U('User/Login/index')}')">登录</li>
 		<?php endif;?>
 	</ul>
 	<div class="clear"></div>

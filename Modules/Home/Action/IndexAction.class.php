@@ -3,8 +3,17 @@
 class IndexAction extends BaseAction {
 
     public function index(){
-
+		// 首页推荐一些最新用户
+		$rt = MongoFactory::table("user")->find([
+			'avatar'=>['$ne'=>""]
+		])->sort(['login_time'=>1])->limit(10);
+		$users = MongoUtil::asList($rt);
+		$users = array_merge($users, $users);
+		$users = array_merge($users, $users);
+		$users = array_merge($users, $users);
+		$this->assign([
+			"users"=>array_slice($users, 0, 6)
+		]);
         $this->display();
-
     }
 }
