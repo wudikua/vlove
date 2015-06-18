@@ -26,7 +26,7 @@
 </div>
 <script type="text/javascript">
 	//var scWidth = $(window).width();
-	scWidth = $(".index-user-list").width()+8;
+	scWidth = $(".index-user-list").width();
 	var tWidth = (scWidth); //减去padding的10px
 	//平均分三等份
 	var onewidth = parseInt((tWidth-30)/3);
