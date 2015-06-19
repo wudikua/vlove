@@ -187,7 +187,7 @@
 		<div class="swiper-wrapper">
 			<?php foreach($user['images'] as $image):?>
 				<div class="swiper-slide">
-					<img width="100%" height="100%" class="swiper-lazy" data-src="__PUBLIC__/upload/{$image}" src="__PUBLIC__/upload/{$image}">
+					<img width="100%" height="100%" class="swiper-lazy" data-src="__PUBLIC__/upload/{$image}" src="__PUBLIC__/upload/thumb/m_{$image}">
 				</div>
 			<?php endforeach;?>
 		</div>

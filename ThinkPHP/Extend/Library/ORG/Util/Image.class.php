@@ -219,7 +219,17 @@ class Image {
 
             // 生成图片
             $imageFun = 'image' . ($type == 'jpg' ? 'jpeg' : $type);
-            $imageFun($thumbImg, $thumbname);
+			switch ($type) {
+				case 'png':
+					$imageFun($thumbImg, $thumbname, 9);
+					break;
+				case 'jpg':
+				case 'jpeg':
+					$imageFun($thumbImg, $thumbname, 50);
+					break;
+				default:
+					$imageFun($thumbImg, $thumbname);
+			}
             imagedestroy($thumbImg);
             imagedestroy($srcImg);
             return $thumbname;
@@ -293,7 +303,18 @@ class Image {
 
             // 生成图片
             $imageFun = 'image' . ($type == 'jpg' ? 'jpeg' : $type);
-            $imageFun($thumbImg, $thumbname);
+			switch ($type) {
+				case 'png':
+					$imageFun($thumbImg, $thumbname, 9);
+					break;
+				case 'jpg':
+				case 'jpeg':
+					$imageFun($thumbImg, $thumbname, 50);
+					break;
+				default:
+					$imageFun($thumbImg, $thumbname);
+			}
+
             imagedestroy($thumbImg);
             imagedestroy($srcImg);
             return $thumbname;

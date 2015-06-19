@@ -22,12 +22,12 @@ class PhotoAction extends UserLoginAction {
 	 */
 	public function remove($id) {
 		$user = $this->getLoginUser();
-		unset($user['images'][intval($id) - 1]);
 		$update = [];
 		if ($user['images'][intval($id) - 1] == $user['avatar']) {
 			// 关联删除头像
 			$update['avatar'] = '';
 		}
+		unset($user['images'][intval($id) - 1]);
 		$user['images'] = array_values($user['images']);
 		$update['images'] = $user['images'];
 		MongoFactory::table("user")->update(
@@ -43,7 +43,7 @@ class PhotoAction extends UserLoginAction {
 	public function setavatar($id) {
 		$user = $this->getLoginUser();
 		$update = [];
-		$update['avatar'] = $user['images'][$id];
+		$update['avatar'] = $user['images'][intval($id) - 1];
 		MongoFactory::table("user")->update(
 			["_id"=>new MongoId($this->userId)],
 			['$set'=> $update]
@@ -58,10 +58,11 @@ class PhotoAction extends UserLoginAction {
 		import('ORG.Net.UploadFile');
 		$config['savePath'] = APP_PATH.'Public/upload/';
 		$config['thumb'] = true;
+		$config['thumbType'] = 0;
 		$config['thumbPath'] = APP_PATH.'Public/upload/thumb/';
 		$config['thumbPrefix'] = 'm_,s_';
-		$config['thumbMaxWidth'] = '200,50';
-		$config['thumbMaxHeight'] = '200,50';
+		$config['thumbMaxWidth'] = '320,50';
+		$config['thumbMaxHeight'] = '320,50';
 		$upload = new UploadFile($config);
 		if(!$upload->upload()) {
 			$this->assign([
@@ -94,9 +95,10 @@ class PhotoAction extends UserLoginAction {
 		$config['savePath'] = APP_PATH.'Public/upload/';
 		$config['thumb'] = true;
 		$config['thumbPath'] = APP_PATH.'Public/upload/thumb/';
+		$config['thumbType'] = 0;
 		$config['thumbPrefix'] = 'm_,s_';
-		$config['thumbMaxWidth'] = '200,50';
-		$config['thumbMaxHeight'] = '200,50';
+		$config['thumbMaxWidth'] = '320,50';
+		$config['thumbMaxHeight'] = '320,50';
 		$upload = new UploadFile($config);
 		if(!$upload->upload()) {
 			$this->assign([
