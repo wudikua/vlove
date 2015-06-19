@@ -29,8 +29,8 @@
 .white_content {
     display: none;
     width: 100%;
-    top: 20%;
-    position: absolute;
+    top: 10%;
+    position: fixed;
     background-color: white;
     z-index:1002;
     overflow: auto;
