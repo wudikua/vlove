@@ -17,7 +17,7 @@
 			WIN_WIDTH = window.screen.width; //兼容Mozilla
 		}
 	</script>
-	<script src="{:version('__PUBLIC__/js/iscroll.v4.2.5.js')}"></script>
+<!--	<script src="{:version('__PUBLIC__/js/iscroll.v4.2.5.js')}"></script>-->
 	<script src="{:version('__PUBLIC__/js/toast.js')}"></script>
 	<script src="{:version('__PUBLIC__/js/public.js')}"></script>
 	<link rel="stylesheet" href="{:version('__PUBLIC__/style/main.css')}" />
