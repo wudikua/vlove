@@ -60,7 +60,7 @@
 			});
 
 			$("#input_file").click(function(){ //选择照片
-				$("#fileurl").click();
+				$("#fileurl").trigger('click');
 			});
 
 			$("#fileurl").bind("change", function(){ //选择照片后提示
