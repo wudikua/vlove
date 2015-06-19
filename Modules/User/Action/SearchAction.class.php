@@ -31,9 +31,10 @@ class SearchAction extends UserLoginAction {
 			$user['s_housing'] = "";
 			$user['s_caring'] = "";
 		}
-		$this->assign(
-			['user'=>$user]
-		);
+		$this->assign([
+			'user'=>$user,
+			"cur_search"=>"1"
+		]);
 		$this->display();
 	}
 
@@ -92,7 +93,8 @@ class SearchAction extends UserLoginAction {
 		$users = MongoUtil::asList($rt);
 		$this->assign([
 			'page'=>$page->show(),
-			'users'=>$users
+			'users'=>$users,
+			"cur_search"=>"1"
 		]);
 		$this->display();
 	}

@@ -12,7 +12,10 @@ class PhotoAction extends UserLoginAction {
 	 */
 	public function index() {
 		$user = $this->getLoginUser();
-		$this->assign(['images'=>$user['images']]);
+		$this->assign([
+			'images'=>$user['images'],
+			"cur_user"=>"1"
+		]);
 		$this->display();
 	}
 

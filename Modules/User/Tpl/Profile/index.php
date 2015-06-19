@@ -3,13 +3,6 @@
 <div class="cp-bartitle">修改资料</div>
 
 <div class="cp-layout-body-gray">
-	<div class="cp-index-bar">
-		<ul>
-			<li onclick="goUrl('{:U('Profile/req')}');"><i class="mob_pro_09"></i>择偶要求</li>
-		</ul>
-		<div class="clear"></div>
-	</div>
-
 	<div class="cp-index-bar" style="margin-top:20px;">
 		<ul>
 			<li onclick="goUrl('{:U('Profile/base')}');"><i class="mob_pro_01"></i>基本资料</li>

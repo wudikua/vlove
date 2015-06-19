@@ -123,23 +123,17 @@
 	<div class="cp-index-bar">
 		<ul>
 			<li onclick="goUrl('{:U('Photo/index')}');"><i class="mob_icon_02"></i>我的相片</li>
-			<li onclick="goUrl('{:U('Profile/index')}');"><i class="mob_icon_03"></i>修改资料</li>
+			<li onclick="goUrl('{:U('Profile/index')}');"><i class="mob_icon_03"></i>我的资料</li>
 		</ul>
 		<div class="clear"></div>
 	</div>
 
 	<div class="cp-index-bar" style="margin-top:20px;">
 		<ul>
-<!--			<li onclick="goUrl('/wap.php?c=cp_message');"><i class="mob_icon_05"></i>我的信件</li>-->
-<!--			<li onclick="goUrl('/wap.php?c=cp_inhi');"><i class="mob_icon_06"></i>收到问候<span>2</span></li>-->
-<!--			<li onclick="goUrl('/wap.php?c=cp_listen');"><i class="mob_icon_07"></i>我的关注</li>-->
-<!--			<li onclick="needBuyVip();" style="border-bottom:none;"><i class="mob_icon_08"></i>谁看过我-->
-<!--				<div class="cp-vip-lock"></div>-->
-<!--			</li>-->
+			<li onclick="goUrl('{:U('Profile/req')}');"><i class="mob_pro_09"></i>择偶要求</li>
 		</ul>
 		<div class="clear"></div>
 	</div>
-
 
 	<div class="cp-index-bar" style="margin-top:20px;">
 		<ul>

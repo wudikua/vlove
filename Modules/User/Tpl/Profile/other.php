@@ -82,7 +82,6 @@
 <div class="home-data">
 	<div class="home-wrap">
 		<h2>相册</h2>
-		<div class="">
 		<div id="imgs" class="imgs">
 			<?php foreach($user['images'] as $i=>$image):?>
 			<img onclick="viewImage('{$i}')" style="width: 64px;height: 64px;" src="__PUBLIC__/upload/thumb/s_{$image}" >

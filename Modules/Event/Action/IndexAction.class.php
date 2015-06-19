@@ -1,12 +1,10 @@
 <?php
 class IndexAction extends UserLoginAction {
-
-	public function index() {
+	public function index(){
 		$this->assign([
-			'user'=>$this->getLoginUser(),
-			"cur_user"=>"1"
+			"login"=>isset($_SESSION['login']),
+			"cur_event"=>"1"
 		]);
 		$this->display();
 	}
-
 }

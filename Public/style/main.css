@@ -787,7 +787,6 @@ i {font-style:normal;}
 .home-itemlist p {
     line-height:22px;color:#6666;padding:5px;
 }
-
 .home-itemlist ul {
     padding:10px;
 }
@@ -797,6 +796,9 @@ i {font-style:normal;}
 }
 .home-itemlist ul li span {
     float: right;line-height:30px;#666666;
+}
+.home-itemlist ul li p {
+    padding: 0px;
 }
 
 .writemsg-layout {

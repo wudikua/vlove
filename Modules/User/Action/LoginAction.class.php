@@ -21,7 +21,9 @@ class LoginAction extends UserBaseAction {
 
 			$this->jump(U("Index/index"), "登录成功");
 		}
-		$this->assign([]);
+		$this->assign([
+			"cur_user"=>"1"
+		]);
 		$this->display();
 	}
 

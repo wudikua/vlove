@@ -135,7 +135,9 @@ class RegAction extends UserBaseAction {
 			$this->innerReg();
 			die;
         }
-        $this->assign([]);
+        $this->assign([
+			"cur_user"=>"1"
+		]);
         $this->display();
 
     }

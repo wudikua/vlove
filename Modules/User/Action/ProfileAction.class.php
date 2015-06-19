@@ -28,6 +28,7 @@ class ProfileAction extends UserLoginAction {
 		}
 		$this->assign([
 			'user'=>$this->getLoginUser(),
+			"cur_user"=>"1"
 		]);
 		$this->display();
 	}
@@ -49,6 +50,7 @@ class ProfileAction extends UserLoginAction {
 		}
 		$this->assign([
 			'user'=>$this->getLoginUser(),
+			"cur_user"=>"1"
 		]);
 		$this->display();
 	}
@@ -87,6 +89,7 @@ class ProfileAction extends UserLoginAction {
 		}
 		$this->assign([
 			'user'=>$this->getLoginUser(),
+			"cur_user"=>"1"
 		]);
 		$this->display();
 	}
@@ -105,6 +108,7 @@ class ProfileAction extends UserLoginAction {
 		}
 		$this->assign([
 			'user'=>$this->getLoginUser(),
+			"cur_user"=>"1"
 		]);
 		$this->display();
 	}
@@ -140,7 +144,7 @@ class ProfileAction extends UserLoginAction {
 			]);
 		}
 		$this->assign([
-
+			"cur_user"=>"1"
 		]);
 		$this->display();
 	}
@@ -151,6 +155,9 @@ class ProfileAction extends UserLoginAction {
 	}
 
 	public function index() {
+		$this->assign([
+			"cur_user"=>"1"
+		]);
 		$this->display();
 	}
 
