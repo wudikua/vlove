@@ -10,7 +10,7 @@
 		var WAP_APPFILE = "/wap.php";
 		var _ROOT_PATH = "/wap.php";
 	</script>
-	<script src="__PUBLIC__/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/js/zepto.min.js"></script>
 	<script type="text/javascript">
 		var WIN_WIDTH = $(window).width();
 		if ($.browser.mozilla) {
@@ -33,6 +33,7 @@
 			$("#loading").remove();
 		}, 100);
 	});
+
 	var regProvince = "{:U('User/Reg/province')}";
 	var regCity = "{:U('User/Reg/city')}";
 	var regArea = "{:U('User/Reg/area')}";
