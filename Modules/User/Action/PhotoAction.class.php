@@ -61,8 +61,8 @@ class PhotoAction extends UserLoginAction {
 		$config['thumbType'] = 0;
 		$config['thumbPath'] = APP_PATH.'Public/upload/thumb/';
 		$config['thumbPrefix'] = 'm_,s_';
-		$config['thumbMaxWidth'] = '320,50';
-		$config['thumbMaxHeight'] = '320,50';
+		$config['thumbMaxWidth'] = '480,64';
+		$config['thumbMaxHeight'] = '480,64';
 		$upload = new UploadFile($config);
 		if(!$upload->upload()) {
 			$this->assign([
@@ -97,8 +97,8 @@ class PhotoAction extends UserLoginAction {
 		$config['thumbPath'] = APP_PATH.'Public/upload/thumb/';
 		$config['thumbType'] = 0;
 		$config['thumbPrefix'] = 'm_,s_';
-		$config['thumbMaxWidth'] = '320,50';
-		$config['thumbMaxHeight'] = '320,50';
+		$config['thumbMaxWidth'] = '480,64';
+		$config['thumbMaxHeight'] = '480,64';
 		$upload = new UploadFile($config);
 		if(!$upload->upload()) {
 			$this->assign([
