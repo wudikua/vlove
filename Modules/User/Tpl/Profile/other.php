@@ -32,164 +32,52 @@
 	</ul>
 	<div class="clear"></div>
 </div>
+<div id="fade" class="black_overlay" onclick="closeImage()"></div>
+<div class="swiper-container" style="width: 100%;top: 10%;display: none;position: fixed;background-color: white;z-index:1002;">
+	<div class="swiper-wrapper">
+		<?php foreach($user['images'] as $image):?>
+			<div class="swiper-slide">
+				<img width="100%" height="100%" class="swiper-lazy" data-src="__PUBLIC__/upload/thumb/m_{$image}" src="__PUBLIC__/upload/thumb/s_{$image}">
+				<div class="swiper-lazy-preloader"></div>
+			</div>
+		<?php endforeach;?>
+	</div>
+	<div class="swiper-pagination"></div>
+
+	<div class="swiper-button-prev"></div>
+	<div class="swiper-button-next"></div>
+
+	<div class="per-pop-close" onclick="closeImage()"></div>
+</div>
+
 <script type="text/javascript">
 	$(function(){
-		$(".swiper-container").css("width", $("body").width()+"px");
-		$(".swiper-container").css("height", $("body").width()/118*120 +"px");
+		$(".swiper-container").css("height", parseInt($("body").css("width"))/118*120 +"px");
 		window.swiper = new Swiper('.swiper-container', {
-			pagination: '.pagination',
+			nextButton: '.swiper-button-next',
+			prevButton: '.swiper-button-prev',
+			pagination: '.swiper-pagination',
 			paginationClickable: true,
-			// Disable preloading of all images
-			updateOnImagesReady: false,
-			// Enable lazy loading
+			speed: 300,
+			preloadImages: false,
 			lazyLoading: true
 		});
-
-		var loginstatus = "1";
-		$("#act_hi").click(function(){ //打招呼
-			if (loginstatus == "0") {
-				goUrl("/wap.php?c=passport&a=login");
-				return false;
-			}
-			else {
-				$.ajax({
-					type: "POST",
-					url: "/wap.php?c=cp_do",
-					cache: false,
-					data: {a:"hi", touid:"162361", r:"1434551482"},
-					dataType: "json",
-					success: function(data) {
-						var json = eval(data);
-						var response = json.response;
-						var result = json.result;
-						if (response == '1') {
-							ToastShow("发送成功");
-						}
-						else {
-							if (result.length > 0) {
-								ToastShow(result);
-							}
-							else {
-								ToastShow("发送失败");
-							}
-						}
-					},
-					error: function() {
-						ToastShow("操作失败，请检查网络状态。");
-					}
-				});
-			}
-		});
-
-
-		$("#act_message").click(function(){ //写信件
-			if (loginstatus == "0") {
-				goUrl("/wap.php?c=passport&a=login");
-				return false;
-			}
-			else {
-				goUrl("/wap.php?c=cp_do&a=writemsg&touid=162361");
-			}
-		});
-
 	});
 
-
-	function addToListen() { //加入关注
-		$.ajax({
-			type: "POST",
-			url: "/wap.php?c=cp_do",
-			cache: false,
-			data: {a:"listen", touid:"162361", r:get_rndnum(8)},
-			dataType: "json",
-			success: function(data) {
-				var json = eval(data);
-				var response = json.response;
-				var result = json.result;
-				if (response == '1') {
-					ToastShow("关注成功");
-					$("#tip_listen").html("<span onclick='cancelListen();'>取消关注</span>");
-				}
-				else {
-					if (result.length > 0) {
-						ToastShow(result);
-					}
-					else {
-						ToastShow("关注失败");
-					}
-				}
-			},
-			error: function() {
-				ToastShow("操作失败，请检查网络状态。");
-			}
-		});
-	}
-
-	function cancelListen() { //取消关注
-		$.ajax({
-			type: "POST",
-			url: "/wap.php?c=cp_do",
-			cache: false,
-			data: {a:"dellisten", touid:"162361", r:"1434551482"},
-			dataType: "json",
-			success: function(data) {
-				var json = eval(data);
-				var response = json.response;
-				var result = json.result;
-				if (response == '1') {
-					ToastShow("取消成功");
-					$("#tip_listen").html("<span onclick='addToListen();'>加关注</span>");
-				}
-				else {
-					if (result.length > 0) {
-						ToastShow(result);
-					}
-					else {
-						ToastShow("取消成功");
-					}
-				}
-			},
-			error: function() {
-				ToastShow("操作失败，请检查网络状态。");
-			}
-		});
-	}
-
 	function viewImage(index) {
-		$('#light').css("display", 'block');
-		$('#fade').css("display", 'block');
+		$('#fade').show();
 		$('#fade').css("height", $("body").height()+ 'px');
-
-		$(".swiper-container").css("display", "block");
-		window.swiper.swipeTo(index, 300);
+		$('.swiper-container').show();
+		window.swiper.update();
+		window.swiper.slideTo(index, 300);
 	}
 
 	function closeImage() {
-		$('#light').css("display", 'none');
-		$('#fade').css("display", 'none');
-		$(".swiper-container").css("display", "none");
+		$('#fade').hide();
+		$(".swiper-container").hide();
 	}
 
 </script>
-
-
-
-<!--//album End-->
-<div id="fade" class="black_overlay" onclick="closeImage()"></div>
-<div id="light" class="white_content">
-	<div class="swiper-container" style="display: none">
-		<div class="swiper-wrapper">
-			<?php foreach($user['images'] as $image):?>
-				<div class="swiper-slide">
-					<img width="100%" height="100%" class="swiper-lazy" data-src="__PUBLIC__/upload/thumb/m_{$image}" src="__PUBLIC__/upload/thumb/m_{$image}">
-				</div>
-			<?php endforeach;?>
-		</div>
-<!--		<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>-->
-		<div class="pagination"></div>
-		<div class="per-pop-close" onclick="closeImage()"></div>
-	</div>
-</div>
 
 <div class="home-data">
 	<div class="home-wrap">
@@ -197,7 +85,7 @@
 		<div class="">
 		<div id="imgs" class="imgs">
 			<?php foreach($user['images'] as $i=>$image):?>
-			<img onclick="viewImage('{$i}')" style="max-width: 88px;max-height: 100px;" src="__PUBLIC__/upload/thumb/s_{$image}" >
+			<img onclick="viewImage('{$i}')" style="width: 64px;height: 64px;" src="__PUBLIC__/upload/thumb/s_{$image}" >
 			<?php endforeach;?>
 		</div>
 	</div>
