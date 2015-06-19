@@ -156,12 +156,6 @@
 	}
 
 	function viewImage(index) {
-//		layer.open({
-//			type: 1,
-//			content: $(".swiper-container").html(),
-//			style: 'background-color: #000;opacity: 0.9;width:'+document.documentElement.clientHeight+'px; height:'+ document.documentElement.clientHeight +'px; border:none;'
-//		});
-
 		$('#light').css("display", 'block');
 		$('#fade').css("display", 'block');
 		$('#fade').css("height", $("body").height()+ 'px');
@@ -187,11 +181,11 @@
 		<div class="swiper-wrapper">
 			<?php foreach($user['images'] as $image):?>
 				<div class="swiper-slide">
-					<img width="100%" height="100%" class="swiper-lazy" data-src="__PUBLIC__/upload/{$image}" src="__PUBLIC__/upload/thumb/m_{$image}">
+					<img width="100%" height="100%" class="swiper-lazy" data-src="__PUBLIC__/upload/thumb/m_{$image}" src="__PUBLIC__/upload/thumb/m_{$image}">
 				</div>
 			<?php endforeach;?>
 		</div>
-		<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+<!--		<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>-->
 		<div class="pagination"></div>
 		<div class="per-pop-close" onclick="closeImage()"></div>
 	</div>
