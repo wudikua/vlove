@@ -43,8 +43,8 @@
 	<ul>
 		<li onclick="goUrl('{:U('Home/Index/index')}');">首页</li>
 		<li onclick="goUrl('{:U('User/Search/index')}');">搜索</li>
-		<li onclick="goUrl('/wap.php?c=cp_message');">信件</li>
-		<li onclick="goUrl('/wap.php?c=cp_buy');">购买</li>
+		<li onclick="goUrl('#');">信件</li>
+		<li onclick="goUrl('#');">购买</li>
 		<?php if ($login):?>
 			<li  onclick="goUrl('{:U('User/Index/index')}')">我的</li>
 		<?php else:?>
