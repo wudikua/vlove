@@ -10,19 +10,19 @@
 		var WAP_APPFILE = "/wap.php";
 		var _ROOT_PATH = "/wap.php";
 	</script>
-	<script src="__PUBLIC__/js/zepto.min.js"></script>
+	<script src="{:version('__PUBLIC__/js/zepto.min.js')}"></script>
 	<script type="text/javascript">
 		var WIN_WIDTH = $(window).width();
 		if ($.browser.mozilla) {
 			WIN_WIDTH = window.screen.width; //兼容Mozilla
 		}
 	</script>
-	<script src="__PUBLIC__/js/iscroll.v4.2.5.js"></script>
-	<script src="__PUBLIC__/js/toast.js"></script>
-	<script src="__PUBLIC__/js/public.js"></script>
-	<link rel="stylesheet" href="__PUBLIC__/style/main.css" />
-	<link rel="stylesheet" href="__PUBLIC__/style/user.css" />
-	<link rel="stylesheet" href="__PUBLIC__/style/append.css" />
+	<script src="{:version('__PUBLIC__/js/iscroll.v4.2.5.js')}"></script>
+	<script src="{:version('__PUBLIC__/js/toast.js')}"></script>
+	<script src="{:version('__PUBLIC__/js/public.js')}"></script>
+	<link rel="stylesheet" href="{:version('__PUBLIC__/style/main.css')}" />
+	<link rel="stylesheet" href="{:version('__PUBLIC__/style/user.css')}" />
+	<link rel="stylesheet" href="{:version('__PUBLIC__/style/append.css')}" />
 </head>
 <body>
 <div id="loading"></div>

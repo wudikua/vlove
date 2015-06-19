@@ -29,6 +29,14 @@ function rage($num) {
 	return "$year".date("md", time());
 }
 
+function version($resource) {
+	$resource = str_replace("__PUBLIC__", "/Public", $resource);
+	if(strpos(dirname(__DIR__).DIRECTORY_SEPARATOR.$resource, '/') !== 0 || !file_exists(dirname(__DIR__).DIRECTORY_SEPARATOR.$resource))
+		return $resource;
+	$mtime = filemtime(dirname(__DIR__).$resource);
+	return preg_replace('{\\.([^./]+)$}', "_$mtime.\$1", $resource);
+}
+
 function constellation($YTD){
 	if ($YTD instanceof MongoDate) {
 		$birthdayDate = $YTD->sec;
