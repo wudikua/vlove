@@ -317,6 +317,20 @@ i {font-style:normal;}
     background:#FC6DA2;border-radius:5px;text-align:center;color:#ffffff;font-size:16px;
 }
 
+.spanbtn2 {
+    margin:0 auto;width:90%;margin-top:5px;
+    display: block;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    background: #f8f8f8;
+    text-align: center;
+    color: #666666;
+    font-size: 16px;
+}
+
 /*---------------------- Button CSS End ----------------------*/
 
 

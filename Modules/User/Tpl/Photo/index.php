@@ -6,7 +6,11 @@
 		<input type="hidden" name="thumbfiles" id="thumbfiles" />
 		<div class="cp-album-upload">
 			<ul>
-				<li>本地照片：<input type="file" name="image" id="fileurl" /></li>
+				<li>
+					<span class="spanbtn2" id="input_file">选择照片</span>
+					<div class="clear"></div>
+					<input type="file" name="image" id="fileurl" style="display: none"/>
+				</li>
 			</ul>
 			<div class="clear"></div>
 
@@ -27,6 +31,13 @@
 					$("#up_tips").html("上传照片");
 				}
 			}
+			$("#input_file").click(function(){ //选择照片
+				$("#fileurl").trigger('click');
+			});
+
+			$("#fileurl").bind("change", function(){ //选择照片后提示
+				$("#input_file").html("已选，重选");
+			});
 			$("#up_tips").click(up_tips);
 			$("#up_tips2").click(up_tips);
 
