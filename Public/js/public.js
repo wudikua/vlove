@@ -151,6 +151,10 @@ function goBackRefresh() {
 
 //home detail 
 function userDetail(uid) {
+    if (uid=="") {
+        alert("报名审核通过后可见")
+        return;
+    }
 	$("#loading").fadeIn(1);
 	window.location.href = window.profileOther+"?uid="+uid;
 }

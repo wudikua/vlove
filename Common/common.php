@@ -132,6 +132,18 @@ class MongoUtil {
 		}
 		return $list;
 	}
+
+	public static function asMap($result, $key) {
+		$map = [];
+		foreach ($result as $kv) {
+			if (!empty($kv) && isset($kv[$key])) {
+				$k = (string)$kv[$key];
+				unset($kv[$key]);
+				$map[$k] = $kv;
+			}
+		}
+		return $map;
+	}
 }
 
 class MongoFactory {

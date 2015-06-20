@@ -47,7 +47,38 @@ class IndexAction extends EventBaseAction {
 
 	public function detail($eid){
 		$event = MongoFactory::table("event")->findOne(["_id"=> new MongoId($eid)]);
+		$rt = MongoFactory::table("event_apply")->find(["eid"=>$eid]);
+		$query = [];
+		// 活动所有申请的人
+		$applys = MongoUtil::asMap($rt, "uid");
+		if (count(array_keys($applys)) > 0) {
+			foreach (array_keys($applys) as $uid) {
+				$query[] = new MongoId($uid);
+			}
+		}
+		$rt = MongoFactory::table("user")->find(["_id"=>['$in'=>$query]], ['_id', 'avatar', 'gender']);
+		$userInfo = MongoUtil::asMap($rt, "_id");
+		$applyFemale = [];
+		$applyMale = [];
+		foreach ($applys as $uid=>$apply) {
+			if (!isset($userInfo[$uid])) {
+				continue;
+			}
+			if ($userInfo[$uid]['gender'] == '1') {
+				$applyMale[$uid] = [
+					'avatar'=>$userInfo[$uid]['avatar']
+				];
+			} else {
+				$applyFemale[$uid] = [
+					'avatar'=>$userInfo[$uid]['avatar']
+				];
+			}
+		}
+
 		$this->assign([
+			"userId"=>$this->userId,
+			"applyFemale"=>$applyFemale,
+			"applyMale"=>$applyMale,
 			"event"=>$event,
 			"login"=>isset($_SESSION['login']),
 			"cur_event"=>"1"
@@ -56,6 +87,13 @@ class IndexAction extends EventBaseAction {
 	}
 
 	public function apply($eid) {
+		$apply = [
+			'eid'=>$eid,
+			'uid'=>$this->userId,
+			'status'=>self::$EVENT_APPLY_WAIT,
+			'time'=>time(),
+		];
+		MongoFactory::table("event_apply")->insert($apply);
 		$this->jump("Index/detail", "申请已经收到，确保个人资料中的联系方式正确，工作人员会联系您", 1000*10);
 	}
 }
