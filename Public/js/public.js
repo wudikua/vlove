@@ -155,7 +155,10 @@ function userDetail(uid) {
 	window.location.href = window.profileOther+"?uid="+uid;
 }
 
-
+function eventDetail(eid) {
+    $("#loading").fadeIn(1);
+    window.location.href = window.eventDetailUrl+"?eid="+eid;
+}
 
 //tabpop position
 /**

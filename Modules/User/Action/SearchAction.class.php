@@ -85,7 +85,6 @@ class SearchAction extends UserLoginAction {
 		import('ORG.Util.Page');
 		$count = MongoFactory::table("user")->find($query)->count();
 		$page = new Page($count);
-//		'prev'=>'< <','next'=>'> >','first'=>'首页','last'=>'尾页','theme'=>'%first% %upPage% %linkPage% %downPage%  %end%'
 		$page->setConfig('prev', '<span onclick="goUrl(\'$url\');\">上一页</span>');
 		$page->setConfig('next', '<span onclick="goUrl(\'$url\');\">下一页</span>');
 		$page->setConfig('theme', '%first% %upPage% %linkPage% %downPage%  %end%');

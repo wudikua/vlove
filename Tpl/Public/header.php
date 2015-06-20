@@ -38,6 +38,7 @@
 	var regArea = "{:U('User/Reg/area')}";
 	var regHometown = "{:U('User/Reg/hometown')}";
 	var profileOther = "{:U('User/Profile/other')}";
+	var eventDetailUrl = "{:U('Event/Index/detail')}";
 </script>
 <div class="navbar-layout">
 	<ul>

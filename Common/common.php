@@ -29,6 +29,15 @@ function rage($num) {
 	return "$year".date("md", time());
 }
 
+function interval2date($begin, $end) {
+	$begin_date = date("n月d日", $begin);
+	$end_date = date("n月d日", $end);
+	if ($begin_date == $end_date) {
+		return $begin_date." ".date("H:i", $begin)."-".date("H:i", $end);
+	}
+	return $begin_date." ".date("H:i", $begin)."-".$begin_date." ".date("H:i", $end);
+}
+
 function version($resource) {
 	$resource = str_replace("__PUBLIC__", "/Public", $resource);
 	if(strpos(dirname(__DIR__).DIRECTORY_SEPARATOR.$resource, '/') !== 0 || !file_exists(dirname(__DIR__).DIRECTORY_SEPARATOR.$resource))

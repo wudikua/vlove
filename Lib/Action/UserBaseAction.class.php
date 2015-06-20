@@ -26,10 +26,11 @@ class UserBaseAction extends BaseAction {
 		session_destroy();
 	}
 
-	public function jump($url, $msg) {
+	public function jump($url, $msg, $timeout=1500) {
 		$this->assign([
 			'msg'=>$msg,
-			'jumpUrl'=>$url
+			'jumpUrl'=>$url,
+			'timeout'=>$timeout,
 		]);
 		$this->display("./Tpl/Public/jump.php");
 		die;

@@ -686,6 +686,23 @@ i {font-style:normal;}
     background-repeat: no-repeat;
 }
 
+.opage_tag {
+    position: absolute;
+    width: 78px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 1px;
+    right: 10px;
+    top: 5;
+    transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+}
 
 .userlist-img {
     border-radius: 5px;

@@ -9,7 +9,7 @@
 			$(function(){
 				setTimeout(function(){
 					window.location.href = "{$jumpUrl}";
-				}, 1500);
+				}, {$timeout});
 			});
 		</script>
 		<span onclick="goUrl('{$jumpUrl}');">如果没有跳转，点击这里。</span>
