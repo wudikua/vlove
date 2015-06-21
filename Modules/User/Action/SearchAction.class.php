@@ -82,6 +82,10 @@ class SearchAction extends UserLoginAction {
 		if ($this->isVip()) {
 			$query = array_merge($query, $this->buildQuery($advFields));
 		}
+		// 一个基础限制是只可以query异性
+		$loginUser = $this->getLoginUser();
+		$query['gender'] = $loginUser['gender'] == '1' ? '0' : '1';
+		// 分页展示
 		import('ORG.Util.Page');
 		$count = MongoFactory::table("user")->find($query)->count();
 		$page = new Page($count);
