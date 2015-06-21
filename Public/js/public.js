@@ -172,8 +172,8 @@ function eventDetail(eid) {
 */
 function tabPopMarginAuto(tabid){
 	$('#'+tabid).css("position","absolute");
-	$('#'+tabid).css("top", Math.max(0, (($(window).height() - $('#'+tabid).outerHeight()) / 2) + $(window).scrollTop()) + "px");
-	$('#'+tabid).css("left", Math.max(0, (($(window).width() - $('#'+tabid).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+	$('#'+tabid).css("top", Math.max(0, (($(window).height() - $('#'+tabid).height()) / 2) + $(window).scrollTop()) + "px");
+	$('#'+tabid).css("left", Math.max(0, (($(window).width() - $('#'+tabid).width()) / 2) + $(window).scrollLeft()) + "px");
 }
 
 /**
@@ -184,7 +184,7 @@ function tabPopMarginAuto(tabid){
 function varPopMarginAuto(tabid){
 	$('#'+tabid).css("position","absolute");
 	$('#'+tabid).css("top", "100px");
-	$('#'+tabid).css("left", Math.max(0, (($(window).width() - $('#'+tabid).outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+	$('#'+tabid).css("left", Math.max(0, (($(window).width() - $('#'+tabid).width()) / 2) + $(window).scrollLeft()) + "px");
 }
 
 
