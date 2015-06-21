@@ -1,10 +1,35 @@
 <include file="./Tpl/Public/header.php" title="首页"/>
+<style>
+	.swiper-pagination-bullet {
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		line-height: 20px;
+		font-size: 12px;
+		color:#000;
+		opacity: 1;
+		background: rgba(0,0,0,0.2);
+	}
+	.swiper-pagination-bullet-active {
+		color:#fff;
+		background: #007aff;
+	}
+</style>
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide"><img src="__PUBLIC__/images/banner1.jpg" alt="" /></div>
+		<div class="swiper-slide"><img src="__PUBLIC__/images/banner2.jpg" alt="" /></div>
+	</div>
+	<!-- Add Pagination -->
+	<div class="swiper-pagination"></div>
+</div>
 <div class="index-user-list-title">
 	<a href="#">
 		<span><i class="spe_txt">今</i>日缘分</span>
 		<span class="arrow_icon fr"></span>
 	</a>
 </div>
+
 <div class="index-user-list">
 	<?php for($i=0; $i<count($users); $i+=3):?>
 	<ul <?php if($i != 0):?>style="margin-top:10px;"<?php endif;?>>
@@ -36,7 +61,14 @@
 	var bigimg_height = (oneheight*2+10);
 	$(".b-li, .b-li-img").css({"width":bigimg_width+"px", "height":bigimg_height+"px"});
 	$(".s-li, .s-li-img").css({"width":onewidth+"px", "height":oneheight+"px"});
-	//alert("小图："+onewidth+"x"+oneheight+"大图："+bigimg_width+"x"+bigimg_height);
+	var swiper = new Swiper('.swiper-container', {
+		pagination: '.swiper-pagination',
+		paginationClickable: true,
+		spaceBetween: 30,
+		centeredSlides: true,
+		autoplay: 300,
+		autoplayDisableOnInteraction: false
+	});
 </script>
 
 <include file="./Tpl/Public/footer.php"/>

@@ -18,6 +18,7 @@ class LoginAction extends UserBaseAction {
 			}
 			// 写登录cookie
 			$this->setLoginSid((string)$rt['_id']);
+			$this->setLoginGender($rt['gender']);
 
 			$this->jump(U("Index/index"), "登录成功");
 		}

@@ -20,9 +20,14 @@ class UserBaseAction extends BaseAction {
 		return $sid;
 	}
 
+	public function setLoginGender($gender) {
+		setcookie('gender', $gender, time() + 3600*24*7, "/");
+	}
+
 	public function removeLoginStatus($id) {
 		MongoFactory::table("user")->update(['_id'=> new MongoId($id)], ['$unset'=> ['sid'=>1]]);
 		setcookie('sid', "", -1, "/");
+		setcookie('gender', "", -1, "/");
 		session_destroy();
 	}
 

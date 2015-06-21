@@ -1,63 +1,3 @@
-/*----------- 支持div滚动条 方式1 touch begin  noBarsOnTouchScreen(divid)---------------*/
-function noBarsOnTouchScreen(arg) {
-	var elem, tx, ty;
-	if('ontouchstart' in document.documentElement ) {
-		if (elem = document.getElementById(arg)) {
-			//elem.style.overflow = 'hidden';
-			elem.ontouchstart = ts;
-			elem.ontouchmove = tm;
-		}
-	}
-
-	function ts(e) {
-		var tch;
-		if(e.touches.length == 1) {
-			e.stopPropagation();
-			tch = e.touches[ 0 ];
-			tx = tch.pageX;
-			ty = tch.pageY;
-		}
-	}
-	function tm(e) {
-		var tch;
-		if (e.touches.length == 1 ) {
-			e.preventDefault();
-			e.stopPropagation();
-			tch = e.touches[ 0 ];
-			this.scrollTop +=  ty - tch.pageY;
-			ty = tch.pageY;
-		}
-	}
-}
-
-
-function isTouchDevice(){
-    try{
-        document.createEvent("TouchEvent");
-        return true;
-    }catch(e){
-        return false;
-    }
-}
-//支持div滚动条 方式2  touchScroll("MyElement");
-function touchScroll(id){
-    if(isTouchDevice()){ //if touch events exist...
-        var el=document.getElementById(id);
-        var scrollStartPos=0;
-
-        document.getElementById(id).addEventListener("touchstart", function(event) {
-            scrollStartPos=this.scrollTop+event.touches[0].pageY;
-            event.preventDefault();
-        },false);
-
-        document.getElementById(id).addEventListener("touchmove", function(event) {
-            this.scrollTop=scrollStartPos-event.touches[0].pageY;
-            event.preventDefault();
-        },false);
-    }
-}
-/*----------- andriod touch end ---------------*/
-
 
 //判断字符长度，一个汉字为2个字符
 function strlen(s){
@@ -294,6 +234,7 @@ function hometownPopup(title, item) {
 		}
 	});
 }
+
 ;(function($){
     var zepto = $.zepto, oldQsa = zepto.qsa, oldMatches = zepto.matches
 

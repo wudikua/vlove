@@ -1,9 +1,5 @@
 <include file="./Tpl/Public/header.php" title="资料"/>
 
-<!--<script src="__PUBLIC__/js/layer.js"></script>-->
-<script src="{:version('__PUBLIC__/js/swiper.js')}"></script>
-<link rel="stylesheet" href="{:version('__PUBLIC__/style/swiper.css')}" />
-
 <div class="home-info-layout">
 	<div class="img-box"><img src="<?php if(strlen($user['avatar'])):?>__PUBLIC__/upload/thumb/s_{$user['avatar']}<?php else:?>__PUBLIC__/images/gender_1.gif<?php endif;?>" /></div>
 	<div class="name-box">
