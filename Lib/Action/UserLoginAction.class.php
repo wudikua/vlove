@@ -11,6 +11,11 @@ class UserLoginAction extends UserBaseAction {
 	 */
 	public $userId;
 
+	/**
+	 * @var array 登录用户的mongo返回对象
+	 */
+	private $loginUser;
+
     public function _initialize() {
 		parent::_initialize();
 		if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
@@ -37,7 +42,10 @@ class UserLoginAction extends UserBaseAction {
 	 * 获取登录用户的详细信息
 	 */
 	public function getLoginUser() {
-		return MongoFactory::table("user")->findOne(['_id'=>new MongoId($this->userId)]);
+		if (!isset($this->loginUser)) {
+			$this->loginUser = MongoFactory::table("user")->findOne(['_id'=>new MongoId($this->userId)]);
+		}
+		return $this->loginUser;
 	}
 
 	/**

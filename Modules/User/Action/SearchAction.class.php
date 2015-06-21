@@ -42,7 +42,8 @@ class SearchAction extends UserLoginAction {
 		$query = [];
 		$user = $this->getLoginUser();
 		foreach ($fields as $field) {
-			if (isset($user[$field]) && strlen($user[$field]) > 0) {
+			// 设置了这个选项，字符串大于0，并且不能是0，因为字段里不会是0，一般0是未填写或者不限
+			if (isset($user[$field]) && strlen($user[$field]) > 0 && !empty($user[$field])) {
 				if ($field == "s_avatar") {
 					// 处理头像
 					$query["avatar"]['$ne'] = "";
@@ -55,11 +56,11 @@ class SearchAction extends UserLoginAction {
 				} else if ($field == "s_age_lt") {
 					// 处理范围
 					$query["birthday"]['$gte'] = rage($user[$field]);
-				} else if ($field == 's_salary') {
+				} else if ($field == 's_salary' || $field == 's_education') {
 					// 处理大于等于
-					$query["salary"]['$gte'] = $user[$field];
+					$query[substr($field, 2, strlen($field))]['$gte'] = $user[$field];
 				} else {
-					$query[strstr($field, "s_")] = $user[$field];
+					$query[substr($field, 2, strlen($field))] = $user[$field];
 				}
 			}
 		}
@@ -84,7 +85,7 @@ class SearchAction extends UserLoginAction {
 		}
 		// 一个基础限制是只可以query异性
 		$loginUser = $this->getLoginUser();
-		$query['gender'] = $loginUser['gender'] == '1' ? '0' : '1';
+		$query['gender'] = $loginUser['gender'] == '1' ? '2' : '1';
 		// 分页展示
 		import('ORG.Util.Page');
 		$count = MongoFactory::table("user")->find($query)->count();
