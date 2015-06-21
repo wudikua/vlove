@@ -52,11 +52,11 @@
 				<div class="clear"></div>
 			</div>
 		</div>
-		<?php if($applys[$userId]['status'] == EventBaseAction::$EVENT_APPLY_WAIT):?>
+		<?php if($myApplyStatus == EventBaseAction::$EVENT_APPLY_WAIT):?>
 			<div class="spanbtn0" style="margin-top:15px;margin-bottom:15px;">已经申请，等待确认</div>
-		<?php elseif($applys[$userId] == EventBaseAction::$EVENT_APPLY_PASS):?>
+		<?php elseif($myApplyStatus == EventBaseAction::$EVENT_APPLY_PASS):?>
 			<div class="spanbtn0" style="margin-top:15px;margin-bottom:15px;">您的活动申请已通过</div>
-		<?php elseif($applys[$userId] == EventBaseAction::$EVENT_APPLY_REJECT):?>
+		<?php elseif($myApplyStatus == EventBaseAction::$EVENT_APPLY_REJECT):?>
 			<div class="spanbtn0" style="margin-top:15px;margin-bottom:15px;">您的活动申请被拒绝</div>
 		<?php elseif($event['status'] == EventBaseAction::$EVENT_STATUS_OPEN):?>
 			<div class="spanbtn0" style="margin-top:15px;margin-bottom:15px;" onclick="goUrl('{:U('Index/apply')}?eid={$event['_id']}');">报名参加</div>

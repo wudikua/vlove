@@ -74,8 +74,15 @@ class IndexAction extends EventBaseAction {
 				];
 			}
 		}
+		// 用户自己对这个活动的状态
+		if (isset($applys[$this->userId])) {
+			$myApplyStatus = $applys[$this->userId]['status'];
+		} else {
+			$myApplyStatus = '0';
+		}
 
 		$this->assign([
+			"myApplyStatus"=>$myApplyStatus,
 			"userId"=>$this->userId,
 			"applyFemale"=>$applyFemale,
 			"applyMale"=>$applyMale,
