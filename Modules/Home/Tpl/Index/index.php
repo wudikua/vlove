@@ -66,7 +66,7 @@
 		paginationClickable: true,
 		spaceBetween: 30,
 		centeredSlides: true,
-		autoplay: 300,
+		autoplay: 3000,
 		autoplayDisableOnInteraction: false
 	});
 </script>
