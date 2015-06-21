@@ -103,8 +103,8 @@ function get_rndnum(n) {
 function popMakerCenter(){
 	//$('.pop-layout').css("display","block");
 	$('.pop-layout').css("position","absolute");
-	$('.pop-layout').css("top", Math.max(0, (($(window).height() - $('.pop-layout').outerHeight()) / 2) + $(window).scrollTop()) + "px");
-	$('.pop-layout').css("left", Math.max(0, (($(window).width() - $('.pop-layout').outerWidth()) / 2) + $(window).scrollLeft()) + "px");
+	$('.pop-layout').css("top", Math.max(0, (($(window).height() - $('.pop-layout').height()) / 2) + $(window).scrollTop()) + "px");
+	$('.pop-layout').css("left", Math.max(0, (($(window).width() - $('.pop-layout').width()) / 2) + $(window).scrollLeft()) + "px");
 }
 
 //popbox close
