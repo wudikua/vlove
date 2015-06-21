@@ -13,7 +13,7 @@
 	<script src="{:version('__PUBLIC__/js/zepto.min.js')}"></script>
 	<script type="text/javascript">
 		var WIN_WIDTH = $(window).width();
-		if ($.browser.mozilla) {
+		if (Zepto.mozilla) {
 			WIN_WIDTH = window.screen.width; //兼容Mozilla
 		}
 	</script>
