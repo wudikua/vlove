@@ -58,6 +58,15 @@ class PhotoAction extends UserLoginAction {
 	}
 
 	public function avatar() {
+		$user = $this->getLoginUser();
+		if (count($user['images']) > 9) {
+			$this->assign([
+				"response"=>1,
+				"msg"=>"一个用户最多上传10张照片",
+			]);
+			$this->display();
+			die;
+		}
 		import('ORG.Net.UploadFile');
 		$config['savePath'] = APP_PATH.'Public/upload/';
 		$config['thumb'] = true;
@@ -94,6 +103,15 @@ class PhotoAction extends UserLoginAction {
 	 * 上传照片
 	 */
 	public function upload() {
+		$user = $this->getLoginUser();
+		if (count($user['images']) > 9) {
+			$this->assign([
+				"response"=>1,
+				"msg"=>"一个用户最多上传10张照片",
+			]);
+			$this->display();
+			die;
+		}
 		import('ORG.Net.UploadFile');
 		$config['savePath'] = APP_PATH.'Public/upload/';
 		$config['thumb'] = true;
@@ -109,6 +127,7 @@ class PhotoAction extends UserLoginAction {
 				"msg"=>$upload->getErrorMsg(),
 			]);
 			$this->display();
+			die;
 		}
 		$info = $upload->getUploadFileInfo();
 		MongoFactory::table("user")->update(
