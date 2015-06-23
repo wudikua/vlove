@@ -2,7 +2,9 @@
 
 <div class="home-data">
 		<div class="home-wrap">
-			<h2>活动介绍</h2>
+			<h2 style="display: inline">活动介绍</h2>
+			<div class="spanbtn0" style="display: inline-block;width: 30%;margin-left: 20px;" onclick="goUrl('{:U('Discuss/index')}?eid=5584f6b8a1a1a18c4a8b456b');">进入讨论组</div>
+
 			<div class="home-itemlist">
 				<ul>
 					<li>时间：<span>{:interval2date($event['start_time'], $event['end_time'])}</span></li>

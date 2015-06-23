@@ -15,7 +15,7 @@
 </div>
 <div class="home-time">
 	最后登录时间：
-	<span onclick="goUrl('/wap.php?c=cp_buy');">特权套餐可见</span>
+	<span>{:date('m-d H:i', $user['login_time'])}</span>
 </div>
 
 <div class="home-tac">

@@ -36,6 +36,7 @@
 	var regHometown = "{:U('User/Reg/hometown')}";
 	var profileOther = "{:U('User/Profile/other')}";
 	var eventDetailUrl = "{:U('Event/Index/detail')}";
+	var postDetailUrl = "{:U('Event/Discuss/detail')}";
 </script>
 <div class="navbar-layout">
 	<ul>

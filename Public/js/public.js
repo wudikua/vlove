@@ -104,6 +104,11 @@ function eventDetail(eid) {
     window.location.href = window.eventDetailUrl+"?eid="+eid;
 }
 
+function postDetail(pid) {
+    $("#loading").fadeIn(1);
+    window.location.href = window.postDetailUrl+"?pid="+pid;
+}
+
 //tabpop position
 /**
  * 层自适应居中
