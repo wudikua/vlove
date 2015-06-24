@@ -1,4 +1,4 @@
-<include file="./Tpl/Public/header.php" title="讨论"/>
+<include file="./Tpl/Public/header.php" title="{$post['title']}"/>
 <div class="cp-layout-body-gray">
 	<div class="item-wrap">
 		<div class="art_tit"><span>标题</span>{$post['title']}</div>
