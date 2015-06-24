@@ -109,4 +109,36 @@ class DiscussAction extends EventBaseAction {
 		$this->display();
 	}
 
+	public function comment($pid, $eid, $replyUid, $content) {
+		$postImage = [];
+		if (!empty($_FILES['image']["name"])) {
+			// 处理图片上传
+			import('ORG.Net.UploadFile');
+			$config['savePath'] = APP_PATH.'Public/upload/';
+			$config['thumb'] = true;
+			$config['thumbType'] = 0;
+			$config['thumbPath'] = APP_PATH.'Public/upload/thumb/';
+			$config['thumbPrefix'] = 'm_,s_';
+			$config['thumbMaxWidth'] = '480,64';
+			$config['thumbMaxHeight'] = '480,64';
+			$upload = new UploadFile($config);
+			if(!$upload->upload()) {
+				$this->jump(U('Discuss/detail')."?pid=$pid", $upload->getErrorMsg());
+			}
+			$info = $upload->getUploadFileInfo();
+			$postImage[] = $info[0]['savename'];
+		}
+		MongoFactory::table("discuss_comment")->insert([
+			'pid'=>$pid,
+			'eid'=>$eid,
+			'uid'=>$this->userId,
+			'replyUid'=>$replyUid,
+			'content'=>$content,
+			'images'=>$postImage,
+			'time'=>time(),
+		]);
+		$this->jump(U('Discuss/detail')."?pid=$pid", "发布成功");
+		die;
+	}
+
 }

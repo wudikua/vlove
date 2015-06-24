@@ -1209,15 +1209,15 @@ i {font-style:normal;}
 .replyBox{ margin: 0 10px 10px; padding: 12px 10px; background-color: #fff; border: 1px solid #ededed;}
 .reBoxLink{ display: block; float: left;}
 .reBoxLink img{ width: 40px; height: 40px; border-radius: 50%; float: left; margin-right: 10px;}
-.reBoxLink p{ width: 180px; height: 23px; font-size: 1.5rem; line-height: 23px; text-overflow:ellipsis; white-space: nowrap; overflow: hidden;}
+.reBoxLink p{width: 180px; height: 23px; font-size: 1.5rem; line-height: 23px; text-overflow:ellipsis; white-space: nowrap; overflow: hidden;}
 .reBoxLink p em{ display: inline-block; width: 25px; height: 14px; color: #fff; background-color: #fc4e4d; border-radius: 2px; font-style: normal; font-size: 0.9rem; text-align: center; line-height: 14px; margin-left: 6px; position: relative; top: -3px;}
 .reBoxLink span{ display: block; line-height: 16px; color: #888;}
 .reBoxLink span i{ display: block; float: left; width: 10px; height: 9px; background-position: 0 -269px; margin-top: 4px; margin-right: 5px;}
 .reBoxBtn{ display: block; float: right; height: 23px; font-size: 1.3rem; color: #888;}
 .reBoxBtn i{ display: block; float: left; margin-right: 5px; width: 10px; height: 9px; background-position: -30px -269px; position: relative; top: 4px;}
 .reBoxText{ font-size: 1.5rem; line-height: 20px; color: #888; margin-top: 10px;}
-.reBoxWho{ font-size: 1.4rem; line-height: 25px; color: #aaaaaa; margin-top: 10px; padding: 7px 10px; background-color: #fff; position: relative;}
-.reBoxWho .quote{ font-size: 1.4rem; line-height: 25px; color: #aaaaaa; margin-top: 10px; padding: 7px 10px; position: relative; background-color:#f8f8f8;}
+.reBoxWho{ overflow:hidden;font-size: 1.4rem; margin-top: 10px; background-color: #fff; position: relative;}
+.reBoxWho .quote{ font-size: 14px; margin-top: 10px; position: relative; background-color:#f8f8f8;}
 .reBoxWho .quote blockquote {background: url(http://bbs.97973.com/static/image/mobile/images/quote.png) bottom right no-repeat;background-size: 14px;}
 
 .reBoxWho i{ display: block; width: 14px; height: 14px; background-position: -65px -269px; position: absolute; right: 10px; bottom: 13px;}
