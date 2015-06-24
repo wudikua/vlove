@@ -3,8 +3,8 @@
 	<div class="item-wrap">
 		<div class="art_tit"><span>标题</span>{$post['title']}</div>
 		<div class="landlord">
-			<a href="javascript:userDetail('{:(string)$post['user']['_id']}');" class="landmsg">
-				<img src="<?php if(strlen($post['user']['avatar'])):?>__PUBLIC__/upload/thumb/s_{$post['user']['avatar']}<?php else:?>__PUBLIC__/images/gender_1.gif<?php endif;?>" style="display: inline; visibility: visible;">
+			<a onclick="javascript:void(0);" class="landmsg">
+				<img onclick="javascript:userDetail('{:(string)$post['user']['_id']}');" src="<?php if(strlen($post['user']['avatar'])):?>__PUBLIC__/upload/thumb/s_{$post['user']['avatar']}<?php else:?>__PUBLIC__/images/gender_1.gif<?php endif;?>" style="display: inline; visibility: visible;">
 				<p>{$post['user']['nickname']}<em>楼主</em></p>
 				<span>
 					浏览：{$post['view']}&nbsp;&nbsp;&nbsp;发布时间：{:date('m-d H:i', $post['time'])}
@@ -23,7 +23,7 @@
 	<div class="replyBox">
 		<div style="overflow: hidden">
 			<a href="javascript:void(0);" class="reBoxLink">
-				<img src="<?php if(strlen($comment['user']['avatar'])):?>__PUBLIC__/upload/thumb/s_{$comment['user']['avatar']}<?php else:?>__PUBLIC__/images/gender_1.gif<?php endif;?>" style="display: inline; visibility: visible;">
+				<img onclick="javascript:userDetail('{$comment['uid']}');" src="<?php if(strlen($comment['user']['avatar'])):?>__PUBLIC__/upload/thumb/s_{$comment['user']['avatar']}<?php else:?>__PUBLIC__/images/gender_1.gif<?php endif;?>" style="display: inline; visibility: visible;">
 				<p> {$comment['user']['nickname']}<em>{++$index}#</em></p>
 				<span>{:date('m-d H:i', $comment['time'])}</span>
 			</a>
