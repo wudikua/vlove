@@ -39,20 +39,22 @@ class DiscussAction extends EventBaseAction {
 		// 评论
 		$rt = MongoFactory::table("discuss_comment")->find(["pid"=>$pid]);
 		$query = [];
-		$comments = MongoUtil::asMap($rt, "uid");
-		if (count(array_keys($comments)) > 0) {
-			foreach (array_keys($comments) as $uid) {
-				$query[] = new MongoId($uid);
+		$comments = MongoUtil::asList($rt);
+		if (count($comments) > 0) {
+			foreach ($comments as $comment) {
+				if (!in_array($comment['uid'], $query)) {
+					$query[] = new MongoId($comment['uid']);
+				}
 			}
 		}
 		$rt = MongoFactory::table("user")->find(["_id"=>['$in'=>$query]], ['_id', 'avatar', 'gender', 'nickname']);
 		$userInfo = MongoUtil::asMap($rt, "_id");
 
-		foreach ($comments as $uid=>&$comment) {
-			if (!isset($userInfo[$uid])) {
+		foreach ($comments as &$comment) {
+			if (!isset($userInfo[$comment['uid']])) {
 				continue;
 			}
-			$comment['user'] = $userInfo[$uid];
+			$comment['user'] = $userInfo[$comment['uid']];
 		}
 
 		$this->assign([
@@ -139,6 +141,20 @@ class DiscussAction extends EventBaseAction {
 		]);
 		$this->jump(U('Discuss/detail')."?pid=$pid", "发布成功");
 		die;
+	}
+
+	public function commentDel($cid, $pid) {
+		$rt = MongoFactory::table("discuss_comment")->remove([
+			'uid'=>$this->userId,
+			'_id'=>new MongoId($cid),
+		], ["justOne"=>true]);
+		if ($rt) {
+			$this->jump(U('Discuss/detail')."?pid=$pid", "删除成功");
+			die;
+		} else {
+			$this->jump(U('Discuss/detail')."?pid=$pid", "权限不足");
+			die;
+		}
 	}
 
 }
