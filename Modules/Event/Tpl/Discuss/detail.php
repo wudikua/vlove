@@ -18,12 +18,12 @@
 		</div>
 	</div>
 	<?php $index=0;?>
-	<?php foreach($comments as $comment):?>
+	<?php foreach($comments as $uid=>$comment):?>
 	<div class="item-wrap">
 	<div class="replyBox">
 		<div style="overflow: hidden">
 			<a href="javascript:void(0);" class="reBoxLink">
-				<img onclick="javascript:userDetail('{$comment['uid']}');" src="<?php if(strlen($comment['user']['avatar'])):?>__PUBLIC__/upload/thumb/s_{$comment['user']['avatar']}<?php else:?>__PUBLIC__/images/gender_1.gif<?php endif;?>" style="display: inline; visibility: visible;">
+				<img onclick="javascript:userDetail('{$uid}');" src="<?php if(strlen($comment['user']['avatar'])):?>__PUBLIC__/upload/thumb/s_{$comment['user']['avatar']}<?php else:?>__PUBLIC__/images/gender_1.gif<?php endif;?>" style="display: inline; visibility: visible;">
 				<p> {$comment['user']['nickname']}<em>{++$index}#</em></p>
 				<span>{:date('m-d H:i', $comment['time'])}</span>
 			</a>
