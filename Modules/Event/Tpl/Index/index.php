@@ -1,5 +1,21 @@
 <include file="./Tpl/Public/header.php" title="活动"/>
+<style>
+	h3 {
+		width: auto;height: 34px;padding: 0 10px;font-size: 1.4rem;font-weight: normal;line-height: 34px;position: relative;color: #797979;border-top: 2px solid #fff;
+	}
+</style>
 <div class="layout-body">
+	<div class="user-list">
+		<h3>
+			吃喝玩乐综合讨论
+		</h3>
+		<div class="spanbtn0" onclick="goUrl('{:U('Discuss/index')}?eid=0');">进入讨论组</div>
+	</div>
+	<div class="user-list">
+		<h3>
+			官方活动
+		</h3>
+	</div>
 	<div class="user-list">
 		<ul id="json_data">
 		<?php if (count($events)==0):?>

@@ -4,7 +4,7 @@ class IndexAction extends BaseAction {
 
     public function index(){
 		$query = [
-			'avatar'=>['$ne'=>""],
+			'avatar'=>['$ne'=>"", '$exists'=>true],
 		];
 		// 匹配相反性别的用户
 		if (isset($_COOKIE['gender'])) {

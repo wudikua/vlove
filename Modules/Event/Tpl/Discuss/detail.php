@@ -3,9 +3,16 @@
 	<div class="item-wrap">
 		<div class="art_tit"><span>标题</span>{$post['title']}</div>
 		<div class="landlord">
+			<?php if ($post['uid'] == $userId):?>
+				<a href="{:U('Discuss/postDel')}?pid={:(string)$post['_id']}" class="reBoxBtn">
+					删除
+				</a>
+			<?php endif;?>
 			<a onclick="javascript:void(0);" class="landmsg">
 				<img onclick="javascript:userDetail('{:(string)$post['user']['_id']}');" src="<?php if(strlen($post['user']['avatar'])):?>__PUBLIC__/upload/thumb/s_{$post['user']['avatar']}<?php else:?>__PUBLIC__/images/gender_1.gif<?php endif;?>" style="display: inline; visibility: visible;">
-				<p>{$post['user']['nickname']}<em>楼主</em></p>
+				<p>
+					{$post['user']['nickname']}<em>楼主</em>
+				</p>
 				<span>
 					浏览：{$post['view']}&nbsp;&nbsp;&nbsp;发布时间：{:date('m-d H:i', $post['time'])}
 				</span>

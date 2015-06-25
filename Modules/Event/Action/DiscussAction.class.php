@@ -20,7 +20,11 @@ class DiscussAction extends EventBaseAction {
 		$rt = MongoFactory::table("discuss_post")->find($query)->skip(intval($page->firstRow))->limit(intval($page->listRows));
 		$posts = MongoUtil::asList($rt);
 		$this->appendUserInfo($posts);
-		$event = MongoFactory::table("event")->findOne(['_id'=>new MongoId($eid)], ['title']);
+		if ($eid != 0) {
+			$event = MongoFactory::table("event")->findOne(['_id'=>new MongoId($eid)], ['title']);
+		} else {
+			$event['title'] = "吃喝玩乐综合讨论区";
+		}
 		$this->assign([
 			'page'=>$page->show(),
 			'event'=>$event,
@@ -141,6 +145,20 @@ class DiscussAction extends EventBaseAction {
 		]);
 		$this->jump(U('Discuss/detail')."?pid=$pid", "发布成功");
 		die;
+	}
+
+	public function postDel($pid) {
+		$rt = MongoFactory::table("discuss_post")->remove([
+			'uid'=>$this->userId,
+			'_id'=>new MongoId($pid),
+		], ["justOne"=>true]);
+		if ($rt) {
+			$this->jump(U('Discuss/detail')."?pid=$pid", "删除成功");
+			die;
+		} else {
+			$this->jump(U('Discuss/detail')."?pid=$pid", "权限不足");
+			die;
+		}
 	}
 
 	public function commentDel($cid, $pid) {
