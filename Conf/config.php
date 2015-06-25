@@ -7,7 +7,7 @@ return array(
     'DB_PREFIX'             => '',    // 数据库表前缀
 
 
-    'APP_GROUP_LIST' => 'Home,Admin,User,Event',
+    'APP_GROUP_LIST' => 'Home,Admin,User,Event,Wechat',
     'DEFAULT_GROUP' => 'Home',
     'APP_GROUP_MODE' => 1,
     'APP_GROUP_PATH' => 'Modules',

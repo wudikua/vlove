@@ -23,11 +23,11 @@ class UserLoginAction extends UserBaseAction {
 		} else {
 			$u = MongoFactory::table("user")->findOne(['sid'=>(string)$_COOKIE['sid']], ['_id']);
 			if (!isset($u['_id'])) {
-				$this->jump(U('Login/index'), "请先登录");
+				$this->jump(U('User/Login/index'), "请先登录");
 			}
 			$this->userId = (string) $u['_id'];
 			if (strlen($this->userId) == 0) {
-				$this->jump(U('Login/index'), "请先登录");
+				$this->jump(U('User/Login/index'), "请先登录");
 			}
 			// 写临时登录态 更新登录时间
 			MongoFactory::table("user")->update(['_id'=> new MongoId($this->userId)],
