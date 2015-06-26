@@ -60,7 +60,9 @@
 	var bigimg_width = (onewidth*2+10);
 	var bigimg_height = (oneheight*2+10);
 	$(".b-li, .b-li-img").css({"width":bigimg_width+"px", "height":bigimg_height+"px"});
+	$(".b-li-img").css("height", "110%");
 	$(".s-li, .s-li-img").css({"width":onewidth+"px", "height":oneheight+"px"});
+	$(".s-li-img").css("height", "110%");
 	var swiper = new Swiper('.swiper-container', {
 		pagination: '.swiper-pagination',
 		paginationClickable: true,

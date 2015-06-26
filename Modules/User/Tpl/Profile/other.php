@@ -33,7 +33,7 @@
 	<div class="swiper-wrapper">
 		<?php foreach($user['images'] as $image):?>
 			<div class="swiper-slide">
-				<img width="100%" height="100%" class="swiper-lazy" data-src="__PUBLIC__/upload/thumb/m_{$image}" src="__PUBLIC__/upload/thumb/s_{$image}">
+				<img width="100%" height="105%" class="swiper-lazy" data-src="__PUBLIC__/upload/thumb/m_{$image}" src="__PUBLIC__/upload/thumb/s_{$image}">
 				<div class="swiper-lazy-preloader"></div>
 			</div>
 		<?php endforeach;?>
