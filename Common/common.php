@@ -127,6 +127,10 @@ class MongoUtil {
 		$list = [];
 		foreach($result as $u) {
 			if (!empty($u)) {
+                if(isset($u['_id'])) {
+                    $key = '$id';
+                    $u['_id'] = $u['_id']->$key;
+                }
 				$list[] = $u;
 			}
 		}
@@ -138,7 +142,7 @@ class MongoUtil {
 		foreach ($result as $kv) {
 			if (!empty($kv) && isset($kv[$key])) {
 				$k = (string)$kv[$key];
-				unset($kv[$key]);
+//				unset($kv[$key]);
 				$map[$k] = $kv;
 			}
 		}

@@ -8,7 +8,7 @@ class ProvinceData {
 					array (
 						1 =>
 							array (
-								'city_name' => '市辖区',
+								'city_name' => '北京',
 								'area' =>
 									array (
 										1 => '东城区',
@@ -47,7 +47,7 @@ class ProvinceData {
 					array (
 						1 =>
 							array (
-								'city_name' => '市辖区',
+								'city_name' => '天津',
 								'area' =>
 									array (
 										1 => '和平区',

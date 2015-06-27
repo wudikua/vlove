@@ -8,7 +8,7 @@
 class UserBaseAction extends BaseAction {
 
     public function _initialize() {
-
+        parent::_initialize();
     }
 
 	public function setLoginSid($id) {

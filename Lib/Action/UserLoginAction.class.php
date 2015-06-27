@@ -11,6 +11,9 @@ class UserLoginAction extends UserBaseAction {
 	 */
 	public $userId;
 
+    public $userName;
+    public $nickName;
+
 	/**
 	 * @var array 登录用户的mongo返回对象
 	 */
@@ -21,7 +24,7 @@ class UserLoginAction extends UserBaseAction {
 		if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
 			$this->userId = $_SESSION['login'];
 		} else {
-			$u = MongoFactory::table("user")->findOne(['sid'=>(string)$_COOKIE['sid']], ['_id']);
+			$u = MongoFactory::table("user")->findOne(['sid'=>(string)$_COOKIE['sid']], ['_id', 'nickname' ,'username']);
 			if (!isset($u['_id'])) {
 				$this->jump(U('User/Login/index'), "请先登录");
 			}
@@ -33,6 +36,8 @@ class UserLoginAction extends UserBaseAction {
 			MongoFactory::table("user")->update(['_id'=> new MongoId($this->userId)],
 				['$set'=> ['login_time'=>time()]]);
 			$_SESSION['login'] = $this->userId;
+            $_SESSION['nickname'] = $u['nickname'] ? $u['nickname'] : $u['username'];
+            $this->nickName = $_SESSION['nickname'];
 		}
 
 		$this->assign("login", true);

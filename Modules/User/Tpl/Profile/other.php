@@ -1,5 +1,4 @@
 <include file="./Tpl/Public/header.php" title="资料"/>
-
 <div class="home-info-layout">
 	<div class="img-box"><img src="<?php if(strlen($user['avatar'])):?>__PUBLIC__/upload/thumb/s_{$user['avatar']}<?php else:?>__PUBLIC__/images/gender_1.gif<?php endif;?>" /></div>
 	<div class="name-box">
@@ -21,7 +20,7 @@
 <div class="home-tac">
 	<ul>
 		<li id="act_hi">打招呼</li>
-		<li id="act_message">写信件</li>
+		<li id="act_message" onclick="goUrl('{:U('msg/send/index')}?uid=<?php $u = '$id'; echo $user['_id']->$u;?>')">写信件</li>
 		<li id="tip_listen" style="border-right:none;">
 			<span onclick="addToListen();">加关注</span>
 		</li>

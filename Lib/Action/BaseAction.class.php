@@ -10,6 +10,7 @@ class BaseAction extends CoreAction {
 
 
     public function _initialize() {
-
+        // 数组操作
+        import('ORG.Util.ArrayMap');
     }
 }
