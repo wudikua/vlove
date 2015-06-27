@@ -33,6 +33,6 @@ class IndexAction extends WechatAction {
 	 */
 	protected function onText() {
 //		$this->responseText("欢迎关注单身吧，本吧定期组织交友活动，点击".self::$host."开始勾搭心仪的对象，和报名活动");
-		$this->responseText("您的资料已经收到，请持续关注本微信");
+//		$this->responseText("您的资料已经收到，请持续关注本微信");
 	}
 }
