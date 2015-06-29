@@ -23,6 +23,7 @@ class UserLoginAction extends UserBaseAction {
 		parent::_initialize();
 		if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
 			$this->userId = $_SESSION['login'];
+            $this->nickName = $_SESSION['nickname'];
 		} else {
 			$u = MongoFactory::table("user")->findOne(['sid'=>(string)$_COOKIE['sid']], ['_id', 'nickname' ,'username']);
 			if (!isset($u['_id'])) {
