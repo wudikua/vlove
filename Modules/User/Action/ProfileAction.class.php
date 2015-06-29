@@ -165,6 +165,7 @@ class ProfileAction extends UserLoginAction {
 		$uid = $this->_get("uid");
 		$this->assign([
 			"user" => MongoFactory::table("user")->findOne(["_id"=>new MongoId($uid)]),
+            "username" => $this->nickName
 		]);
 		$this->display();
 	}

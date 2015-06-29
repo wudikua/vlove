@@ -41,6 +41,7 @@
             success: function(data) {
                 if (data == '1') {
                     alert("发送成功");
+                    history.back();
                 }
                 else {
                     alert("发送失败");
