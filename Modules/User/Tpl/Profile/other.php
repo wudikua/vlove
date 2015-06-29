@@ -21,9 +21,15 @@
 	<ul>
 		<li id="act_hi">打招呼</li>
 		<li id="act_message" onclick="goUrl('{:U('msg/send/index')}?uid=<?php $u = '$id'; echo $user['_id']->$u;?>')">写信件</li>
-		<li id="tip_listen" style="border-right:none;">
+		<?php if($atten) {?>
+            <li style="border-right:none;color: red">
+                <span >已关注</span>
+            </li>
+        <?php }else{?>
+        <li id="tip_listen" style="border-right:none;">
 			<span >加关注</span>
 		</li>
+        <?php }?>
 	</ul>
 	<div class="clear"></div>
 </div>

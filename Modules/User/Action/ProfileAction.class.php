@@ -162,10 +162,11 @@ class ProfileAction extends UserLoginAction {
 	}
 
 	public function other() {
-		$uid = $this->_get("uid");
+		$uid   = $this->_get("uid");
 		$this->assign([
-			"user" => MongoFactory::table("user")->findOne(["_id"=>new MongoId($uid)]),
-            "username" => $this->nickName
+			"user"     => MongoFactory::table("user")->findOne(["_id"=>new MongoId($uid)]),
+            "username" => $this->nickName,
+            "atten"    => AttenModel::isAtten($this->userId, $uid)
 		]);
 		$this->display();
 	}
