@@ -73,8 +73,7 @@
                 success: function(data) {
                     if (data == '1') {
                         alert("发送成功");
-                    }
-                    else {
+                    } else {
                         alert("发送失败");
                     }
                 },
@@ -93,8 +92,9 @@
                 success: function(data) {
                     if (data == '1') {
                         alert("关注成功");
-                    }
-                    else {
+                    } else if(data == 2) {
+                        alert("您已关注");
+                    } else {
                         alert("关注失败");
                     }
                 },

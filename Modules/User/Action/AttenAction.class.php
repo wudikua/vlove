@@ -21,6 +21,10 @@ class AttenAction extends UserLoginAction {
      */
     public function add() {
         $uid = $this->_post('touid');
+        if(AttenModel::isAtten($this->userId, $uid)) {
+            echo 2;exit;
+        }
+
         $userInfo = UserModel::getUserById($uid, ['nickname']);
         $data = [
             'uid'      => $uid,
