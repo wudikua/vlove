@@ -62,7 +62,7 @@
                 type: "POST",
                 url: "{:U('msg/send/send')}",
                 cache: false,
-                data: {touid:<?php echo (string)$user['_id'];?>, content:'hi,我是<?php echo $username;?>,交个朋友吧！', r:get_rndnum(8)},
+                data: {touid:'<?php echo (string)$user['_id'];?>', content:'hi,我是<?php echo $username;?>,交个朋友吧！', r:get_rndnum(8)},
                 dataType: "json",
                 success: function(data) {
                     if (data == '1') {
