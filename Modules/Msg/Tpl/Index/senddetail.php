@@ -28,7 +28,7 @@
         <p><?php echo $result['msg'];?></p>
     </div>
 <?php if($result['type'] == 2){?>
-    <div class="spanbtn0" onclick="goUrl('{:U('msg/send/index')}?uid=<?php echo $result['userid'];?>')">回复</div>
+    <div class="spanbtn0" onclick="goUrl('<?php echo U('msg/send/index') . '?uid=' . $result['userid'];?>')">回复</div>
 <?php } ?>
     <div class="spanbtn0" onclick="history.back();">返回上一页</div>
     <div class="hr-b"></div>

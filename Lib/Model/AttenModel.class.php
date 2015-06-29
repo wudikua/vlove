@@ -34,6 +34,15 @@ class AttenModel extends  MongoFactory {
         return MongoFactory::table(self::$TABLE)->findOne(['_id' => new MongoId($id)]);
     }
 
+
+    /**
+     * @param $uid 用户id
+     * @param $userid 我关注的id
+     */
+    public static function isAtten($uid, $userid) {
+        return MongoFactory::table(self::$TABLE)->findOne(['uid' => $uid, 'userid' => $userid]);
+    }
+
     /**
      * @brief 删除
      * @param $id

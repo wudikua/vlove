@@ -22,7 +22,7 @@ class SendAction extends UserLoginAction {
     public function send() {
         $uid = $this->_post('touid');
         $content = $this->_post('content');
-        $userInfo = UserModel::getUserById($uid,['nickname']);
+        $userInfo = UserModel::getUserById($uid,['nickname' , 'username']);
         $data = [
             'uid'      => $uid,
             'userid'   => $this->userId,
@@ -36,7 +36,7 @@ class SendAction extends UserLoginAction {
         $data1 = [
             'uid'      => $this->userId,
             'userid'   => $uid,
-            'username' => $userInfo['nickname'],
+            'username' => $userInfo['nickname'] ? $userInfo['nickname'] : $userInfo['username'],
             'type'     => 1,
             'msg'      => $content,
             'read'     => 0,

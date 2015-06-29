@@ -21,9 +21,15 @@
 	<ul>
 		<li id="act_hi">打招呼</li>
 		<li id="act_message" onclick="goUrl('{:U('msg/send/index')}?uid=<?php $u = '$id'; echo $user['_id']->$u;?>')">写信件</li>
-		<li id="tip_listen" style="border-right:none;">
-			<span onclick="addToListen();">加关注</span>
+		<?php if($atten) {?>
+            <li style="border-right:none;color: red">
+                <span >已关注</span>
+            </li>
+        <?php }else{?>
+        <li id="tip_listen" style="border-right:none;">
+			<span >加关注</span>
 		</li>
+        <?php }?>
 	</ul>
 	<div class="clear"></div>
 </div>
@@ -62,14 +68,34 @@
                 type: "POST",
                 url: "{:U('msg/send/send')}",
                 cache: false,
-                data: {touid:<?php echo (string)$user['_id'];?>, content:'hi,我是<?php echo $username;?>,交个朋友吧！', r:get_rndnum(8)},
+                data: {touid:'<?php echo (string)$user['_id'];?>', content:'hi,我是<?php echo $username;?>,交个朋友吧！', r:get_rndnum(8)},
                 dataType: "json",
                 success: function(data) {
                     if (data == '1') {
                         alert("发送成功");
-                    }
-                    else {
+                    } else {
                         alert("发送失败");
+                    }
+                },
+                error: function() {
+                    alert("操作失败，请检查网络状态。");
+                }
+            });
+        });
+        $("#tip_listen").click(function(){
+            $.ajax({
+                type: "POST",
+                url: "{:U('user/atten/add')}",
+                cache: false,
+                data: {touid:'<?php echo (string)$user['_id'];?>', r:get_rndnum(8)},
+                dataType: "json",
+                success: function(data) {
+                    if (data == '1') {
+                        alert("关注成功");
+                    } else if(data == 2) {
+                        alert("您已关注");
+                    } else {
+                        alert("关注失败");
                     }
                 },
                 error: function() {
