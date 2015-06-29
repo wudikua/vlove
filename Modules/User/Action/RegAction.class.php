@@ -117,6 +117,9 @@ class RegAction extends UserBaseAction {
 			foreach ($fields as $f) {
 				$data[$f] = $this->_post($f);
 			}
+			if (!isset($data['nickname'])) {
+				$data['nickname'] = $data['username'];
+			}
 			$rt = MongoFactory::table("user")->insert($data);
 			$this->ajaxReturn([
 				"response"=>1,
