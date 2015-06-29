@@ -57,6 +57,26 @@
 			preloadImages: false,
 			lazyLoading: true
 		});
+        $("#act_hi").click(function(){
+            $.ajax({
+                type: "POST",
+                url: "{:U('msg/send/send')}",
+                cache: false,
+                data: {touid:touid, content:'hi,我是<?php echo $username;?>,交个朋友吧！', r:get_rndnum(8)},
+                dataType: "json",
+                success: function(data) {
+                    if (data == '1') {
+                        alert("发送成功");
+                    }
+                    else {
+                        alert("发送失败");
+                    }
+                },
+                error: function() {
+                    alert("操作失败，请检查网络状态。");
+                }
+            });
+        });
 	});
 
 	function viewImage(index) {
