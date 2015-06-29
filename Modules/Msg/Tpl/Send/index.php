@@ -41,7 +41,7 @@
             success: function(data) {
                 if (data == '1') {
                     alert("发送成功");
-                    userDetail(touid);
+                    goBack();
                 } else {
                     alert("发送失败");
                 }

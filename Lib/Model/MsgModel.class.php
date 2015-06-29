@@ -8,7 +8,7 @@
 class MsgModel extends  MongoFactory {
 
 
-    public static $TABLE = 'mssage';
+    public static $TABLE = 'message';
 
     // type：1.我发送的msg,2.发送给我的msg。、
     // read:0.未读,1.阅读,
