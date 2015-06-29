@@ -28,7 +28,7 @@ $rt = $curl->post(
 	'https://api.douban.com/v2/group/topic/76947624/delete_comment?udid=07a7d18a9f38be8932ed1a41fad89391ded77aae',
 	[
 		'reason'=>'',
-		'comment_id'=>$rt['id']
+		'comment_id'=>$rt->id
 	]
 );
 echo json_encode($rt).PHP_EOL;
