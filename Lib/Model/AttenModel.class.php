@@ -48,10 +48,9 @@ class AttenModel extends  MongoFactory {
      * @param $id
      * @return bool
      */
-    public static function del($id) {
+    public static function del($uid, $userid) {
         return self::table(self::$TABLE)->remove(
-            ["_id"  => new MongoId($id), "type" => 1],
-            ['$set' => ['del' => 1]]
+            ['$or' => [['uid' => $uid, 'userid' => $userid],['uid' => $userid, 'userid' => $uid]]]
         );
     }
 
@@ -68,8 +67,8 @@ class AttenModel extends  MongoFactory {
      * @param $limit
      * @return MongoCursor
      */
-    public static function getAttenByUid($uid, $offset, $limit) {
-        return self::_getList(['uid' => $uid, 'type' => 2], $offset, $limit);
+    public static function getMyAttenByUid($uid, $offset, $limit) {
+        return self::_getList(['uid' => $uid, 'type' => 1], $offset, $limit);
     }
 
     /**
@@ -79,7 +78,7 @@ class AttenModel extends  MongoFactory {
      * @param $limit
      * @return MongoCursor
      */
-    public static function getFansByUid($uid, $offset, $limit) {
-        return self::_getList(['uid' => $uid, 'type' => 2, 'read' => 1,'del' => 0], $offset, $limit);
+    public static function getMyFansByUid($uid, $offset, $limit) {
+        return self::_getList(['uid' => $uid, 'type' => 2], $offset, $limit);
     }
 }
