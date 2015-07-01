@@ -38,6 +38,18 @@
 	var eventDetailUrl = "{:U('Event/Index/detail')}";
 	var postDetailUrl = "{:U('Event/Discuss/detail')}";
 </script>
+<style>
+.notify-circle {
+    background-color: #00E2FF;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 1.5rem;
+    display: inline-block;
+    position: absolute;
+    right: 0.7rem;
+    top: 0.7rem;
+}
+</style>
 <div class="navbar-layout">
 	<ul>
 		<li <?php if($cur_home):?>class="cur"<?php endif;?> onclick="goUrl('{:U('Home/Index/index')}');">首页</li>
@@ -45,8 +57,9 @@
 		<li <?php if($cur_search):?>class="cur"<?php endif;?> onclick="goUrl('{:U('User/Search/index')}');">搜索</li>
 		<li onclick="goUrl('{:U('msg/index/index')}');">消息</li>
 		<?php if ($login):?>
-			<li <?php if($cur_user):?>class="cur"<?php endif;?>  onclick="goUrl('{:U('User/Index/index')}')">我的</li>
-		<?php else:?>
+			<li <?php if($cur_user):?>class="cur"<?php endif;?>  onclick="goUrl('{:U('User/Index/index')}')">我的<?php if($attention){?><div class="notify-circle"></div><?php }?></li>
+
+        <?php else:?>
 		<li <?php if($cur_user):?>class="cur"<?php endif;?>  onclick="goUrl('{:U('User/Login/index')}')">登录</li>
 		<?php endif;?>
 	</ul>
