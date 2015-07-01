@@ -124,7 +124,6 @@ class RegAction extends UserBaseAction {
 			if (!isset($data['nickname'])) {
 				$data['nickname'] = $data['username'];
 			}
-            //
             $data['create_time'] = time();
             $data['login_time']  = time();
 			$data['email']       = "";
