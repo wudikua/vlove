@@ -6,10 +6,6 @@
 	<div class="reg-wrap">
 		<h2>会员帐号信息 必填</h2>
 		<div class="reg-itemlist">
-			<dl id="li_email">
-				<dt>邮 箱：</dt>
-				<dd><input type="text" id="email" name="email" placeholder="输入有效邮箱" class="input" onblur="checkEmail();" /></dd>
-			</dl>
 			<dl id="li_username">
 				<dt>用户名：</dt>
 				<dd><input type="text" id="username" name="username" placeholder="输入用户名称" class="input" onblur="checkUserName();" /></dd>
@@ -89,11 +85,6 @@
 $(function(){
 
 	$("#btn_post").click(function(){ //提交 下一步
-		var email = $("#email").val();
-		if (email == "") {
-			ToastShow("请填写邮箱");
-			return false;
-		}
 
 		var username = $("#username").val();
 		if (username == "") {

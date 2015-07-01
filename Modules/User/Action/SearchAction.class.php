@@ -4,7 +4,11 @@ class SearchAction extends UserLoginAction {
 	private function updateField($fields) {
 		$update = [];
 		foreach ($fields as $f) {
-			$update[$f] = $this->_post($f);
+			if ($this->_post($f) == "undefined") {
+				$update[$f] = "0";
+			} else {
+				$update[$f] = $this->_post($f);
+			}
 		}
 		MongoFactory::table("user")->update(['_id'=>new MongoId($this->userId)],
 			['$set'=> $update]

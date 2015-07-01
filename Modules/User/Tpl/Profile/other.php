@@ -151,18 +151,6 @@
 		</div>
 	</div>
 
-	<div class="home-wrap">
-		<h2>联系方式</h2>
-		<div class="home-itemlist">
-<!--			<p style="padding:10px;text-align:center;">互相点赞可见</p>-->
-			<ul>
-				<li>微信：<span>{$user['wechat']}</span></li>
-				<li style="border-bottom:none;">QQ：<span>{$user['qq']}</span></li>
-			</ul>
-			<div class="clear"></div>
-		</div>
-		<div class="clear"></div>
-	</div>
 
 	<div class="home-wrap">
 		<h2>基本资料</h2>

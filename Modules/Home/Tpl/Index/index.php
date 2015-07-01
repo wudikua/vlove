@@ -17,8 +17,8 @@
 </style>
 <div class="swiper-container">
 	<div class="swiper-wrapper">
-		<div class="swiper-slide"><img width="100%" src="__PUBLIC__/images/banner1.jpg" alt="" /></div>
-		<div class="swiper-slide"><img width="100%" src="__PUBLIC__/images/banner2.jpg" alt="" /></div>
+		<div class="swiper-slide"><img width="100%" src="__PUBLIC__/images/banner1.gif" alt="" /></div>
+		<div class="swiper-slide"><img width="100%" src="__PUBLIC__/images/banner2.gif" alt="" /></div>
 	</div>
 	<!-- Add Pagination -->
 	<div class="swiper-pagination"></div>

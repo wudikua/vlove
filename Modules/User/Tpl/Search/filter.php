@@ -52,7 +52,7 @@
 				<select name='s_age_lt' id='s_age_lt'>
 					<option value=''>=不限=</option>
 					<?php for($i =18;$i<50; $i++):?>
-						<option value='{$i}' <?php if($user['req_age_lt'] == $i):?>selected<?php endif;?>>{$i}岁</option>
+						<option value='{$i}' <?php if($user['s_age_lt'] == $i):?>selected<?php endif;?>>{$i}岁</option>
 					<?php endfor;?>
 				</select> 岁
 			</dd>
