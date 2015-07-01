@@ -107,7 +107,7 @@ class RegAction extends UserBaseAction {
 	private function innerReg() {
 		try {
 			$fields = [
-				'email', 'username', 'password', //登录信息
+				'username', 'password', //登录信息
 				'dist1', 'dist2', 'dist3',		 //区域信息
 				'gender', 'birthday',
 				'marrystatus', 'education', 'height', 'weight',
