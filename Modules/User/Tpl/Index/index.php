@@ -77,7 +77,7 @@
 					ToastShow("请选择要上传的头像");
 					return false;
 				}
-				if(!/.(gif|jpg|jpeg|png)$/.test(file_val)){
+				if(!/.(gif|jpg|jpeg|png)$/i.test(file_val)){
 					ToastShow("头像格式不正确");
 					return false;
 				}
