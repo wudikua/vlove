@@ -113,9 +113,9 @@
 		}
 	</script>
 
-	<div class="cp-data-tips">
-		可用金币：<font color="green">0.00</font>
-	</div>
+<!--	<div class="cp-data-tips">-->
+<!--		可用金币：<font color="green">0.00</font>-->
+<!--	</div>-->
 </div>
 
 
