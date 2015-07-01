@@ -115,11 +115,16 @@ class RegAction extends UserBaseAction {
 			];
 			$data = [];
 			foreach ($fields as $f) {
-				$data[$f] = $this->_post($f);
+				if ($this->_post($f) == "undefined") {
+					$data[$f] = "0";
+				} else {
+					$data[$f] = $this->_post($f);
+				}
 			}
 			if (!isset($data['nickname'])) {
 				$data['nickname'] = $data['username'];
 			}
+			$data['email'] = "";
 			$rt = MongoFactory::table("user")->insert($data);
 			$this->ajaxReturn([
 				"response"=>1,
@@ -128,7 +133,7 @@ class RegAction extends UserBaseAction {
 		} catch (Exception $e) {
 			$this->ajaxReturn([
 				"response"=>0,
-				"result"=>"服务器错误",
+				"result"=>"服务器错误 ".$e->getMessage(),
 			]);
 		}
 	}
