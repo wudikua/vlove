@@ -96,6 +96,7 @@
                     if (data == '1') {
                         alert("关注成功");
                         $("#tip_listen").css('color', 'red');
+                        $("#tip_listen").find('span').html('已关注');
                     } else if(data == 2) {
                         alert("您已关注");
                     } else {
