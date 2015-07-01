@@ -19,10 +19,14 @@
 	<div class="swiper-wrapper">
 		<div class="swiper-slide">
 			<a href="{:U('Home/Index/push')}">
-				<img width="100%" src="__PUBLIC__/images/banner1.gif" alt="" />
+				<img width="100%" src="__PUBLIC__/images/banner1.jpg" alt="" />
 			</a>
 		</div>
-		<div class="swiper-slide"><img width="100%" src="__PUBLIC__/images/banner2.gif" alt="" /></div>
+		<div class="swiper-slide">
+			<a href="{:U('Event/Index/index')}">
+				<img width="100%" src="__PUBLIC__/images/banner2.jpg" alt="" />
+			</a>
+		</div>
 	</div>
 	<!-- Add Pagination -->
 	<div class="swiper-pagination"></div>
@@ -106,7 +110,7 @@
 		paginationClickable: true,
 		spaceBetween: 30,
 		centeredSlides: true,
-		autoplay: 3000,
+		autoplay: 5000,
 		autoplayDisableOnInteraction: false
 	});
 </script>
