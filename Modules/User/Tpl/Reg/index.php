@@ -158,7 +158,7 @@ $(function(){
 			url: "{:U('Reg/index')}",
 			cache: false,
 			data: {
-				email:email, username:username, password:password,
+				username:username, password:password,
 				dist1:dist1, dist2:dist2, dist3:dist3, gender:gender, birthday:birthday,
 				marrystatus:marrystatus, education:education, height:height, weight:weight,
 				lovesort:lovesort, salary:salary, mobile:mobile, qq:qq, idnumber:idnumber, r:get_rndnum(8)

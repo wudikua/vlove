@@ -171,4 +171,9 @@ class ProfileAction extends UserLoginAction {
 		$this->display();
 	}
 
+	public function push() {
+		$redis = new Redis();
+		$redis->zAdd("wx_push_list", time(), $this->userId);
+		$this->jump(U("Home/Index/index"), "您的申请已经收到，我们确认后会进行推送");
+	}
 }

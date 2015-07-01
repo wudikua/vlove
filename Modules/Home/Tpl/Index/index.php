@@ -17,7 +17,11 @@
 </style>
 <div class="swiper-container">
 	<div class="swiper-wrapper">
-		<div class="swiper-slide"><img width="100%" src="__PUBLIC__/images/banner1.gif" alt="" /></div>
+		<div class="swiper-slide">
+			<a href="{:U('Home/Index/push')}">
+				<img width="100%" src="__PUBLIC__/images/banner1.gif" alt="" />
+			</a>
+		</div>
 		<div class="swiper-slide"><img width="100%" src="__PUBLIC__/images/banner2.gif" alt="" /></div>
 	</div>
 	<!-- Add Pagination -->

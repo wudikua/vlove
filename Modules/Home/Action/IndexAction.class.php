@@ -23,4 +23,11 @@ class IndexAction extends BaseAction {
 		]);
         $this->display();
     }
+
+	/**
+	 * 申请推送到微信公众平台
+	 */
+	public function push() {
+		$this->display();
+	}
 }
