@@ -53,6 +53,7 @@
 
 <script type="text/javascript">
 	$(function(){
+        var flag = true;
 		$(".swiper-container").css("height", parseInt($("body").css("width"))/118*120 +"px");
 		window.swiper = new Swiper('.swiper-container', {
 			nextButton: '.swiper-button-next',
@@ -83,6 +84,8 @@
             });
         });
         $("#tip_listen").click(function(){
+            if(!flag) return false;
+            flag = false;
             $.ajax({
                 type: "POST",
                 url: "{:U('user/atten/add')}",
@@ -92,9 +95,11 @@
                 success: function(data) {
                     if (data == '1') {
                         alert("关注成功");
+                        $("#tip_listen").css('color', 'red');
                     } else if(data == 2) {
                         alert("您已关注");
                     } else {
+                        flag = true;
                         alert("关注失败");
                     }
                 },
