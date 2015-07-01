@@ -73,8 +73,8 @@ class PhotoAction extends UserLoginAction {
 		$config['thumbType'] = 0;
 		$config['thumbPath'] = APP_PATH.'Public/upload/thumb/';
 		$config['thumbPrefix'] = 'm_,s_';
-		$config['thumbMaxWidth'] = '480,64';
-		$config['thumbMaxHeight'] = '480,64';
+		$config['thumbMaxWidth'] = '480,100';
+		$config['thumbMaxHeight'] = '480,*';
 		$upload = new UploadFile($config);
 		if(!$upload->upload()) {
 			$this->assign([
