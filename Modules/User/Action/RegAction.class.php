@@ -124,13 +124,16 @@ class RegAction extends UserBaseAction {
 			if (!isset($data['nickname'])) {
 				$data['nickname'] = $data['username'];
 			}
-			$data['email'] = "";
+            //
+            $data['create_time'] = time();
+            $data['login_time']  = time();
+			$data['email']       = "";
 			$g = new Guid();
 			$sid = $g->toString();
 			$data['sid'] = $sid;
 			setcookie('sid', $sid, time() + 3600*24*7, "/");
 			setcookie('gender', $data['gender'], time() + 3600*24*7, "/");
-			MongoFactory::table("user")->insert($data);
+			$rt = MongoFactory::table("user")->insert($data);
 			$this->ajaxReturn([
 				"response"=>1,
 				"result"=>"",

@@ -16,9 +16,13 @@ class IndexAction extends BaseAction {
 		$users = array_merge($users, $users);
 		$users = array_merge($users, $users);
 		$users = array_merge($users, $users);
+
+        // 首页最新注册用户
+        $new = UserModel::getNewUsers(6);
 		$this->assign([
 			"login"=>isset($_SESSION['login']),
 			"users"=>array_slice($users, 0, 6),
+            "new"  => $new,
 			"cur_home"=>"1"
 		]);
         $this->display();
