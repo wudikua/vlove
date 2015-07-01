@@ -76,4 +76,13 @@ class UserModel extends MongoFactory{
         }
         return $result;
     }
+
+
+    /**
+     * @brief 获取最新注册的用户
+     */
+    public static function getNewUsers($limit = 10) {
+        $result = MongoFactory::table(self::$TABLE)->find()->sort(['create_time' => -1])->limit(intval($limit));
+        return MongoUtil::asList($result);
+    }
 }

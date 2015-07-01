@@ -53,6 +53,38 @@
 	<div class="clear"></div>
 	<?php endfor;?>
 </div>
+
+
+<div class="index-user-list-title">
+    <a href="#">
+        <span>新用户</span>
+        <span class="arrow_icon fr"></span>
+    </a>
+</div>
+
+<div class="index-user-list">
+        <ul style="margin-top:10px;">
+            <?php for($i=0; $i<2; $i++){?>
+                <li class="s-li" <?php if ($i==1){?>
+                    style="margin-left: 10px; margin-right: 10px; width: 124px; height: 152px;"
+                  onclick="userDetail('{:(string)$new[$i]['_id']}');">
+                    <img class="s-li-img" src="<?php if(strlen($new[$i]['avatar'])){?>__PUBLIC__/upload/thumb/m_{$new[$i]['avatar']}<?php }else{?>__PUBLIC__/images/gender_1.gif<?php }?>" />
+                </li>
+            <?php }?>
+        </ul>
+        <div class="clear"></div>
+
+    <ul style="margin-top:10px;">
+        <?php for($i=3; $i<6; $i++){?>
+        <li class="s-li" <?php if ($i==4){?>
+            style="margin-left: 10px; margin-right: 10px; width: 124px; height: 152px;"
+            onclick="userDetail('{:(string)$new[$i]['_id']}');">
+            <img class="s-li-img" src="<?php if(strlen($new[$i]['avatar'])){?>__PUBLIC__/upload/thumb/m_{$new[$i]['avatar']}<?php }else{?>__PUBLIC__/images/gender_1.gif<?php }?>" />
+        </li>
+    <?php }?>
+    </ul>
+    <div class="clear"></div>
+</div>
 <script type="text/javascript">
 	//var scWidth = $(window).width();
 	scWidth = parseInt($(".index-user-list").css('width')) - 5;
