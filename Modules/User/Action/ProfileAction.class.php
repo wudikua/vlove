@@ -173,6 +173,7 @@ class ProfileAction extends UserLoginAction {
 
 	public function push() {
 		$redis = new Redis();
+		$redis->connect('localhost');
 		$redis->zAdd("wx_push_list", time(), $this->userId);
 		$redis->hSet("user_push_requirement", $this->userId, $this->_post('content'));
 		$this->jump(U("Home/Index/index"), "您的申请已经收到，我们确认后会进行推送");
