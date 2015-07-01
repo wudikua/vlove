@@ -131,7 +131,7 @@
 	<div class="cp-index-bar" style="margin-top:20px;">
 		<ul>
 			<li onclick="goUrl('{:U('Profile/req')}');"><i class="mob_pro_09"></i>择偶要求</li>
-            <li onclick="goUrl('{:U('atten/index')}');"><i class="mob_pro_09"></i>我的关注</li>
+            <li onclick="goUrl('{:U('atten/index')}');"><i class="mob_pro_07"></i>我的关注</li>
 		</ul>
 		<div class="clear"></div>
 	</div>
