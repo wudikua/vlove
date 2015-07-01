@@ -26,7 +26,7 @@ class IndexAction extends UserLoginAction {
             $data['list'] = MsgModel::getReceiveUnreadMsgByUid($this->userId, 0, 50);
         }
 
-        $data['list'] = $this->_formatData($data['list']);
+        $data['list'] = $this->getUserInfo($data['list']);
         $this->assign($data);
         $this->display();
     }
@@ -38,7 +38,7 @@ class IndexAction extends UserLoginAction {
     public function send() {
         // 发件箱
         $data['list'] = MsgModel::getSendMsgByUid($this->userId, 0, 50);
-        $data['list'] = $this->_formatData($data['list']);
+        $data['list'] = $this->getUserInfo($data['list']);
         $this->assign($data);
         $this->display();
 
@@ -48,28 +48,10 @@ class IndexAction extends UserLoginAction {
         $mid = $this->_get('mid');
         $result = MsgModel::getById($mid);
         MsgModel::read($mid);
-        $result = $this->_formatData([$result]);
+        $result = $this->getUserInfo([$result]);
         $this->assign('nickname',$this->nickName);
         $this->assign('result',$result[0]);
         $this->display();
     }
 
-    private function _formatData($data) {
-        $userIds = [];
-        foreach($data as $value) {
-            array_push($userIds, $value['userid']);
-        }
-        if($userIds) {
-            $usersInfo = UserModel::getUserByIds($userIds, ['username', 'marrystatus' ,
-                'birthday' , 'dist1' ,'dist2' ,'dist3', 'avatar', 'gender', 'education']);
-            $usersInfo = MongoUtil::asMap($usersInfo, '_id');
-            foreach($data as &$msg) {
-                $info = $usersInfo[$msg['userid']];
-                $msg['fromuser'] = $info;
-                $msg['fromuser']['city'] = ProvinceData::$data[$info['dist1']]['city'][$info['dist2']]['city_name'];
-                $msg['fromuser']['area'] = ProvinceData::$data[$info['dist1']]['city'][$info['dist2']]['area'][$info['dist3']];
-            }
-        }
-        return $data;
-    }
 }

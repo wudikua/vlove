@@ -60,4 +60,29 @@ class UserLoginAction extends UserBaseAction {
 	public function isVip() {
 		return true;
 	}
+
+
+    /**
+     * @brief 通过用户id查询 用户相信信息
+     * @param $data
+     * @return mixed
+     */
+    public function getUserInfo($data) {
+        $userIds = [];
+        foreach($data as $value) {
+            array_push($userIds, $value['userid']);
+        }
+        if($userIds) {
+            $usersInfo = UserModel::getUserByIds($userIds, ['username', 'marrystatus' ,
+                'birthday' , 'dist1' ,'dist2' ,'dist3', 'avatar', 'gender', 'education']);
+            $usersInfo = MongoUtil::asMap($usersInfo, '_id');
+            foreach($data as &$msg) {
+                $info = $usersInfo[$msg['userid']];
+                $msg['fromuser'] = $info;
+                $msg['fromuser']['city'] = ProvinceData::$data[$info['dist1']]['city'][$info['dist2']]['city_name'];
+                $msg['fromuser']['area'] = ProvinceData::$data[$info['dist1']]['city'][$info['dist2']]['area'][$info['dist3']];
+            }
+        }
+        return $data;
+    }
 }
