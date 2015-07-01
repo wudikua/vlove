@@ -221,14 +221,14 @@ class Image {
             $imageFun = 'image' . ($type == 'jpg' ? 'jpeg' : $type);
 			switch ($type) {
 				case 'png':
-					$imageFun($thumbImg, $thumbname, 90);
+					$imageFun($thumbImg, $thumbname, 100);
 					break;
 				case 'jpg':
 				case 'jpeg':
-					$imageFun($thumbImg, $thumbname, 95);
+					$imageFun($thumbImg, $thumbname, 100);
 					break;
 				default:
-					$imageFun($thumbImg, $thumbname,95);
+					$imageFun($thumbImg, $thumbname,100);
 			}
             imagedestroy($thumbImg);
             imagedestroy($srcImg);
