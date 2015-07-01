@@ -69,7 +69,7 @@
                     style="margin-left: 10px; margin-right: 10px; width: 124px; height: 152px;"
                     <?php }?>
                   onclick="userDetail('{:(string)$new[$i]['_id']}');">
-                    <img class="s-li-img" src="<?php if(strlen($new[$i]['avatar'])){?>__PUBLIC__/upload/thumb/m_{$new[$i]['avatar']}<?php }else{?>__PUBLIC__/images/gender_1.gif<?php }?>" />
+                    <img class="s-li-img" src="<?php if(strlen($new[$i]['avatar'])){?>__PUBLIC__/upload/thumb/m_<?php echo $new[$i]['avatar'];}else{?>__PUBLIC__/images/gender_1.gif<?php }?>" />
                 </li>
             <?php }?>
         </ul>
@@ -81,7 +81,7 @@
             style="margin-left: 10px; margin-right: 10px; width: 124px; height: 152px;"
         <?php }?>
             onclick="userDetail('{:(string)$new[$i]['_id']}');">
-            <img class="s-li-img" src="<?php if(strlen($new[$i]['avatar'])){?>__PUBLIC__/upload/thumb/m_{$new[$i]['avatar']}<?php }else{?>__PUBLIC__/images/gender_1.gif<?php }?>" />
+            <img class="s-li-img" src="<?php if(strlen($new[$i]['avatar'])){?>__PUBLIC__/upload/thumb/m_<?php echo $new[$i]['avatar'];}else{?>__PUBLIC__/images/gender_1.gif<?php }?>" />
         </li>
     <?php }?>
     </ul>
