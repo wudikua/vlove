@@ -124,8 +124,10 @@ class RegAction extends UserBaseAction {
 			if (!isset($data['nickname'])) {
 				$data['nickname'] = $data['username'];
 			}
+            //
             $data['create_time'] = time();
-			$data['email'] = "";
+            $data['login_time']  = time();
+			$data['email']       = "";
 			$rt = MongoFactory::table("user")->insert($data);
 			$this->ajaxReturn([
 				"response"=>1,
