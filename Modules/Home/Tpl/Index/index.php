@@ -64,7 +64,7 @@
 
 <div class="index-user-list">
         <ul style="margin-top:10px;">
-            <?php for($i=0; $i<2; $i++){?>
+            <?php for($i=0; $i<3; $i++){?>
                 <li class="s-li" <?php if ($i==1){?>
                     style="margin-left: 10px; margin-right: 10px; width: 124px; height: 152px;"
                     <?php }?>
