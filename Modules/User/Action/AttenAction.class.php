@@ -25,7 +25,7 @@ class AttenAction extends UserLoginAction {
             echo 2;exit;
         }
 
-        $userInfo = UserModel::getUserById($uid, ['nickname']);
+        $userInfo = UserModel::getUserById($uid, ['nickname', 'username']);
         $data = [
             'uid'      => $uid,
             'userid'   => $this->userId,
@@ -36,7 +36,7 @@ class AttenAction extends UserLoginAction {
         $data1 = [
             'uid'      => $this->userId,
             'userid'   => $uid,
-            'username' => $userInfo['nickname'],
+            'username' => $userInfo['nickname'] ? $userInfo['nickname'] : $userInfo['username'],
             'type'     => 1,
             'create_time' => time(),
         ];
