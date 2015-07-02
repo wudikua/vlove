@@ -15,9 +15,9 @@ class UserModel extends MongoFactory{
     // uid
     // from uid|name发送者
     public static $FIELD =  [
-        'email', 'username', 'password', //登录信息
+        'email', 'username', 'password', 'nickname',//登录信息
         'dist1', 'dist2', 'dist3',       //区域信息
-        'gender', 'birthday','avatar',
+        'gender', 'birthday','avatar', "images",
         'marrystatus', 'education', 'height', 'weight',
         'lovesort', 'salary', 'mobile', 'qq', 'idnumber',
 		'wgateid', 'wg_openid', 'wg_city', 'wg_province', 'wg_country',
