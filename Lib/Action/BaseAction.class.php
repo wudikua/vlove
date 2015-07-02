@@ -42,7 +42,12 @@ class BaseAction extends CoreAction {
 			// 微信Oauth没获取到性别，这不知道概率有多大
 			$data['gender'] = '0';
 		}
-		$data['nickname'] = (string)$user['nickname'];
+		$data['username'] = (string)$user['wgateid'];
+		$data['wgateid'] = (string)$user['wgateid'];
+		$data['wg_openid'] = (string)$user['wg_openid'];
+		$data['wg_city'] = (string)$user['wg_city'];
+		$data['wg_province'] = (string)$user['wg_province'];
+		$data['wg_country'] = (string)$user['wg_country'];
 		import('ORG.Net.UploadFile');
 		$config['savePath'] = APP_PATH.'Public/upload/';
 		$config['thumb'] = true;
