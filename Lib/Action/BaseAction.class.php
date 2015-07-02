@@ -14,7 +14,7 @@ class BaseAction extends CoreAction {
         import('ORG.Util.ArrayMap');
 		// 微信之门登录
 		if (isset($_REQUEST['wgateid'])) {
-			$u = MongoFactory::table("user")->findOne(['wgateid'=>$_REQUEST['wgateid']], ['_id', 'nickname' ,'username']);
+			$u = MongoFactory::table("user")->findOne(['wgateid'=>$_REQUEST['wgateid']], ['_id', 'nickname' ,'username', 'sid']);
 			if (!isset($u['_id'])) {
 				// 获取Oauth信息，用户注册
 				$user = UserModel::getWeChatGateOAuthInfo();
@@ -23,9 +23,19 @@ class BaseAction extends CoreAction {
 				}
 				$this->wgateRegister($user);
 			} else {
-				// 微信之门登录成功，写自己登录系统的sid
-				setcookie('sid', $u['sid'], time() + 3600*24*7, "/");
-				$_COOKIE['sid'] = (string)$u['sid'];
+				if (!isset($u['sid'])) {
+					// 这种是推出登录了会删除sid 所以微信之门登录的时候有用户但是sid是空的，还得重新生成一遍
+					$g = new Guid();
+					$sid = $g->toString();
+					MongoFactory::table("user")->update(['_id'=> $u['_id']],
+						['$set'=> ['sid'=>$sid]]);
+					setcookie('sid', $sid, time() + 3600*24*7, "/");
+					$_COOKIE['sid'] = $sid;
+				} else {
+					// 微信之门登录成功，写自己登录系统的sid
+					setcookie('sid', $u['sid'], time() + 3600*24*7, "/");
+					$_COOKIE['sid'] = (string)$u['sid'];
+				}
 			}
 		}
     }
