@@ -65,7 +65,5 @@ class BaseAction extends CoreAction {
 		setcookie('sid', $sid, time() + 3600*24*7, "/");
 		$_COOKIE['sid'] = $sid;
 		$rt = UserModel::add($data);
-		var_dump($rt);
-		var_dump($data);die;
 	}
 }

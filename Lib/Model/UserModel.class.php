@@ -21,7 +21,8 @@ class UserModel extends MongoFactory{
         'marrystatus', 'education', 'height', 'weight',
         'lovesort', 'salary', 'mobile', 'qq', 'idnumber',
 		'wgateid', 'wg_openid', 'wg_city', 'wg_province', 'wg_country',
-		'create_time', 'login_time'
+		'create_time', 'login_time',
+		'sid' //登录态
     ];
 
     /**
