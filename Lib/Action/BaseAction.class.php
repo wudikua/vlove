@@ -35,6 +35,10 @@ class BaseAction extends CoreAction {
 		$data['create_time'] = time();
 		$data['login_time']  = time();
 		$data['email']       = "";
+		$data['birthday'] = "";
+		$data['dist1'] = "";
+		$data['dist2'] = "";
+		$data['dist3'] = "";
 		$data['nickname'] = $user['nickname'];
 		if ($user['sex'] == '1' || $user['sex'] == '2') {
 			$data['gender'] = (string)$user['sex'];
