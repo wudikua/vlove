@@ -2,6 +2,7 @@
 <div class="cp-layout-body-gray">
 	<div class="item-wrap">
 		<div class="art_tit">关于申请微信公众平台群发</div>
+		<h6 style="padding: 0px 10px;margin: 10px 0px">申请成功后会被推送到微信公众账号wxdanshenba群发</h6>
 	</div>
 	<div class="item-wrap">
 		<div class="replyBox">
