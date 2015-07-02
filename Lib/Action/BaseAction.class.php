@@ -35,7 +35,7 @@ class BaseAction extends CoreAction {
 		$data['create_time'] = time();
 		$data['login_time']  = time();
 		$data['email']       = "";
-		$data['birthday'] = "";
+		$data['birthday'] = date('Ymd', time());
 		$data['dist1'] = "";
 		$data['dist2'] = "";
 		$data['dist3'] = "";
