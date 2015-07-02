@@ -1,4 +1,6 @@
 <?php
+// 类改了名字，临时Fix找不到类的问题
+require_once __ROOT__."/ThinkPHP/Lib/Core/Action.class.php";
 /**
  * Created by PhpStorm.
  * User: zzq
