@@ -42,12 +42,12 @@ class BaseAction extends CoreAction {
 			// 微信Oauth没获取到性别，这不知道概率有多大
 			$data['gender'] = '0';
 		}
-		$data['username'] = (string)$user['wgateid'];
-		$data['wgateid'] = (string)$user['wgateid'];
-		$data['wg_openid'] = (string)$user['wg_openid'];
-		$data['wg_city'] = (string)$user['wg_city'];
-		$data['wg_province'] = (string)$user['wg_province'];
-		$data['wg_country'] = (string)$user['wg_country'];
+		$data['username'] = $_REQUEST['wgateid'];
+		$data['wgateid'] = $_REQUEST['wgateid'];
+		$data['wg_openid'] = (string)$user['openid'];
+		$data['wg_city'] = (string)$user['city'];
+		$data['wg_province'] = (string)$user['province'];
+		$data['wg_country'] = (string)$user['country'];
 		import('ORG.Net.UploadFile');
 		$config['savePath'] = APP_PATH.'Public/upload/';
 		$config['thumb'] = true;
@@ -64,6 +64,8 @@ class BaseAction extends CoreAction {
 		$data['sid'] = $sid;
 		setcookie('sid', $sid, time() + 3600*24*7, "/");
 		$_COOKIE['sid'] = $sid;
-		UserModel::add($data);
+		$rt = UserModel::add($data);
+		var_dump($rt);
+		var_dump($data);die;
 	}
 }
