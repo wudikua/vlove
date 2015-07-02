@@ -25,6 +25,7 @@ class UserLoginAction extends UserBaseAction {
 			$this->userId = $_SESSION['login'];
             $this->nickName = $_SESSION['nickname'];
 		} else {
+			// 自己平台的sid登录
 			$u = MongoFactory::table("user")->findOne(['sid'=>(string)$_COOKIE['sid']], ['_id', 'nickname' ,'username']);
 			if (!isset($u['_id'])) {
 				$this->jump(U('User/Login/index'), "请先登录");

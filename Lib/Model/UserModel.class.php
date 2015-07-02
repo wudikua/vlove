@@ -19,7 +19,9 @@ class UserModel extends MongoFactory{
         'dist1', 'dist2', 'dist3',       //区域信息
         'gender', 'birthday','avatar',
         'marrystatus', 'education', 'height', 'weight',
-        'lovesort', 'salary', 'mobile', 'qq', 'idnumber'
+        'lovesort', 'salary', 'mobile', 'qq', 'idnumber',
+		'wgateid', 'wg_openid', 'wg_city', 'wg_province', 'wg_country',
+		'create_time', 'login_time'
     ];
 
     /**
@@ -85,4 +87,12 @@ class UserModel extends MongoFactory{
         $result = MongoFactory::table(self::$TABLE)->find()->sort(['create_time' => -1])->limit(intval($limit));
         return MongoUtil::asList($result);
     }
+
+	/**
+	 * 通过微信之门获取用户的OAuth信息 http://www.weixingate.com/index.php
+	 */
+	public static function getWeChatGateOAuthInfo() {
+		$ret = json_decode(file_get_contents("http://www.weixingate.com/wgate_user.php?wgateid={$_REQUEST['wgateid']}"), true);
+		return $ret;
+	}
 }

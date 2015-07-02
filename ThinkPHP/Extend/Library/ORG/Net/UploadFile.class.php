@@ -10,6 +10,50 @@
 // +----------------------------------------------------------------------
 
 /**
+ * 从URL下载JPG图片，自动生成图片文件名
+ * Class UrlUploadFile
+ */
+class UrlUploadFile extends UploadFile {
+	public function saveRemote($url) {
+		import($this->imageClassPath);
+		$g = new Guid();
+		$picId = $g->toString();
+		$filename = $this->savePath."$picId.jpg";
+		$extension = substr($filename, strrpos($filename, ".")+1);
+		$imageData = file_get_contents("$url");
+		file_put_contents($filename, $imageData);
+		$image =  getimagesize($filename);
+		if(false !== $image) {
+			//是图像文件生成缩略图
+			$thumbWidth		=	explode(',',$this->thumbMaxWidth);
+			$thumbHeight	=	explode(',',$this->thumbMaxHeight);
+			$thumbPrefix	=	explode(',',$this->thumbPrefix);
+			$thumbSuffix    =   explode(',',$this->thumbSuffix);
+			$thumbFile		=	explode(',',$this->thumbFile);
+			$thumbPath      =   $this->thumbPath?$this->thumbPath:dirname($filename).'/';
+			$thumbExt       =   $this->thumbExt ? $this->thumbExt : $extension; //自定义缩略图扩展名
+			// 生成图像缩略图
+			for($i=0,$len=count($thumbWidth); $i<$len; $i++) {
+				if(!empty($thumbFile[$i])) {
+					$thumbname  =   $thumbFile[$i];
+				}else{
+					$prefix     =   isset($thumbPrefix[$i])?$thumbPrefix[$i]:$thumbPrefix[0];
+					$suffix     =   isset($thumbSuffix[$i])?$thumbSuffix[$i]:$thumbSuffix[0];
+					$thumbname  =   $prefix.basename($filename,'.'.$extension).$suffix;
+				}
+				if(1 == $this->thumbType){
+					Image::thumb2($filename,$thumbPath.$thumbname.'.'.$thumbExt,'',$thumbWidth[$i],$thumbHeight[$i],true);
+				}else{
+					Image::thumb($filename,$thumbPath.$thumbname.'.'.$thumbExt,'',$thumbWidth[$i],$thumbHeight[$i],true);
+				}
+
+			}
+		}
+		return substr($filename, strrpos($filename, "/") + 1);
+	}
+}
+
+/**
  * 文件上传类
  * @category   ORG
  * @package  ORG
