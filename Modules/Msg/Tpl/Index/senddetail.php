@@ -7,7 +7,7 @@
             <img src="<?php if(strlen($result['fromuser']['avatar'])){?>__PUBLIC__/upload/thumb/s_<?php echo $result['fromuser']['avatar'];?><?php }else{?>__PUBLIC__/images/gender_1.gif<?php } ?>" />
         </div>
         <div class="cp-data-info">
-            <h2><b><?php echo $result['fromuser']['username'];?></b>(<?php if($result['type'] == 2){echo '发';}else{echo '收';}?>件人)</h2>
+            <h2><b><?php echo $result['fromuser']['nickname'];?></b>(<?php if($result['type'] == 2){echo '发';}else{echo '收';}?>件人)</h2>
             <ul>
                 <li>
                     <?php echo ProfileConst::$gender[$result['fromuser']['gender']];?>  <?php echo age($result['fromuser']['birthday']);?> 岁 <?php echo ProfileConst::$marrystatus[$result['fromuser']['marrystatus']];?>
