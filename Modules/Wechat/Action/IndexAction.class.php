@@ -23,7 +23,7 @@ class IndexAction extends WechatAction {
 	 */
 	protected function onSubscribe() {
 //		$this->responseText("欢迎关注单身吧，本吧定期组织交友活动，点击".self::$host."开始勾搭心仪的对象，和报名活动");
-		$this->responseText("欢迎关注单身吧，本吧定期组织单身交友活动。本号汇聚海量单身资源，进入http://wap.datougou.cn/gate.php编辑好个人资料，可以搜索别的人，参加活动等");
+		$this->responseText("<a href='http://wap.datougou.cn/gate.php'>欢迎关注单身吧，本吧定期组织单身交友活动，点击链接查看更多用户。编辑个人资料，可以搜索别的人，参加活动等</a>");
 	}
 
 	/**
