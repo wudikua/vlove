@@ -10,7 +10,7 @@
             <h2><b><?php echo $result['username'];?></b>(<?php if($result['type'] == 2){echo '发';}else{echo '收';}?>件人)</h2>
             <ul>
                 <li>
-                    <?php if($result['gender'] == 1){echo '男';}else{echo '女';}?>  <?php echo (intval(date('Y')) - intval($result['fromuser']['birthday']/10000));?> 岁 <?php if($result['fromuser']['marrystatus']==1){echo '未婚';}else{echo '已婚';}?>
+                    <?php echo ProfileConst::$gender[$result['gender']];?>  <?php echo age($result['fromuser']['birthday']);?> 岁 <?php ProfileConst::$marrystatus[$result['fromuser']['marrystatus']];?>
                 </li>
                 <li>
                     <?php echo $result['fromuser']['city'] . '  ' .$result['fromuser']['area'];?>

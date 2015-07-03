@@ -18,7 +18,7 @@
                             <h2>
                                 <span><?php echo date('m/d H:i', $value['create_time']);?></span>
                                 <b> <?php echo $value['username'];?></b></h2>
-                            <p><?php echo (intval(date('Y')) - intval($value['fromuser']['birthday']/10000));?>岁 <?php if($value['fromuser']['marrystatus']==1){echo '未婚';}else{echo '已婚';}?> <?php echo $value['fromuser']['city'] . '  ' .$value['fromuser']['area'];?></p>
+                            <p><?php echo age($value['fromuser']['birthday']);?>岁 <?php echo ProfileConst::$marrystatus[$value['fromuser']['marrystatus']];?> <?php echo $value['fromuser']['city'] . '  ' .$value['fromuser']['area'];?></p>
                         </div>
                         <div class="clear"></div>
                     </li>
