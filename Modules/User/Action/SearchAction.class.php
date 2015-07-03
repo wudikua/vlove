@@ -97,7 +97,7 @@ class SearchAction extends UserLoginAction {
 		$page->setConfig('prev', '<span onclick="goUrl(\'$url\');\">上一页</span>');
 		$page->setConfig('next', '<span onclick="goUrl(\'$url\');\">下一页</span>');
 		$page->setConfig('theme', '%first% %upPage% %downPage%');
-		$rt = MongoFactory::table("user")->find($query)->skip(intval($page->firstRow))->limit(intval($page->listRows));
+		$rt = MongoFactory::table("user")->find($query)->sort(['login_time' => -1])->skip(intval($page->firstRow))->limit(intval($page->listRows));
 		$users = MongoUtil::asList($rt);
 		$this->assign([
 			'page'=>$page->show(),
