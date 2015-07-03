@@ -60,7 +60,7 @@
 
 
 <div class="index-user-list-title">
-    <a href="#">
+    <a href="{:U('Home/new/index')}">
         <span>新用户</span>
         <span class="arrow_icon fr"></span>
     </a>
