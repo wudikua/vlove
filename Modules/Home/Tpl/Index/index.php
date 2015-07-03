@@ -59,8 +59,8 @@
 </div>
 
 
-<div class="index-user-list-title">
-    <a href="{:U('Home/new/index')}">
+<div class="index-user-list-title" onclick="goUrl('{:U('Home/new/index')}');">
+    <a href="#">
         <span>新用户</span>
         <span class="arrow_icon fr"></span>
     </a>
