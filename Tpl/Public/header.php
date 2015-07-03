@@ -55,7 +55,7 @@
 		<li <?php if($cur_home):?>class="cur"<?php endif;?> onclick="goUrl('{:U('Home/Index/index')}');">首页</li>
 		<li <?php if($cur_event):?>class="cur"<?php endif;?> onclick="goUrl('{:U('Event/Index/index')}');">活动</li>
 		<li <?php if($cur_search):?>class="cur"<?php endif;?> onclick="goUrl('{:U('User/Search/index')}');">搜索</li>
-		<li onclick="goUrl('{:U('msg/index/index')}');">消息</li>
+		<li <?php if($cur_msg):?>class="cur"<?php endif;?> onclick="goUrl('{:U('msg/index/index')}');">消息</li>
 		<?php if (strlen($_SESSION['login'])):?>
 			<li <?php if($cur_user):?>class="cur"<?php endif;?>  onclick="goUrl('{:U('User/Index/index')}')">我的<?php if($attention){?><div class="notify-circle"></div><?php }?></li>
 

@@ -8,6 +8,7 @@ class IndexAction extends UserLoginAction {
     public function _initialize() {
         $this->offset = (int)$this->_get('offset');
         $this->limit  = (int)$this->_get('limit') > 0 ? (int)$this->_get('limit') : $this->limit;
+        $this->assign('cur_msg', true);
         parent::_initialize();
     }
 
