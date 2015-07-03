@@ -17,7 +17,7 @@ class DiscussAction extends EventBaseAction {
 		$page->setConfig('prev', '<span onclick="goUrl(\'$url\');\">上一页</span>');
 		$page->setConfig('next', '<span onclick="goUrl(\'$url\');\">下一页</span>');
 		$page->setConfig('theme', '%first% %upPage% %linkPage% %downPage%  %end%');
-		$rt = MongoFactory::table("discuss_post")->find($query)->skip(intval($page->firstRow))->limit(intval($page->listRows));
+		$rt = MongoFactory::table("discuss_post")->find($query)->sort(["time"=>-1])->skip(intval($page->firstRow))->limit(intval($page->listRows));
 		$posts = MongoUtil::asList($rt);
 		$this->appendUserInfo($posts);
 		if ($eid != 0) {

@@ -31,6 +31,26 @@
 	<!-- Add Pagination -->
 	<div class="swiper-pagination"></div>
 </div>
+<?php if (count($posts)>0):?>
+<div class="index-user-list-title" onclick="goUrl('{:U('Event/Discuss/index')}?eid=0');">
+	<a>
+		<span><i class="spe_txt">综</i>合讨论</span>
+		<span class="arrow_icon fr"></span>
+	</a>
+</div>
+
+<div class="index-user-list" >
+	<ul class="news_items">
+		<?php foreach($posts as $post):?>
+			<li onclick="postDetail('{:(string)$post['_id']}');">
+				<a>{$post['title']}</a>
+			</li>
+		<?php endforeach;?>
+	</ul>
+	<div class="clear"></div>
+</div>
+<?php endif;?>
+
 <div class="index-user-list-title">
 	<a href="#">
 		<span><i class="spe_txt">今</i>日缘分</span>
