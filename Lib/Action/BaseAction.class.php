@@ -21,24 +21,32 @@ class BaseAction extends CoreAction {
 				if (!$user) {
 					return;
 				}
+				$u = MongoFactory::table("user")->findOne(['wg_openid'=>$user['openid']], ['_id', 'nickname' ,'username', 'sid']);
+				if (isset($u['_id'])) {
+					$this->wgateLogin($u);
+				}
 				$this->wgateRegister($user);
 			} else {
-				if (!isset($u['sid'])) {
-					// 这种是推出登录了会删除sid 所以微信之门登录的时候有用户但是sid是空的，还得重新生成一遍
-					$g = new Guid();
-					$sid = $g->toString();
-					MongoFactory::table("user")->update(['_id'=> $u['_id']],
-						['$set'=> ['sid'=>$sid]]);
-					setcookie('sid', $sid, time() + 3600*24*7, "/");
-					$_COOKIE['sid'] = $sid;
-				} else {
-					// 微信之门登录成功，写自己登录系统的sid
-					setcookie('sid', $u['sid'], time() + 3600*24*7, "/");
-					$_COOKIE['sid'] = (string)$u['sid'];
-				}
+				$this->wgateLogin($u);
 			}
 		}
     }
+
+	private function wgateLogin($u) {
+		if (!isset($u['sid'])) {
+			// 这种是推出登录了会删除sid 所以微信之门登录的时候有用户但是sid是空的，还得重新生成一遍
+			$g = new Guid();
+			$sid = $g->toString();
+			MongoFactory::table("user")->update(['_id'=> $u['_id']],
+				['$set'=> ['sid'=>$sid]]);
+			setcookie('sid', $sid, time() + 3600*24*7, "/");
+			$_COOKIE['sid'] = $sid;
+		} else {
+			// 微信之门登录成功，写自己登录系统的sid
+			setcookie('sid', $u['sid'], time() + 3600*24*7, "/");
+			$_COOKIE['sid'] = (string)$u['sid'];
+		}
+	}
 
 	private function wgateRegister($user) {
 		$data = [];
