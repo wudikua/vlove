@@ -51,37 +51,9 @@
 </div>
 <?php endif;?>
 
-<div class="index-user-list-title">
-	<a href="#">
-		<span><i class="spe_txt">今</i>日缘分</span>
-		<span class="arrow_icon fr"></span>
-	</a>
-</div>
-
-<div class="index-user-list">
-	<?php for($i=0; $i<count($users); $i+=3):?>
-	<ul <?php if($i != 0):?>style="margin-top:10px;"<?php endif;?>>
-		<?php for($j=$i; $j<count($users) && $j<$i+3; $j++):?>
-		<li <?php if ($j==1):?>
-			style="margin-bottom: 10px; width: 124px; height: 152px;"
-			<?php elseif($j%3==1):?>
-			style="margin-left: 10px; margin-right: 10px; width: 124px; height: 152px;"
-			<?php endif;?> class="<?php if($j == 0):?>b-li<?php else:?>s-li<?php endif;?>" onclick="userDetail('{:(string)$users[$j]['_id']}');">
-			<img class="<?php if($j == 0):?>b-li-img<?php else:?>s-li-img<?php endif;?>" src="<?php if(strlen($users[$j]['avatar'])):?>__PUBLIC__/upload/thumb/m_{$users[$j]['avatar']}<?php else:?>__PUBLIC__/images/gender_1.gif<?php endif;?>" />
-			<?php if($j==0):?>
-			<p>{$users[$j]['nickname']}|{:age($users[$j]['birthday'])}岁|{$users[$j]['height']}</p>
-			<?php endif;?>
-		</li>
-		<?php endfor;?>
-	</ul>
-	<div class="clear"></div>
-	<?php endfor;?>
-</div>
-
-
 <div class="index-user-list-title" onclick="goUrl('{:U('Home/new/index')}');">
     <a href="#">
-        <span>新用户</span>
+		<span><i class="spe_txt">新</i>用户</span>
         <span class="arrow_icon fr"></span>
     </a>
 </div>
@@ -111,6 +83,34 @@
     </ul>
     <div class="clear"></div>
 </div>
+
+<div class="index-user-list-title">
+	<a href="#">
+		<span><i class="spe_txt">今</i>日缘分</span>
+		<span class="arrow_icon fr"></span>
+	</a>
+</div>
+
+<div class="index-user-list">
+	<?php for($i=0; $i<count($users); $i+=3):?>
+		<ul <?php if($i != 0):?>style="margin-top:10px;"<?php endif;?>>
+			<?php for($j=$i; $j<count($users) && $j<$i+3; $j++):?>
+				<li <?php if ($j==1):?>
+					style="margin-bottom: 10px; width: 124px; height: 152px;"
+				<?php elseif($j%3==1):?>
+					style="margin-left: 10px; margin-right: 10px; width: 124px; height: 152px;"
+				<?php endif;?> class="<?php if($j == 0):?>b-li<?php else:?>s-li<?php endif;?>" onclick="userDetail('{:(string)$users[$j]['_id']}');">
+					<img class="<?php if($j == 0):?>b-li-img<?php else:?>s-li-img<?php endif;?>" src="<?php if(strlen($users[$j]['avatar'])):?>__PUBLIC__/upload/thumb/m_{$users[$j]['avatar']}<?php else:?>__PUBLIC__/images/gender_1.gif<?php endif;?>" />
+					<?php if($j==0):?>
+						<p>{$users[$j]['nickname']}|{:age($users[$j]['birthday'])}岁|{$users[$j]['height']}</p>
+					<?php endif;?>
+				</li>
+			<?php endfor;?>
+		</ul>
+		<div class="clear"></div>
+	<?php endfor;?>
+</div>
+
 <script type="text/javascript">
 	//var scWidth = $(window).width();
 	scWidth = parseInt($(".index-user-list").css('width')) - 5;
