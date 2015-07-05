@@ -3,9 +3,11 @@
 <div class="reg-layout">
 <!--	<div class="spanbtn0" id="reg_btn">我没有账号</div>-->
 <!--	<div class="spanbtn0" id="bind_btn">我已经有账号</div>-->
-	<h1>为了您的账号安全，我们现在需要对微信自动登陆用户进行账号绑定</h1>
+	<h1 style="line-height: 19px;">为了您的账号安全，<br>
+		我们现在需要对微信自动登陆用户进行账号绑定。<br>
+		微信用户绑定账号的作用，除了可以用微信登陆，<br>
+		还可以在浏览器用账号密码登陆<br></h1>
 	<div class="reg-wrap" id="reg_form" >
-		<h2>微信用户绑定账号的作用，除了可以用微信登陆，还可以在浏览器用账号密码登陆</h2>
 		<div class="reg-itemlist">
 			<dl id="reg_li_username">
 				<dt>用户名：</dt>

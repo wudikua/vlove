@@ -189,7 +189,7 @@
 			return false;
 		}
 
-		if ($("#jobs").val() == "") {
+		if ($("#job").val() == "") {
 			ToastShow("请选择职业");
 			return false;
 		}

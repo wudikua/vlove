@@ -70,7 +70,7 @@ class UserLoginAction extends UserBaseAction {
 		if (!isset($user['birthday']) || strlen($user['birthday']) == 0) {
 			return false;
 		}
-		if (!isset($user['jobs']) || strlen($user['jobs']) == 0) {
+		if (!isset($user['job']) || strlen($user['job']) == 0) {
 			return false;
 		}
 		if (!isset($user['height']) || strlen($user['height']) == 0) {
