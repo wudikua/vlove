@@ -1,8 +1,59 @@
-<include file="./Tpl/Public/header.php" title="修改基本资料"/>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>完善基本资料</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<script src="{:version('__PUBLIC__/js/zepto.min.js')}"></script>
+	<script type="text/javascript">
+		var WIN_WIDTH = $(window).width();
+		if (Zepto.mozilla) {
+			WIN_WIDTH = window.screen.width; //兼容Mozilla
+		}
+	</script>
+	<script src="{:version('__PUBLIC__/js/toast.js')}"></script>
+	<script src="{:version('__PUBLIC__/js/public.js')}"></script>
+	<script src="{:version('__PUBLIC__/js/swiper.js')}"></script>
+	<link rel="stylesheet" href="{:version('__PUBLIC__/style/swiper.css')}" />
+	<link rel="stylesheet" href="{:version('__PUBLIC__/style/main.css')}" />
+	<link rel="stylesheet" href="{:version('__PUBLIC__/style/user.css')}" />
+	<link rel="stylesheet" href="{:version('__PUBLIC__/style/append.css')}" />
+</head>
+<body>
+<div id="loading"></div>
+<script type="text/javascript">
+	$(function(){
+		setTimeout(function(){
+			$("#loading").hide();
+		}, 100);
+	});
 
-<div class="cp-bartitle">基本资料</div>
+	var regProvince = "{:U('User/Reg/province')}";
+	var regCity = "{:U('User/Reg/city')}";
+	var regArea = "{:U('User/Reg/area')}";
+	var regHometown = "{:U('User/Reg/hometown')}";
+	var profileOther = "{:U('User/Profile/other')}";
+	var eventDetailUrl = "{:U('Event/Index/detail')}";
+	var postDetailUrl = "{:U('Event/Discuss/detail')}";
+</script>
+<style>
+	.notify-circle {
+		background-color: #00E2FF;
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 1.5rem;
+		display: inline-block;
+		position: absolute;
+		right: 0.7rem;
+		top: 0.7rem;
+	}
+</style>
 
-<form name="myform" id="myform" method="post" action="{:U('Profile/base')}">
+<div class="cp-bartitle">完善基本资料后可以进行交友</div>
+
+<form name="myform" id="myform" method="post" action="{:U('User/Bind/base')}">
 	<div class="cp-layout-body">
 		<div class="profile-layout">
 			<ul>
@@ -20,10 +71,11 @@
 						<select name='marrystatus' id='marrystatus'>
 							<option value=''>=请选择=</option>
 							<?php foreach(ProfileConst::$marrystatus as $k=>$v):?>
-							<option value='{$k}' <?php if($user['marrystatus'] == $k):?>selected<?php endif;?>>{$v}</option>
+								<option value='{$k}' <?php if($user['marrystatus'] == $k):?>selected<?php endif;?>>{$v}</option>
 							<?php endforeach;?>
 						</select>
 					</div>
+					(必填)
 					<div class="clear"></div>
 				</li>
 
@@ -33,7 +85,7 @@
 						<select name='lovesort' id='lovesort'>
 							<option value=''>=请选择=</option>
 							<?php foreach(ProfileConst::$lovesort as $k=>$v):?>
-							<option value='{$k}' <?php if($user['lovesort'] == $k):?>selected<?php endif;?>>{$v}</option>
+								<option value='{$k}' <?php if($user['lovesort'] == $k):?>selected<?php endif;?>>{$v}</option>
 							<?php endforeach;?>
 						</select>
 					</div>
@@ -45,6 +97,7 @@
 					<div class="profile-value">
 						<input type="text" name='birthday' id='birthday' value="{$user['birthday']}" placeholder="(格式:19920501)">
 					</div>
+					(必填)
 					<div class="clear"></div>
 				</li>
 
@@ -54,10 +107,11 @@
 						<select name='height' id='height'>
 							<option value=''>=请选择=</option>
 							<?php foreach(ProfileConst::$height as $k=>$v):?>
-							<option value='{$k}' <?php if($user['height'] == $k):?>selected<?php endif;?>>{$v}CM</option>
+								<option value='{$k}' <?php if($user['height'] == $k):?>selected<?php endif;?>>{$v}CM</option>
 							<?php endforeach;?>
 						</select>
 					</div>
+					(必填)
 					<div class="clear"></div>
 				</li>
 
@@ -76,6 +130,7 @@
 						<?php echo Province::getCityName($user['dist1'], $user['dist2']);?>
 						<?php echo Province::getAreaName($user['dist1'], $user['dist2'], $user['dist3']);?>
 					</div>
+					(必填)
 					<div class="clear"></div>
 					<input type="hidden" name="dist1" id="dist1" value="{$user['dist1']}" />
 					<input type="hidden" name="dist2" id="dist2" value="{$user['dist2']}" />
@@ -109,7 +164,7 @@
 						<select name='salary' id='salary'>
 							<option value=''>=请选择=</option>
 							<?php foreach(ProfileConst::$salary as $k=>$v):?>
-							<option value='{$k}' <?php if($user['salary'] == $k):?>selected<?php endif;?>>{$v}</option>
+								<option value='{$k}' <?php if($user['salary'] == $k):?>selected<?php endif;?>>{$v}</option>
 							<?php endforeach;?>
 						</select>
 					</div>
@@ -123,7 +178,7 @@
 						<select name='industry' id='industry'>
 							<option value=''>=请选择=</option>
 							<?php foreach(ProfileConst::$industry as $k=>$v):?>
-							<option value='{$k}' <?php if($user['industry'] == $k):?>selected<?php endif;?>>{$v}</option>
+								<option value='{$k}' <?php if($user['industry'] == $k):?>selected<?php endif;?>>{$v}</option>
 							<?php endforeach;?>
 						</select>
 					</div>
@@ -135,6 +190,7 @@
 					<div class="profile-value">
 						<input type="text" name='job' id='job' value="{$user['job']}" placeholder="职业">
 					</div>
+					(必填)
 					<div class="clear"></div>
 				</li>
 
@@ -189,8 +245,18 @@
 			return false;
 		}
 
+		if ($("#birthday").val() == "") {
+			ToastShow("请填写生日");
+			return false;
+		}
+
 		if ($("#jobs").val() == "") {
 			ToastShow("请选择职业");
+			return false;
+		}
+
+		if ($("#height").val() == "") {
+			ToastShow("请填写身高");
 			return false;
 		}
 

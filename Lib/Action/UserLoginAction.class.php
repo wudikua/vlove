@@ -41,9 +41,28 @@ class UserLoginAction extends UserBaseAction {
             $_SESSION['nickname'] = $u['nickname'] ? $u['nickname'] : $u['username'];
             $this->nickName = $_SESSION['nickname'];
 		}
-
+		$this->loginUser = $this->getLoginUser();
+		if (!$this->isFull($this->loginUser)) {
+			$this->jump(U("User/Bind/index"), "我们检测到您是微信用户，需要绑定账号和完善交友资料", 3000);
+		}
 		$this->assign("login", true);
     }
+
+	/**
+	 * 资料是否完整
+	 */
+	private function isFull($user) {
+		if ($this->getActionName() == "Bind") {
+			return true;
+		}
+		if (!isset($user['password'])) {
+			return false;
+		}
+		if (isset($user['wgateid']) && $user['wgateid'] == $user['username']) {
+			return false;
+		}
+		return true;
+	}
 
 	/**
 	 * 获取登录用户的详细信息

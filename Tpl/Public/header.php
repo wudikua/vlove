@@ -50,6 +50,7 @@
     top: 0.7rem;
 }
 </style>
+
 <div class="navbar-layout">
 	<ul>
 		<li <?php if($cur_home):?>class="cur"<?php endif;?> onclick="goUrl('{:U('Home/Index/index')}');">首页</li>
