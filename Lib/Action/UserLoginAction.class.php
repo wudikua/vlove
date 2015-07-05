@@ -43,7 +43,7 @@ class UserLoginAction extends UserBaseAction {
 		}
 		$this->loginUser = $this->getLoginUser();
 		if (!$this->isFull($this->loginUser)) {
-			$this->jump(U("User/Bind/index"), "我们检测到您是微信用户，需要绑定账号和完善交友资料", 3000);
+			$this->jump(U("User/Bind/index"), "我们检测到您是微信用户，需要绑定账号", 3000);
 		}
 		$this->assign("login", true);
     }
@@ -60,6 +60,24 @@ class UserLoginAction extends UserBaseAction {
 		}
 		if (isset($user['wgateid']) && $user['wgateid'] == $user['username']) {
 			return false;
+		}
+		if (!isset($user['education']) || strlen($user['education']) == 0) {
+			$this->jump(U("User/Bind/index"), "我们检测到您的资料不完整，需要完善交友资料", 3000);
+		}
+		if (!isset($user['marrystatus']) || strlen($user['education']) == 0) {
+			$this->jump(U("User/Bind/index"), "我们检测到您的资料不完整，需要完善交友资料", 3000);
+		}
+		if (!isset($user['birthday']) || strlen($user['education']) == 0) {
+			$this->jump(U("User/Bind/index"), "我们检测到您的资料不完整，需要完善交友资料", 3000);
+		}
+		if (!isset($user['jobs']) || strlen($user['education']) == 0) {
+			$this->jump(U("User/Bind/index"), "我们检测到您的资料不完整，需要完善交友资料", 3000);
+		}
+		if (!isset($user['height']) || strlen($user['education']) == 0) {
+			$this->jump(U("User/Bind/index"), "我们检测到您的资料不完整，需要完善交友资料", 3000);
+		}
+		if (!isset($user['dist1']) || strlen($user['education']) == 0) {
+			$this->jump(U("User/Bind/index"), "我们检测到您的资料不完整，需要完善交友资料", 3000);
 		}
 		return true;
 	}
