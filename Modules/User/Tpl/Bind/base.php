@@ -52,7 +52,7 @@
 </style>
 
 <div class="cp-bartitle">完善基本资料后可以进行交友</div>
-
+<h1>完善必填项才可以使用单身吧，如果已经填写可以直接下一步</h1>
 <form name="myform" id="myform" method="post" action="{:U('User/Bind/base')}">
 	<div class="cp-layout-body">
 		<div class="profile-layout">
@@ -207,7 +207,7 @@
 		</div>
 		<!--//profile-layout End-->
 
-		<div class="spanbtn0" id="btn_post">保存修改</div>
+		<div class="spanbtn0" id="btn_post">下一步</div>
 	</div>
 </form>
 <!--//cp-layout-body End-->
