@@ -41,10 +41,19 @@ class UserLoginAction extends UserBaseAction {
             $_SESSION['nickname'] = $u['nickname'] ? $u['nickname'] : $u['username'];
             $this->nickName = $_SESSION['nickname'];
 		}
-		$this->loginUser = $this->getLoginUser();
-		if (!$this->isFull($this->loginUser)) {
-			$this->jump(U("User/Bind/index"), "我们检测到您是微信用户，需要绑定账号", 3000);
+		if ($this->getActionName() != "Bind") {
+			$this->loginUser = $this->getLoginUser();
+			if (!isset($this->loginUser['password'])) {
+				$this->jump(U("User/Bind/index"), "我们检测到您是微信用户，需要绑定账号", 3000);
+			}
+			if (isset($this->loginUser['wgateid']) && $this->loginUser['wgateid'] == $this->loginUser['username']) {
+				$this->jump(U("User/Bind/index"), "我们检测到您是微信用户，需要绑定账号", 3000);
+			}
+			if (!$this->isFull($this->loginUser)) {
+				$this->jump(U("User/Bind/base"), "我们检测到您的资料不完整，需要完善交友资料", 3000);
+			}
 		}
+
 		$this->assign("login", true);
     }
 
@@ -52,32 +61,23 @@ class UserLoginAction extends UserBaseAction {
 	 * 资料是否完整
 	 */
 	private function isFull($user) {
-		if ($this->getActionName() == "Bind") {
-			return true;
-		}
-		if (!isset($user['password'])) {
-			return false;
-		}
-		if (isset($user['wgateid']) && $user['wgateid'] == $user['username']) {
-			return false;
-		}
 		if (!isset($user['education']) || strlen($user['education']) == 0) {
-			$this->jump(U("User/Bind/base"), "我们检测到您的资料不完整，需要完善交友资料", 3000);
+			return false;
 		}
-		if (!isset($user['marrystatus']) || strlen($user['education']) == 0) {
-			$this->jump(U("User/Bind/base"), "我们检测到您的资料不完整，需要完善交友资料", 3000);
+		if (!isset($user['marrystatus']) || strlen($user['marrystatus']) == 0) {
+			return false;
 		}
-		if (!isset($user['birthday']) || strlen($user['education']) == 0) {
-			$this->jump(U("User/Bind/base"), "我们检测到您的资料不完整，需要完善交友资料", 3000);
+		if (!isset($user['birthday']) || strlen($user['birthday']) == 0) {
+			return false;
 		}
-		if (!isset($user['jobs']) || strlen($user['education']) == 0) {
-			$this->jump(U("User/Bind/base"), "我们检测到您的资料不完整，需要完善交友资料", 3000);
+		if (!isset($user['jobs']) || strlen($user['jobs']) == 0) {
+			return false;
 		}
-		if (!isset($user['height']) || strlen($user['education']) == 0) {
-			$this->jump(U("User/Bind/base"), "我们检测到您的资料不完整，需要完善交友资料", 3000);
+		if (!isset($user['height']) || strlen($user['height']) == 0) {
+			return false;
 		}
-		if (!isset($user['dist1']) || strlen($user['education']) == 0) {
-			$this->jump(U("User/Bind/base"), "我们检测到您的资料不完整，需要完善交友资料", 3000);
+		if (!isset($user['dist1']) || strlen($user['dist1']) == 0) {
+			return false;
 		}
 		return true;
 	}
