@@ -90,6 +90,7 @@ class SearchAction extends UserLoginAction {
 		// 一个基础限制是只可以query异性
 		$loginUser = $this->getLoginUser();
 		$query['gender'] = $loginUser['gender'] == '1' ? '2' : '1';
+		$query['robot'] = ['$ne'=>"1", '$exists'=>false];
 		// 分页展示
 		import('ORG.Util.Page');
 		$count = MongoFactory::table("user")->find($query)->count();

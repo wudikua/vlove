@@ -20,6 +20,11 @@ class IndexAction extends BaseAction {
 		$query = [
 			'avatar'=>['$ne'=>"", '$exists'=>true],
 		];
+		// 匹配相反性别的用户
+		if (isset($_COOKIE['gender'])) {
+			$query['gender'] = $_COOKIE['gender'] == '2' ? '1' : '2';
+		}
+		$query['robot'] = ['$ne'=>"1", '$exists'=>false];
 		// 首页推荐一些最新用户
 		$rt = MongoFactory::table("user")->find($query)->sort(['login_time'=>1])->limit(10);
 		$users = MongoUtil::asList($rt);
