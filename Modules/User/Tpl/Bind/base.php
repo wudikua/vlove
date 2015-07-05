@@ -147,6 +147,7 @@
 							<?php endforeach;?>
 						</select>
 					</div>
+					(必填)
 					<div class="clear"></div>
 				</li>
 
@@ -262,6 +263,11 @@
 
 		if ($("#dist1").val() == "") {
 			ToastShow("请选择地区");
+			return false;
+		}
+
+		if ($("#education").val() == "") {
+			ToastShow("请选择学历");
 			return false;
 		}
 
