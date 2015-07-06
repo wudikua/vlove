@@ -131,7 +131,7 @@
 	<div class="cp-index-bar" style="margin-top:20px;">
 		<ul>
 			<li onclick="goUrl('{:U('Profile/req')}');"><i class="mob_pro_09"></i>择偶要求</li>
-            <li onclick="goUrl('{:U('atten/index')}');"><i class="mob_pro_07"></i>我的关注 <?php if($new_atten){?>&nbsp;&nbsp;&nbsp;&nbsp;<a style="color: red">新关注</a><?php }?></li>
+            <li onclick="goUrl('{:U('atten/index')}');"><i class="mob_pro_07"></i>我的关注 <?php if($new_atten){?>&nbsp;&nbsp;&nbsp;&nbsp;<a style="color: red">新粉丝</a><?php }?></li>
 		</ul>
 		<div class="clear"></div>
 	</div>
