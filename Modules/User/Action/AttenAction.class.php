@@ -52,6 +52,8 @@ class AttenAction extends UserLoginAction {
         ];
         AttenModel::add($data);
         AttenModel::add($data1);
+        // 消息通知
+        UserNotifyModel::addAtten($uid);
         echo 1;exit;
     }
 
