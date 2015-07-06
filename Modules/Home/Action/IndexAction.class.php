@@ -57,4 +57,27 @@ class IndexAction extends BaseAction {
 	public function push() {
 		$this->display();
 	}
+
+	/**
+	 * 游戏排行
+	 */
+	public function top() {
+		$redis = new Redis();
+		$redis->connect("localhost");
+		if (isset($_REQUEST['sc']) && $this->getUid()) {
+			$redis->zAdd("game_top", intval($_REQUEST['sc']), $this->getUid());
+		}
+		$userIds = $redis->zRange("game_top", 0, 10, true);
+		$query = [];
+		foreach ($userIds as $id=>$u) {
+			$query[] = new MongoId($id);
+		}
+		$rt = MongoFactory::table("user")->find(["_id"=>['$in'=>$query]], ['_id', 'avatar', 'gender', 'nickname']);
+		$users = MongoUtil::asList($rt);
+		foreach ($users as &$u) {
+			$u['score'] = $userIds[(string)$u['_id']];
+		}
+		$this->assign("users", $users);
+		$this->display();
+	}
 }

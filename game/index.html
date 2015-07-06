@@ -4,6 +4,7 @@
     <title>一夜N次郎(单身吧出品)</title>
     <meta charset="utf-8"/>
 	<meta name="viewport" content="initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, width=device-width,target-densitydpi=device-dpi"/>
+    <script src="http://wap.datougou.cn/Public/js/zepto.min_1434894983.js"></script>
     <script type="text/javascript">
     var i = new Date().getTime() % 5;
 	if(i < 3){
@@ -335,6 +336,7 @@ display: none;
 		var l = document.getElementById('GameScoreLayer');
 		var c = document.getElementById(_gameBBList[_gameBBListIndex-1].id).className.match(_ttreg)[1];
 		l.className = l.className.replace(/bgc\d/, 'bgc'+c);
+        document.getElementById('GameScoreLayer-top').innerHTML = "<a href='/index.php/home/index/top.html?sc="+_gameScore+"' style='color: #fff;'>点击查看自己在单身吧排名</a>";
 		document.getElementById('GameScoreLayer-text').innerHTML = shareText(_gameScore);
 		document.getElementById('GameScoreLayer-score').innerHTML = '得分&nbsp;&nbsp;'+_gameScore;
 		var bast = cookie('bast-score');
@@ -436,6 +438,8 @@ display: none;
 
 	<div id="GameScoreLayer" class="BBOX SHADE bgc1" style="display:none;">
 		<div style="padding:0 5%;">
+            <div id="GameScoreLayer-top"></div>
+            <br>
 			<div id="GameScoreLayer-text"></div>
 			<br/>
 			<div id="GameScoreLayer-score" style="margin-bottom:1em;">得分</div>
