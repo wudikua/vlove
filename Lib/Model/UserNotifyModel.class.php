@@ -13,6 +13,7 @@ class UserNotifyModel extends RedisModel{
      * @param $uid
      */
     public static function addMsg($uid) {
+        self::init();
         $key   = sprintf(self::$KEY['notify']['msg']['key'], $uid);
         $field = self::$KEY['notify']['msg']['field'];
         return self::hSet($key, $field, 1);
@@ -24,6 +25,7 @@ class UserNotifyModel extends RedisModel{
      * @return bool
      */
     public static function isNewMsg($uid) {
+        self::init();
         $key   = sprintf(self::$KEY['notify']['msg']['key'], $uid);
         $field = self::$KEY['notify']['msg']['field'];
         if(self::hGet($key, $field)) return true;
@@ -36,6 +38,7 @@ class UserNotifyModel extends RedisModel{
      * @return mixed
      */
     public static function delMsg($uid) {
+        self::init();
         $key   = sprintf(self::$KEY['notify']['msg']['key'], $uid);
         $field = self::$KEY['notify']['msg']['field'];
         return self::hSet($key, $field, 0);
@@ -46,6 +49,7 @@ class UserNotifyModel extends RedisModel{
      * @param $uid
      */
     public static function addAtten($uid) {
+        self::init();
         $key   = sprintf(self::$KEY['notify']['atten']['key'], $uid);
         $field = self::$KEY['notify']['atten']['field'];
         return self::hSet($key, $field, 1);
@@ -57,6 +61,7 @@ class UserNotifyModel extends RedisModel{
      * @return bool
      */
     public static function isNewAtten($uid) {
+        self::init();
         $key   = sprintf(self::$KEY['notify']['atten']['key'], $uid);
         $field = self::$KEY['notify']['atten']['field'];
         if(self::hGet($key, $field)) return true;
@@ -69,6 +74,7 @@ class UserNotifyModel extends RedisModel{
      * @return mixed
      */
     public static function delAtten($uid) {
+        self::init();
         $key   = sprintf(self::$KEY['notify']['atten']['key'], $uid);
         $field = self::$KEY['notify']['atten']['field'];
         return self::hSet($key, $field, 0);

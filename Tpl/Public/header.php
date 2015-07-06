@@ -58,7 +58,7 @@
 		<li <?php if($cur_search):?>class="cur"<?php endif;?> onclick="goUrl('{:U('User/Search/index')}');">搜索</li>
 		<li <?php if($cur_msg):?>class="cur"<?php endif;?> onclick="goUrl('{:U('msg/index/index')}');">消息</li>
 		<?php if (strlen($_SESSION['login'])):?>
-			<li <?php if($cur_user):?>class="cur"<?php endif;?>  onclick="goUrl('{:U('User/Index/index')}')">我的<?php if($attention){?><div class="notify-circle"></div><?php }?></li>
+			<li <?php if($cur_user):?>class="cur"<?php endif;?>  onclick="goUrl('{:U('User/Index/index')}')">我的<?php if($new_msg){?><div class="notify-circle"></div><?php }?></li>
 
         <?php else:?>
 		<li <?php if($cur_user):?>class="cur"<?php endif;?>  onclick="goUrl('{:U('User/Login/index')}')">登录</li>

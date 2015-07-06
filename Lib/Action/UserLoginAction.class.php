@@ -41,6 +41,7 @@ class UserLoginAction extends UserBaseAction {
             $_SESSION['nickname'] = $u['nickname'] ? $u['nickname'] : $u['username'];
             $this->nickName = $_SESSION['nickname'];
 		}
+
 		if ($this->getActionName() != "Bind") {
 			$this->loginUser = $this->getLoginUser();
 			if (!isset($this->loginUser['password'])) {
@@ -53,6 +54,10 @@ class UserLoginAction extends UserBaseAction {
 				$this->jump(U("User/Bind/base"), "我们检测到您的资料不完整，需要完善交友资料", 3000);
 			}
 		}
+
+        // 是否有新的关注和msg
+        $this->assign("new_msg", UserNotifyModel::isNewMsg($this->userId));
+        $this->assign("new_atten", UserNotifyModel::isNewAtten($this->userId));
 
 		$this->assign("login", true);
     }

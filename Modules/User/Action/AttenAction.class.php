@@ -18,6 +18,10 @@ class AttenAction extends UserLoginAction {
      * 我的粉丝
      */
     public function fans() {
+
+        // 标记消息通知删除
+        UserNotifyModel::delAtten($this->userId);
+
         $list = AttenModel::getMyFansByUid($this->userId, 0 , 50);
         $data['list'] = $this->getUserInfo($list);
         $data['type'] = 2;
