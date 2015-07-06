@@ -22,7 +22,7 @@
 		<li id="act_hi">打招呼</li>
 		<li id="act_message" onclick="goUrl('{:U('msg/send/index')}?uid=<?php $u = '$id'; echo $user['_id']->$u;?>')">写信件</li>
 		<?php if($atten) {?>
-            <li style="border-right:none;color: red">
+            <li id="tip_unlisten" style="border-right:none;color: red">
                 <span >已关注</span>
             </li>
         <?php }else{?>
@@ -76,6 +76,32 @@
                         alert("发送成功");
                     } else {
                         alert("发送失败");
+                    }
+                },
+                error: function() {
+                    alert("操作失败，请检查网络状态。");
+                }
+            });
+        });
+        $("#tip_listen").click(function(){
+            if(!flag) return false;
+            flag = false;
+            $.ajax({
+                type: "POST",
+                url: "{:U('user/atten/add')}",
+                cache: false,
+                data: {touid:'<?php echo (string)$user['_id'];?>', r:get_rndnum(8)},
+                dataType: "json",
+                success: function(data) {
+                    if (data == '1') {
+                        alert("关注成功");
+                        $("#tip_listen").css('color', 'red');
+                        $("#tip_listen").find('span').html('已关注');
+                    } else if(data == 2) {
+                        alert("您已关注");
+                    } else {
+                        flag = true;
+                        alert("关注失败");
                     }
                 },
                 error: function() {
