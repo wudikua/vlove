@@ -33,6 +33,7 @@ class IndexAction extends BaseAction {
 		$query['birthday'] = ['$ne'=>"", '$exists'=>true];
 		$query['height'] = ['$ne'=>"", '$exists'=>true];
 		$query['robot'] = ['$ne'=>"1", '$exists'=>false];
+		$query['password'] = ['$ne'=>"", '$exists'=>true];
 		// 首页推荐一些最新用户
 		$rt = MongoFactory::table("user")->find($query)->sort(['login_time'=>-1]);
 		$users = MongoUtil::asList($rt);

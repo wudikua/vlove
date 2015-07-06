@@ -91,6 +91,7 @@ class SearchAction extends UserLoginAction {
 		$loginUser = $this->getLoginUser();
 		$query['gender'] = $loginUser['gender'] == '1' ? '2' : '1';
 		$query['robot'] = ['$ne'=>"1", '$exists'=>false];
+		$query['password'] = ['$ne'=>"", '$exists'=>true];
 		// 分页展示
 		import('ORG.Util.Page');
 		$count = MongoFactory::table("user")->find($query)->count();
