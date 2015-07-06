@@ -23,7 +23,7 @@ class AttenAction extends UserLoginAction {
     public function atten() {
         $list = AttenModel::getMyAttenByUid($this->userId, 0 , 50);
         $data['list'] = $this->getUserInfo($list);
-        $data['type'] = 1;
+        $data['type'] = 2;
         $this->assign($data);
         $this->display('index');
 
