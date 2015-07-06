@@ -1,8 +1,8 @@
 <include file="./Tpl/Public/header.php" title="活动"/>
 <div class="tab-layout-2">
     <ul>
-        <li onclick="goUrl('{:U('user/atten/index')}?type=1')" style="width:50%;" <?php if($type==1){?>class="tab-selected"<?php }?>>我的关注</li>
-        <li onclick="goUrl('{:U('user/atten/fans')}?type=2')" style="width:50%;" <?php if($type==2){?>class="tab-selected"<?php }?>>我的粉丝</li>
+        <li onclick="goUrl('{:U('user/atten/atten')}?type=1')" style="width:50%;" <?php if($type==2){?>class="tab-selected"<?php }?>>我的粉丝</li>
+        <li onclick="goUrl('{:U('user/atten/index')}?type=2')" style="width:50%;" <?php if($type==1){?>class="tab-selected"<?php }?>>我的关注</li>
     </ul>
     <div class="clear"></div>
 </div>
