@@ -9,6 +9,14 @@ require_once dirname(dirname(__DIR__))."/ThinkPHP/Lib/Core/Action.class.php";
  */
 class BaseAction extends CoreAction {
 
+
+    /**
+     * @var string 已经登录用户的id
+     */
+    public $userId;
+    public $userName;
+    public $nickName;
+
     public function _initialize() {
         // 数组操作
         import('ORG.Util.ArrayMap');
@@ -88,4 +96,27 @@ class BaseAction extends CoreAction {
 		$_COOKIE['sid'] = $sid;
 		$rt = UserModel::add($data);
 	}
+
+    /**
+     * @获取用户uid
+     */
+    public function getUid() {
+        if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
+            return $_SESSION['login'];
+        } else {
+            // 自己平台的sid登录
+            $u = MongoFactory::table("user")->findOne(['sid'=>(string)$_COOKIE['sid']], ['_id', 'nickname' ,'username']);
+            return (string) $u['_id'];
+
+        }
+    }
+
+    /**
+     * @brief 是否有新提醒
+     */
+    public function notify($uid) {
+        // 是否有新的关注和msg
+        $this->assign("new_msg", UserNotifyModel::isNewMsg($uid));
+        $this->assign("new_atten", UserNotifyModel::isNewAtten($uid));
+    }
 }

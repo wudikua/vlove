@@ -9,6 +9,12 @@ class IndexAction extends BaseAction {
 	}
 
     public function index(){
+
+        $uid = $this->getUid();
+        if($uid) {
+            $this->notify($uid);
+        }
+
 		$eid = "0"; //综合讨论组的活动号
 		// 首页增加帖子
 		$rt = MongoFactory::table("discuss_post")->find(['eid'=>$eid,])->sort(["time"=>-1])->limit(4);

@@ -6,18 +6,12 @@
  */
 class UserLoginAction extends UserBaseAction {
 
-	/**
-	 * @var string 已经登录用户的id
-	 */
-	public $userId;
 
-    public $userName;
-    public $nickName;
 
-	/**
-	 * @var array 登录用户的mongo返回对象
-	 */
-	private $loginUser;
+    /**
+     * @var array 登录用户的mongo返回对象
+     */
+    private $loginUser;
 
     public function _initialize() {
 		parent::_initialize();
@@ -55,9 +49,7 @@ class UserLoginAction extends UserBaseAction {
 			}
 		}
 
-        // 是否有新的关注和msg
-        $this->assign("new_msg", UserNotifyModel::isNewMsg($this->userId));
-        $this->assign("new_atten", UserNotifyModel::isNewAtten($this->userId));
+        $this->notify($this->userId);
 
 		$this->assign("login", true);
     }
