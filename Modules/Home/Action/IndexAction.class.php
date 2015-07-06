@@ -77,6 +77,9 @@ class IndexAction extends BaseAction {
 		foreach ($users as &$u) {
 			$u['score'] = $userIds[(string)$u['_id']];
 		}
+		uasort($users, function($a, $b) {
+			return $a['score'] < $b['score'];
+		});
 		$this->assign("users", $users);
 		$this->display();
 	}
