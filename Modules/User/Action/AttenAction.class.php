@@ -4,10 +4,13 @@ class AttenAction extends UserLoginAction {
 
 
     /**
-     * 我关注的
+     * 我的粉丝
      */
     public function index() {
-        $list = AttenModel::getMyAttenByUid($this->userId, 0 , 50);
+        // 标记消息通知删除
+        UserNotifyModel::delAtten($this->userId);
+
+        $list = AttenModel::getMyFansByUid($this->userId, 0 , 50);
         $data['list'] = $this->getUserInfo($list);
         $data['type'] = 1;
         $this->assign($data);
@@ -15,14 +18,15 @@ class AttenAction extends UserLoginAction {
     }
 
     /**
-     * 我的粉丝
+     *我的关注
      */
-    public function fans() {
-        $list = AttenModel::getMyFansByUid($this->userId, 0 , 50);
+    public function atten() {
+        $list = AttenModel::getMyAttenByUid($this->userId, 0 , 50);
         $data['list'] = $this->getUserInfo($list);
         $data['type'] = 2;
         $this->assign($data);
         $this->display('index');
+
     }
 
 
@@ -52,6 +56,8 @@ class AttenAction extends UserLoginAction {
         ];
         AttenModel::add($data);
         AttenModel::add($data1);
+        // 消息通知
+        UserNotifyModel::addAtten($uid);
         echo 1;exit;
     }
 

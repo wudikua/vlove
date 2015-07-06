@@ -17,6 +17,10 @@ class IndexAction extends UserLoginAction {
      */
     public function index(){
 
+
+        // 标记消息通知删除
+        UserNotifyModel::delMsg($this->userId);
+
         // 收件箱
         $data['type'] = in_array((int)$_GET['type'], [0, 1, 2]) ? (int)$_GET['type'] : 0;
         if($data['type'] == 0){

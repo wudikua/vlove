@@ -45,6 +45,8 @@ class SendAction extends UserLoginAction {
         ];
         MsgModel::add($data);
         MsgModel::add($data1);
+        // 消息通知
+        UserNotifyModel::addMsg($uid);
         echo 1;exit;
     }
 }
