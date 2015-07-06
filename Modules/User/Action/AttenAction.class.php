@@ -14,7 +14,7 @@ class AttenAction extends UserLoginAction {
         $data['list'] = $this->getUserInfo($list);
         $data['type'] = 2;
         $this->assign($data);
-        $this->display('index');
+        $this->display();
     }
 
     /**
@@ -25,7 +25,7 @@ class AttenAction extends UserLoginAction {
         $data['list'] = $this->getUserInfo($list);
         $data['type'] = 1;
         $this->assign($data);
-        $this->display();
+        $this->display('index');
 
     }
 
