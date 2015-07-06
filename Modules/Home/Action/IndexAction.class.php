@@ -65,11 +65,18 @@ class IndexAction extends BaseAction {
 		$redis = new Redis();
 		$redis->connect("localhost");
 		if (isset($_REQUEST['sc']) && $this->getUid()) {
-			$redis->zAdd("game_top", intval($_REQUEST['sc']), $this->getUid());
+			$userScore = $redis->hGet("game_top", $this->getUid());
+			if ($userScore < $_REQUEST['sc']) {
+				$redis->hSet("game_top", $this->getUid(), $_REQUEST['sc']);
+			}
 		}
-		$userIds = $redis->zRange("game_top", 0, 10, true);
+		$userIds = $redis->hGetAll("game_top");
+		uasort($userIds, function($a, $b) {
+			return $a < $b;
+		});
+		$userIds = array_slice($userIds, 0, 10);
 		$query = [];
-		foreach ($userIds as $id=>$u) {
+		foreach ($userIds as $id=>$score) {
 			$query[] = new MongoId($id);
 		}
 		$rt = MongoFactory::table("user")->find(["_id"=>['$in'=>$query]], ['_id', 'avatar', 'gender', 'nickname']);
