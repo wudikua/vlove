@@ -14,7 +14,4 @@ class VisitorAction extends UserLoginAction {
         $this->assign($data);
         $this->display();
     }
-
-
-
 }
