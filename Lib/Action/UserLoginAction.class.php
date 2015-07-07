@@ -108,7 +108,7 @@ class UserLoginAction extends UserBaseAction {
             array_push($userIds, $value['userid']);
         }
         if($userIds) {
-            $usersInfo = UserModel::getUserByIds($userIds, ['username', 'marrystatus' ,
+            $usersInfo = UserModel::getUserByIds($userIds, ['username', 'nickname','marrystatus' ,
                 'birthday' , 'dist1' ,'dist2' ,'dist3', 'avatar', 'gender', 'education']);
             $usersInfo = MongoUtil::asMap($usersInfo, '_id');
             foreach($data as &$msg) {
