@@ -10,14 +10,15 @@
         <div class="cplist-box">
             <ul id="json_data">
                 <?php foreach($list as $value){?>
-                    <li onclick="goUrl('<?php echo __APP__?>/user/profile/other?uid=<?php echo $value['userid'];?>');">
+                    <li onclick="goUrl('<?php echo __APP__?>/user/profile/other?uid=<?php echo (string)$value['_id'];?>');">
                         <div class="cplist-img" >
-                            <img src="<?php if(strlen($value['fromuser']['avatar'])){?>__PUBLIC__/upload/thumb/s_<?php echo $value['fromuser']['avatar'];?><?php }else{?>__PUBLIC__/images/gender_1.gif<?php } ?>"></div>
+                            <img src="<?php if(strlen($value['avatar'])){?>__PUBLIC__/upload/thumb/s_<?php echo $value['avatar'];?><?php }else{?>__PUBLIC__/images/gender_1.gif<?php } ?>"></div>
                         <div class="cplist-info" style="width: 275px;">
                             <h2>
-                                <span><?php echo date('m/d H:i', $value['create_time']);?></span>
+                                <span><?php echo date('m/d H:i', $value['login_time']);?></span>
                                 <b> <?php echo $value['username'];?></b></h2>
-                            <p><?php echo age($value['fromuser']['birthday']);?>岁 <?php echo ProfileConst::$marrystatus[$value['fromuser']['marrystatus']];?> <?php echo $value['fromuser']['city'] . '  ' .$value['fromuser']['area'];?></p>
+                            <p><?php echo age($value['birthday']);?>岁 <?php echo ProfileConst::$marrystatus[$value['marrystatus']];?> <?php echo Province::getCityName($value['s_dist1'], $value['dist2']);?>
+                                <?php echo Province::getAreaName($value['dist1'], $value['dist2'], $value['dist3']);?></p>
                         </div>
                         <div class="clear"></div>
                     </li>

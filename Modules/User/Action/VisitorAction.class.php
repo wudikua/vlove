@@ -10,7 +10,7 @@ class VisitorAction extends UserLoginAction {
 
         $uids = UserNotifyModel::getVisitor($this->userId);
         $list = UserModel::getUserByIds($uids);
-        $data['list'] = $this->getUserInfo($list);
+        $data['list'] = $list;
         $this->assign($data);
         $this->display();
     }
