@@ -106,8 +106,12 @@ class BaseAction extends CoreAction {
         } else {
             // 自己平台的sid登录
             $u = MongoFactory::table("user")->findOne(['sid'=>(string)$_COOKIE['sid']], ['_id', 'nickname' ,'username']);
-            return (string) $u['_id'];
-
+			if (strlen((string)$u['_id']) > 0) {
+				$this->userId = $u['_id'];
+				$_SESSION['login'] = $this->userId;
+				$_SESSION['nickname'] = $u['nickname'] ? $u['nickname'] : $u['username'];
+			}
+			return (string) $u['_id'];
         }
     }
 
