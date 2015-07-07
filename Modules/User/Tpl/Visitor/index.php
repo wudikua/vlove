@@ -16,8 +16,8 @@
                         <div class="cplist-info" style="width: 275px;">
                             <h2>
                                 <span><?php echo date('m/d H:i', $value['login_time']);?></span>
-                                <b> <?php echo $value['username'];?></b></h2>
-                            <p><?php echo age($value['birthday']);?>岁 <?php echo ProfileConst::$marrystatus[$value['marrystatus']];?> <?php echo Province::getCityName($value['s_dist1'], $value['dist2']);?>
+                                <b> <?php echo $value['username'];?> &nbsp;&nbsp;&nbsp; <?php echo ProfileConst::$gender[$value['gender']];?></b></h2>
+                            <p><?php echo age($value['birthday']);?>岁 <?php echo ProfileConst::$marrystatus[$value['marrystatus']];?> <?php echo Province::getCityName($value['dist1'], $value['dist2']);?>
                                 <?php echo Province::getAreaName($value['dist1'], $value['dist2'], $value['dist3']);?></p>
                         </div>
                         <div class="clear"></div>
