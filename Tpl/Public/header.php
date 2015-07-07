@@ -41,8 +41,18 @@
 <style>
 .notify-msg-circle {
     background-color: #00E2FF;
-    width: 0.7rem;
-    height: 0.7rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 1.5rem;
+    display: inline-block;
+    position: absolute;
+    right: 0.7rem;
+	top: 0.4rem;
+}
+.notify-atten-circle {
+    background-color: #00E2FF;
+    width: 0.5rem;
+    height: 0.5rem;
     border-radius: 1.5rem;
     display: inline-block;
     position: absolute;
@@ -58,7 +68,7 @@
 		<li <?php if($cur_search):?>class="cur"<?php endif;?> onclick="goUrl('{:U('User/Search/index')}');">搜索</li>
 		<li <?php if($cur_msg):?>class="cur"<?php endif;?> onclick="goUrl('{:U('msg/index/index')}');">消息<?php if($new_msg){?><div class="notify-msg-circle"></div><?php }?></li>
 		<?php if (strlen($_SESSION['login'])):?>
-			<li <?php if($cur_user):?>class="cur"<?php endif;?>  onclick="goUrl('{:U('User/Index/index')}')">我的<?php if($new_atten || $new_visitor){?><div class="notify-msg-circle"></div><?php }?></li>
+			<li <?php if($cur_user):?>class="cur"<?php endif;?>  onclick="goUrl('{:U('User/Index/index')}')">我的<?php if($new_atten){?><div class="notify-atten-circle"></div><?php }?></li>
 
         <?php else:?>
 		<li <?php if($cur_user):?>class="cur"<?php endif;?>  onclick="goUrl('{:U('User/Login/index')}')">登录</li>
