@@ -163,6 +163,11 @@ class ProfileAction extends UserLoginAction {
 
 	public function other() {
 		$uid   = $this->_get("uid");
+
+        //增加最近访客
+        if($this->userId != $uid) {
+            UserNotifyModel::addVisitor($this->userId, $uid);
+        }
 		$this->assign([
 			"user"     => MongoFactory::table("user")->findOne(["_id"=>new MongoId($uid)]),
             "username" => $this->nickName,
