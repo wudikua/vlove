@@ -135,7 +135,12 @@
 		</ul>
 		<div class="clear"></div>
 	</div>
-
+    <div class="cp-index-bar">
+        <ul>
+            <li onclick="goUrl('{:U('visitor/index')}');"><i class="mob_icon_08"></i>谁看过我 <?php if($new_visitor){?>&nbsp;&nbsp;&nbsp;&nbsp;<a style="color: red">新访客</a><?php }?></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
 	<div class="cp-index-bar" style="margin-top:20px;">
 		<ul>
 			<li onclick="goUrl('{:U('Profile/changepwd')}');" style="border-bottom:none;">&#12288;修改密码</li>

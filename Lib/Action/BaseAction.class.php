@@ -118,5 +118,6 @@ class BaseAction extends CoreAction {
         // 是否有新的关注和msg
         $this->assign("new_msg", UserNotifyModel::isNewMsg($uid));
         $this->assign("new_atten", UserNotifyModel::isNewAtten($uid));
+        $this->assign("new_visitor", UserNotifyModel::isNewVisitor($uid));
     }
 }

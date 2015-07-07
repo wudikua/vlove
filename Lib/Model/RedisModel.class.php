@@ -12,9 +12,11 @@ class RedisModel {
     public static $KEY = [
         'notify' => [
             //是否有新消息 USER_NOTIFY:uid:msg:true|false
-            'msg'   => ['key' => 'USER_NOTIFY:%s:', 'field' => 'msg'],
+            'msg'     => ['key' => 'USER_NOTIFY:%s:', 'field' => 'msg'],
             //是否有新的关注 USER_NOTIFY:uid:atten:true|false
-            'atten' => ['key' => 'USER_NOTIFY:%s:', 'field' => 'atten'],
+            'atten'   => ['key' => 'USER_NOTIFY:%s:', 'field' => 'atten'],
+            //是否有新的访客 USER_NOTIFY:uid:visitor:true|false，recent 存储用户最新访客 string json
+            'visitor' => ['key' => 'USER_NOTIFY:%s:', 'field' => 'visitor', 'recent' => 'USER_VISITOR:%s'],
         ]
     ];
 
