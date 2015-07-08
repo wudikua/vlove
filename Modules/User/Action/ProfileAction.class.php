@@ -156,7 +156,8 @@ class ProfileAction extends UserLoginAction {
 
 	public function index() {
 		$this->assign([
-			"cur_user"=>"1"
+			"cur_user"=>"1",
+			"user"=>$this->getLoginUser()
 		]);
 		$this->display();
 	}

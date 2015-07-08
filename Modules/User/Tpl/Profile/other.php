@@ -18,19 +18,23 @@
 </div>
 
 <div class="home-tac">
+	<?php if ($_SESSION['login'] != (string)$user['_id']):?>
 	<ul>
 		<li id="act_hi">打招呼</li>
 		<li id="act_message" onclick="goUrl('{:U('msg/send/index')}?uid=<?php $u = '$id'; echo $user['_id']->$u;?>')">写信件</li>
-		<?php if($atten) {?>
+		<?php if($atten): ?>
             <li id="tip_unlisten" style="border-right:none;color: red">
                 <span >已关注</span>
             </li>
-        <?php }else{?>
+        <?php else: ?>
         <li id="tip_listen" style="border-right:none;">
 			<span >加关注</span>
 		</li>
-        <?php }?>
+        <?php endif;?>
 	</ul>
+	<?php else:?>
+		<div class="spanbtn0" id="share_btn" style="padding:7px;margin: 10px auto;">分享到微信群</div>
+	<?php endif;?>
 	<div class="clear"></div>
 </div>
 <div id="fade" class="black_overlay" onclick="closeImage()"></div>
@@ -51,9 +55,24 @@
 	<div class="per-pop-close" onclick="closeImage()"></div>
 </div>
 
+<div id="share" style="position: fixed; top: 0px; left: 0px; text-align: right; display: none; background-color: rgba(0, 0, 0, 0.498039);">
+	<img src="__PUBLIC__/images/share.png" style="width: 230px;">
+</div>
+
 <script type="text/javascript">
 	$(function(){
-        var flag = true;
+		var w = $(window).width();
+		var h = $(window).height();
+		$("#share").width(w).height(h);
+		$("#share_btn").click(function(){
+			$("#share").show();
+		});
+		$("#share").click(function(){
+			$(this).hide();
+		});
+
+
+		var flag = true;
 		$(".swiper-container").css("height", parseInt($("body").css("width"))/118*120 +"px");
 		window.swiper = new Swiper('.swiper-container', {
 			nextButton: '.swiper-button-next',
@@ -166,7 +185,13 @@
 	<div class="home-wrap">
 		<h2>内心独白</h2>
 		<div class="home-itemlist">
-			<p>{$user['content']}</p>
+			<p>
+				<?php if (empty($user['content'])):?>
+					未填写
+				<?php else:?>
+					{$user['content']}
+				<?php endif;?>
+			</p>
 		</div>
 	</div>
 
@@ -209,15 +234,87 @@
 		<h2>详细资料</h2>
 		<div class="home-itemlist">
 			<ul>
-				<li>户&#12288;&#12288;口：<span>{:Province::getProvinceName($user['hometown1'])} {:Province::getCityName($user['hometown1'], $user['hometown2'])}</span></li>
-				<li>籍&#12288;&#12288;贯：<span>{:Province::getProvinceName($user['birthhometown1'])} {:Province::getCityName($user['birthhometown1'], $user['birthhometown2'])}</span></li>
-				<li>婚&#12288;&#12288;姻：<span>{:ProfileConst::$marrystatus[$user['marrystatus']]}</span></li>
-				<li>购房情况：<span>{:ProfileConst::$housing[$user['housing']]}</span></li>
-				<li>购车情况：<span>{:ProfileConst::$caring[$user['caring']]}</span></li>
-				<li>家中排行：<span>{:ProfileConst::$tophome[$user['tophome']]}</span></li>
-				<li>民&#12288;&#12288;族：<span>{:ProfileConst::$national[$user['national']]}</span></li>
-				<li>属&#12288;&#12288;相：<span>{:ProfileConst::$cnage[$user['cnage']]}</span></li>
-				<li style="border-bottom:none;">星座：<span>{:constellation($user['birthday'])}</span></li>
+				<li>户&#12288;&#12288;口：
+					<span>
+						<?php if (!empty($user['hometown1'])):?>
+						{:Province::getProvinceName($user['hometown1'])} {:Province::getCityName($user['hometown1'], $user['hometown2'])}
+						<?php else:?>
+							未填写
+						<?php endif;?>
+					</span>
+				</li>
+				<li>籍&#12288;&#12288;贯：<span>
+						<?php if (!empty($user['birthhometown1'])):?>
+						{:Province::getProvinceName($user['birthhometown1'])} {:Province::getCityName($user['birthhometown1'], $user['birthhometown2'])}
+						<?php else:?>
+							未填写
+						<?php endif;?>
+					</span>
+				</li>
+
+				<li>婚&#12288;&#12288;姻：
+					<span>
+						<?php if (!empty($user['marrystatus'])):?>
+						{:ProfileConst::$marrystatus[$user['marrystatus']]}
+						<?php else:?>
+							未填写
+						<?php endif;?>
+					</span>
+				</li>
+				<li>购房情况：
+					<span>
+						<?php if (!empty($user['housing'])):?>
+						{:ProfileConst::$housing[$user['housing']]}
+						<?php else:?>
+							未填写
+						<?php endif;?>
+					</span>
+				</li>
+				<li>购车情况：
+					<span>
+						<?php if (!empty($user['caring'])):?>
+						{:ProfileConst::$caring[$user['caring']]}
+						<?php else:?>
+							未填写
+						<?php endif;?>
+					</span>
+				</li>
+				<li>家中排行：
+					<span>
+						<?php if (!empty($user['tophome'])):?>
+						{:ProfileConst::$tophome[$user['tophome']]}
+						<?php else:?>
+							未填写
+						<?php endif;?>
+					</span>
+				</li>
+				<li>民&#12288;&#12288;族：
+					<span>
+						<?php if (!empty($user['national'])):?>
+						{:ProfileConst::$national[$user['national']]}
+						<?php else:?>
+							未填写
+						<?php endif;?>
+					</span>
+				</li>
+				<li>属&#12288;&#12288;相：
+					<span>
+						<?php if (!empty($user['cnage'])):?>
+						{:ProfileConst::$cnage[$user['cnage']]}
+						<?php else:?>
+							未填写
+						<?php endif;?>
+					</span>
+				</li>
+				<li style="border-bottom:none;">星座：
+					<span>
+						<?php if (!empty($user['birthday'])):?>
+						{:constellation($user['birthday'])}
+						<?php else:?>
+							未填写
+						<?php endif;?>
+					</span>
+				</li>
 			</ul>
 			<div class="clear"></div>
 		</div>

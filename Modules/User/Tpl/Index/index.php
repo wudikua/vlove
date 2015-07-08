@@ -122,8 +122,15 @@
 <div class="cp-layout-body-gray">
 	<div class="cp-index-bar">
 		<ul>
-			<li onclick="goUrl('{:U('Photo/index')}');"><i class="mob_icon_02"></i>我的相片</li>
-			<li onclick="goUrl('{:U('Profile/index')}');"><i class="mob_icon_03"></i>我的资料</li>
+			<li onclick="goUrl('{:U('User/Profile/other')}?uid={:(string)$user['_id']}');"><i class="mob_icon_09"></i>预览个人资料</li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+
+	<div class="cp-index-bar" style="margin-top:20px;">
+		<ul>
+			<li onclick="goUrl('{:U('Photo/index')}');"><i class="mob_icon_02"></i>上传相片</li>
+			<li onclick="goUrl('{:U('Profile/index')}');"><i class="mob_icon_03"></i>修改资料</li>
 		</ul>
 		<div class="clear"></div>
 	</div>

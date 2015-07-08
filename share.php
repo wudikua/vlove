@@ -22,7 +22,7 @@
 		</div>
 		<div class="qr-container">
 			<div class="qr" id="qr_img">
-				<img id="qr_img_default" src="http://mj.datougou.cn/Public/images/qrcode.jpg"/>
+				<img id="qr_img_default" src="http://wap.datougou.cn/Public/images/qrcode.jpg"/>
 			</div>
 			<div class="qr-word">用手机微信扫一扫，或添加好友：wxdanshenba。一秒完成注册</div>
 		</div>

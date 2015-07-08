@@ -22,11 +22,11 @@
 				<img width="100%" src="__PUBLIC__/images/banner1.jpg" alt="" />
 			</a>
 		</div>
-		<div class="swiper-slide">
-			<a href="{:U('Event/Index/index')}">
-				<img width="100%" src="__PUBLIC__/images/banner2.jpg" alt="" />
-			</a>
-		</div>
+<!--		<div class="swiper-slide">-->
+<!--			<a href="{:U('Event/Index/index')}">-->
+<!--				<img width="100%" src="__PUBLIC__/images/banner2.jpg" alt="" />-->
+<!--			</a>-->
+<!--		</div>-->
 	</div>
 	<!-- Add Pagination -->
 	<div class="swiper-pagination"></div>

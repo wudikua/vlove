@@ -15,18 +15,20 @@ class UserLoginAction extends UserBaseAction {
 
     public function _initialize() {
 		parent::_initialize();
-		if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
+		if (false && isset($_SESSION['login']) && $_SESSION['login'] == true) {
 			$this->userId = $_SESSION['login'];
             $this->nickName = $_SESSION['nickname'];
 		} else {
 			// 自己平台的sid登录
 			$u = MongoFactory::table("user")->findOne(['sid'=>(string)$_COOKIE['sid']], ['_id', 'nickname' ,'username']);
 			if (!isset($u['_id'])) {
-				$this->jump(U('User/Login/index'), "请先登录");
+				$currentUrl = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];
+				$this->jump("http://wap.datougou.cn/gate.php?backurl=".$currentUrl, "请先登录");
 			}
 			$this->userId = (string) $u['_id'];
 			if (strlen($this->userId) == 0) {
-				$this->jump(U('User/Login/index'), "请先登录");
+				$currentUrl = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];
+				$this->jump("http://wap.datougou.cn/gate.php?backurl=".$currentUrl, "请先登录");
 			}
 			// 写临时登录态 更新登录时间
 			MongoFactory::table("user")->update(['_id'=> new MongoId($this->userId)],
