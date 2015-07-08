@@ -31,7 +31,13 @@ class BindAction extends UserLoginAction {
 				'salary', 'job', 'company', 'industry',
 			];
 			$this->updateField($fields);
-			$this->jump(U("User/Photo/index"), "恭喜您已经可以正常使用“单身吧”，最后再上传几张照片，可以大大增加您的魅力");
+			if (isset($_COOKIE['backurl'])) {
+				setcookie("backurl", "", -1);
+				$this->jump($_COOKIE['backurl'], "恭喜您已经可以正常使用“单身吧”，正在跳转到他人资料");
+			} else {
+				$this->jump(U("User/Photo/index"), "恭喜您已经可以正常使用“单身吧”，最后再上传几张照片，可以大大增加您的魅力");
+			}
+
 			die;
 		}
 		$this->assign([

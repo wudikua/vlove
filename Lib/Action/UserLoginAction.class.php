@@ -23,11 +23,13 @@ class UserLoginAction extends UserBaseAction {
 			$u = MongoFactory::table("user")->findOne(['sid'=>(string)$_COOKIE['sid']], ['_id', 'nickname' ,'username']);
 			if (!isset($u['_id'])) {
 				$currentUrl = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];
+				setcookie("backurl", $currentUrl);
 				$this->jump("http://wap.datougou.cn/gate.php?backurl=".$currentUrl, "请先登录");
 			}
 			$this->userId = (string) $u['_id'];
 			if (strlen($this->userId) == 0) {
 				$currentUrl = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];
+				setcookie("backurl", $currentUrl);
 				$this->jump("http://wap.datougou.cn/gate.php?backurl=".$currentUrl, "请先登录");
 			}
 			// 写临时登录态 更新登录时间
