@@ -23,9 +23,8 @@ class IndexAction extends WechatAction {
 	 */
 	protected function onSubscribe() {
 //		$this->responseText("欢迎关注单身吧，本吧定期组织交友活动，点击".self::$host."开始勾搭心仪的对象，和报名活动");
-		$this->responseText("
-		<a href='http://wap.datougou.cn/gate.php?backurl=http://wap.datougou.cn/index.php/home/index/group.html'>北京上海所有群点击获取二维码</a>
-		<a href='http://wap.datougou.cn/gate.php'>欢迎关注单身吧，点击此处查看更多信息。本吧定期组织单身交友活动，编辑个人资料，可以搜索别的人，参加活动等</a>");
+		$this->responseText("<a href='http://wap.datougou.cn/gate.php?backurl=http://wap.datougou.cn/index.php/home/index/group.html'>北京上海所有群点击获取二维码</a>
+		\n\n<a href='http://wap.datougou.cn/gate.php'>欢迎关注单身吧，点击此处查看更多信息。本吧定期组织单身交友活动，编辑个人资料，可以搜索别的人，参加活动等</a>");
 	}
 
 	/**
@@ -35,8 +34,7 @@ class IndexAction extends WechatAction {
 	 */
 	protected function onText() {
 //		$this->responseText("欢迎关注单身吧，本吧定期组织交友活动，点击".self::$host."开始勾搭心仪的对象，和报名活动");
-		$this->responseText("
-		<a href='http://wap.datougou.cn/gate.php?backurl=http://wap.datougou.cn/index.php/home/index/group.html'>北京上海所有群点击获取二维码</a>
-		<a href='http://wap.datougou.cn/gate.php'>点击此处，查看更多玩法</a>");
+		$this->responseText("<a href='http://wap.datougou.cn/gate.php?backurl=http://wap.datougou.cn/index.php/home/index/group.html'>北京上海所有群点击获取二维码</a>
+		\n\n<a href='http://wap.datougou.cn/gate.php'>点击此处，查看更多玩法</a>");
 	}
 }
