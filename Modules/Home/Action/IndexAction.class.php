@@ -8,6 +8,10 @@ class IndexAction extends BaseAction {
 		}
 	}
 
+	public function group() {
+		$this->display();
+	}
+
     public function index(){
 
         $uid = $this->getUid();
